@@ -1,4 +1,4 @@
-#include "0913.cpp"
+#include "Test3.cpp"
 //bittree helper
 #include "0297.cpp"
 /*
@@ -25,11 +25,11 @@ int main()
 	Codec BitTreeHelper;
 	Solution s;
 	vector<int> tuple = { 3,2,1,4 };
-	vector<vector<int>> tuple1 = {{1, 3}, { 0 }, { 3 }, { 0, 2 }};
+	vector<vector<int>> tuple1 = {{3, 2}, {4, 3}, {4, 4}, {2, 5}};
 	vector<string> tuple2 = { "ju","fzjnm","x","e","zpmcz","h","q" };
 	vector<string> tuple3 = { "f","hveml","cpivl","d" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
- 	s.catMouseGame(tuple1);
+ 	s.mostPoints(tuple1);
 	/*string a = "())()))()(()(((())(()()))))((((()())(())";
 	string b = "1011101100010001001011000000110010100101";
 	s.canBeValid(a, b
