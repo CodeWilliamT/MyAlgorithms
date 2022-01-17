@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>[V1.0.36 2019/04/19]
+  1.修正:调试Adimec相机(已可用)，测试新增相机类型 GenaralEuresyCamLink，修正代码中bug。
+  2.修复:修复流程界面显示已检测NG芯片数目信息，实际显示了OK芯片数目信息的问题.
+  3.新增:软件所有方法代码均增添注释。
+  4.修改:将外设参数界面命名修改为相机参数界面。
+  5.修复:修复相机参数界面新增相机后保存，相机数目未改变的bug.
+  6.新增:采图界面新增4通道增亮光源配置，需要系统参数界面选择使用该设备.
+123213213
+
+[V1.0.35 2019/04/12]
+  1.新增:新增采图界面等待存储最长时间配置，从-1至3600秒，-1表示等待至存储完全完成.  
+  2.新增:离线检测芯片图谱旁新增缺陷列表，
+   (检测后单击芯片图谱更新相应芯片的缺陷，单击列表缺陷项目视图窗口显示相应缺陷).
+  3.新增:流程界面新增已检测芯片数目，NG芯片数目信息.
+  4.新增系统参数选择项:多通道增亮光源控制选项,注意在App.cs里配置enHance_LightEx的串口号.
+  5.新增相机类型 GenaralEuresyCamLink.
+
+[V1.0.34 2019/03/29]
+  1.更改:更改采图界面等待存储最长时间，从10S改为30S.  
+  2.修复:离线检测未更新图像大小导致匹配去偏离的问题.
+  3.修复:算法内释放图像的问题。
+  4.修复:复看软件兼容多视野拍图逻辑上的一些问题。
+  5.更改:连续扫描按钮不再使能。
+
+[V1.0.33 2019/03/25]
+  1.新增：手动上下料模式流程操作。
+  2.新增：相对聚焦高度:
+    当记录芯片聚焦高度时，自动记录芯片聚焦高度与样片聚焦高度差值,
+    之后只需改变机构信息里的料片聚焦高度，将会自动改变各个产品聚焦高度.
+  3.新增：系统选项：夹爪模式选择：电机或io;
+  4.新增：图像界面连续扫描流程。
+  5.修改：流程更改，下料推片完成后再开始检测。
+  6.修复：修复不同夹爪模式，夹爪回零逻辑上的bug。 
+  7.修复：修复手动上下料模式，流程上下料机构未启用回零使得夹爪未回零的bug。
+  8.更改：兼容夹爪电机模式跟气缸模式的手动上下料模式。
+
+[V1.0.32 2019/03/15]
+  1.完善手动上下料模式机构操作。
+  2.修复切换产品时，报警光源关闭失败。
+  3.料盒属性新增上下料第一槽最后槽y偏移属性，删除上料下料z轴初始上片位。
+
+[V1.0.32 2019/03/14]
+  1.完善手动上下料模式机构操作。
+  2.修复切换产品时，报警光源关闭失败。
+
+[V1.0.31 2019/03/11]
+  1.修复缺陷类型列表的部分bug
+  2.修复加载产品光源配置失败导致卡死的bug。
+  3.新增产品参数打标点双芯片blockX镜像对称选项.
+  4.修复调试过程中发现的一些其他bug.
+
+
+[V1.0.31 2019/03/11]
+  1.调整产品喷印高度不再变化.
+  2.更新算法模板制作模块。
+  3.更新算法模块.
+  4.配合机构改变，更新回零顺序。
+  5.修复调试过程中发现的一些其他bug.
+
+[V1.0.30 2019/03/06]
+  1.尝试修正喷墨器标定的一些问题:
+    标定后写入打标高度，标定时聚焦位，产品打标高度根据聚焦相对高度差异变化.
+  2.更新算法模板制作模块。
+  3.更新算法模块.
+  4.配合机构改变，更新导轨夹爪夹取逻辑.默认夹爪回零松开，上下料机构模块新增导轨夹爪夹取位z。
+  5.修复配置光源时，提示同轴光1关闭失败的问题。
+  6.修复调试过程中发现的一些其他bug.
+
+[V1.0.29 2019/03/04]
+  1.修正喷墨器标定的一些问题.
+  2.新增操作保护，当流程处于运行、报警、暂停状态时，无法操作机构。
+  3.上料盒动作z轴动作结束的位置，现在为第一片位置。
+  4.修正产品料盒模块bug.
+  5.修复调试过程中发现的一些其他bug.
+
+[V1.0.28 2019/02/28]
+  1.修正喷墨器标定判定的一些问题.
+  2.修正部分情况下停止流程会使得上料线程跳出的问题。
+  3.上料机构下料盒动作，增加推杆避让动作。
+  4.流程停止后，报警不再会响起，在只会Log栏有所提示。
+  5.图谱界面新增标记并查看首个芯片按钮
+  6.修复调试过程中发现的一些其他bug.
+
+[V1.0.27 2019/02/27]
+  1.新增喷印标定使用说明.
+  2.产品切换若导轨宽度不变则不会配置导轨宽度了。
+  3.流程对应批次，在流程界面新增变更批次按钮。
+  4.当选择直接配置，切换产品后会直接配置导轨了。
+  5.修复调试过程中发现的一些其他bug.
+
+[V1.0.26 2019/02/26]
+  1.调整流程：上料推杆感应器不使用，每次都推，检测是否到位判定有无。
+  2.新增:加载产品后默认配置第一条视觉配置入设备.  
+  3.修正喷印偏移问题,识别后进行标定，当标记处于视野中心则标定完成.
+  4.新增顺序下料隔层功能，层数在料盒参数内配置.
+  5.新增流程界面产品切换功能.
+  6.新增产品切换导轨直接配置选择项.
+  7.更新复看软件、模板软件、算法模块。
+  8.上料推杆安全位结束位现在属于料盒属性了.
+  9.修复调试过程中发现的一些其他bug.
+
+[V1.0.25 2019/02/22]
+  1.调整流程：下料时移动至最右端就触发等待位料片移动到检测位。
+  2.新增:加载产品后默认配置第一条视觉配置入设备.  
+  3.修正喷印偏移问题.
+  4.新增流程界面产品切换功能.
+  5.新增产品切换导轨直接配置选择项.
+  6.修复调试过程中发现的一些其他bug.
+
+[V1.0.24 2019/02/18]
+  1.料盒管理界面新增拷贝料盒数据功能。
+  2.图谱界面计算距心距离显示所标记点位以及图像中心点位.  
+  3.修复倒序推料模式下部分bug.
+  4.修复料盒管理界面部分bug.
+  5.修复调试过程中发现的一些其他bug.
+
+[V1.0.23 2019/02/11]
+  1.产品参数新增料盒型号选项。
+  2.新增料盒参数管理界面.  
+  3.产品界面新增料盒参数管理界面呼出按钮,可呼出料盒参数管理界面.
+  4.启动界面检测是否已选择相应料盒.
+  5.修复调试过程中发现的一些bug.
+
+[V1.0.22 2019/01/22]
+  1.离线检测界面新增银胶参数阈值及实际值查看。 
+  2.增加可倒序推片功能。
+    方法：在产品属性中，将料盒属性第一层与最后层数值互换，变更上下料Z轴初始位。
+  3.新增银胶外扩尺寸、银胶图片索引、银胶对比度离线检测界面参数配置。  
+  4.修复墨点设备状态检测的一些bug. 
+  5.系统设置可配置批次的两种模式：对料盒、对流程.
+  6.修复离线检测常用参数模块部分bug.
+  7.修复调试过程中发现的一些bug.
+
+[V1.0.21 2019/01/16]
+  1.添加喷印机系统标定模块,产品标定模块。 
+  2.添加喷印机启用开关。
+  3.调整喷印流程，增加喷印位拍照、喷引位存图功能.
+  4.添加喷印位存图开关。
+  5.解决算法调试中遇到问题，更新算法动态库。
+  6.修复调试过程中发现的一些bug.
+
+[V1.0.20 2019/01/4]
+  1.根据喷引器设备控制逻辑编写喷印逻辑，设备控制逻辑，流程控制。
+  2.配合解决算法调试中遇到问题，更新算法动态库。
+  3.修复调试过程中发现的一些bug.
+
+[V1.0.19 2018/12/29]
+  1.新增喷墨器串口控制模块.(设备未到，待测试)
+  2.配合解决算法调试中遇到问题，更新算法动态库。
+  3.修复调试过程中发现的一些bug.
+
+[V1.0.18 2018/12/21]
+  1.优化扫描料片及离线检测的连续检测多线程逻辑.
+  2.修改离线检测界面，界面增加常用参数配置及部分检测结果查看模块.  
+  3.更新手动生成芯片图谱算法模块.
+  4.配合解决算法调试中遇到问题，更新算法动态库。
+  5.修复调试过程中发现的一些bug.
+
+[V1.0.17 2018/12/13]
+  1.修改扫描料片多线程逻辑.
+  2.修改离线检测界面连续检测为多线程处理.  
+  3.配合解决算法调试中遇到问题，更新算法动态库。
+  4.修复调试过程中发现的一些bug.
+
+[V1.0.16 2018/12/11]
+  1.修正图谱制作-生成扫面点位功能算法Bug.
+  2.修正增亮光源串口控制模块逻辑适应其配置延迟.
+  3.更新算法模块.  
+  4.更新检测参数配置模块.
+  5.修复了其他一些已知bug
+
+[V1.0.15 2018/11/30]
+  1.调整下料至右极限动作:动作完成后不再到最右.
+  2.下料模块增加曲翘感应器设备.
+  3.调整下料推片入盒动作:动作增加检测曲翘感应器逻辑.  
+  4.新增增亮光源串口控制亮度模块，系统界面可进行选择，采图界面表格进行配置.
+  5.新增下料推杆感应位输入.
+  6.调整下料推片入盒动作:推片位适应料片长度.  
+  7.调整流程中上下料同层逻辑符合实际需求.  
+  8.修复了一些已知bug
+
+[V1.0.14 2018/11/23]
+  1.调整下料至右极限动作:不再进入料盒,改回运送至右感应器感应到为止.
+  2.增加上料机构感应器位置设置接口,增加产品长度设置接口.
+  3.调整传送至检测位动作,最后的夹爪推片位根据料片长度调整.
+  4.调整料盒批次输入时机,防止出现BUG,
+  5.增加默认时间命名的系统选项.
+  6.修正上料盒停止动作方法.
+  7.拍摄矫正点前增加配置光源相机参数代码,避免矫正点拍摄不正确.  
+  8.修复了一些已知bug
+
+[V1.0.13 2018/11/19]
+  1.修复3D线扫模块添加后产生的部分BUG
+  2.修复采图模块保存参数过久的问题
+  3.修复复看模块新建批次接口用时过久的问题
+  4.修复了一些已知bug
+
+[V1.0.12 2018/11/15]
+  1.流程增加3D线扫模块
+  2.调整3D线扫按钮功能
+  3.拍照信息增加3D线扫启用选项、各个线扫参数。
+  4.拍照信息2D拍照启用选项  
+  5.修复了一些已知bug
+
+[V1.0.11 2018/11/9]
+  1.调整上料盒动作检测是否有料盒在外移y轴后发生
+  2.调整不同图显示不同的缺陷区
+  3.离线检测只通过图片数据可查看芯片缺陷了
+  4.优化了按钮、放缩、信息显示等一系列UI  
+  5.修复了一些已知bug
+
+[V1.0.10 2018/11/6]
+  1.调整界面按钮无需回零可打开上下料机构料盒夹爪(不可关闭)、导轨夹爪
+  2.调整移动至检测位流程
+  3.修复了一些已知bug
+  4.优化了图标、放缩、信息显示等一系列UI
+  5.纯扫描现在也会刷新图谱表示进度了.
+
+[V1.0.9 2018/11/2]
+  1.增加新建指定id的批次功能界面及加入流程中
+  2.产品信息界面增加当前以及选中料片芯片信息图片显示功能
+  3.显示的图片可按住Ctrl拖拽
+  4.修复了一些已知bug
+
+[V1.0.8 2018/10/29]
+  1.修复了生成匹配区的一些bug
+  2.修复了配置相机增益曝光的一些bug
+  3.优化了图谱创建逻辑
+  4.增加了上料底部推料盒机构推料盒时无料盒提前结束的功能
+  5.相机控制助手增加了存图功能
+
+[V1.0.7 2018/10/26]
+  1.修复了流程上下料料盒同层相关bug
+  2.增加了控制料盒夹爪的控制功能按钮
+  3.优化了等待界面相关显示
+
+[V1.0.6 2018/10/25]
+  1.优化调试软件线扫功能,使其扫描速度极快
+  2.增加功能多相机标定功能及流程及相关模块
+  3.优化多次拍照显示图片通道UI
+   4.增加功能:使生成图谱扫描点位后更新视野行列数据
+  5.优化等待窗体显示逻辑
+  6.增加相机拍照助手上升下降、快捷键操作功能
+  7.修复软件一些BUG
+
+[V1.0.5 2018/10/17]
+  1.调整下料推片入盒动作
+  2.调整检测位设置，调整移动至检测位动作
+  3.增加手动生成图谱模块
+  4.修复复看软件存储耗时不正常的bug
+  5.增加上下料盒同层功能
+  6.优化界面，去除已失效的参数输入模块
+  7.修复软件一些BUG
+
+[V1.0.4 2018/10/10]
+  1.流程上，调整下料夹爪直接下料不使用推杆
+  2.调整相机轴移动助手界面，新增拍照与显示功能，增加快捷键控制。
+  3.增加二维码手动输入功能界面.
+  4.优化导轨配置功能界面.
+
+[V1.0.3 2018/10/08]
+  1.增加了相机二维码识别的功能。
+
+[V1.0.2 2018/09/29]
+  1.改善了固定料片，松开料片的动作流程。
+  2.修复了已知的复看软件的存储BUG。
+  3.改善算法，使得能够分辨更多缺陷.
+  4.优化了界面UI.
+
+[V1.0.1 2018/09/28]
+  1.增加了操作等待窗口，防止误操作。
+  2修复了已知的复看软件BUG。
+  3.修复了已知的扫描保存结果位置不正确的BUG。
+  4.修复了流程上一些已知问题。
+  5.配置导轨宽度按钮加入导轨励磁，方便操作。
+
+[V1.0.0 2018/09/27]
+  1.增加了版本日志功能.
+  2.优化了相机接口，使得纯扫描速率达到29s以内.</value>
+  </data>
+</root>

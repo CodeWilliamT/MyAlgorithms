@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2639CD2B-DB88-4FD6-AC8E-1E4231561080}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeadframeAOI_III</RootNamespace>
+    <AssemblyName>LeadframeAOI-III</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basler.Pylon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e389355f398382ab, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\basler\x64\Basler.Pylon.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>dll\control\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="ButtonEx">
+      <HintPath>dll\control\ButtonEx.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassLibrary2">
+      <HintPath>..\..\..\..\07-Demo\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.dll</HintPath>
+    </Reference>
+    <Reference Include="Cntk.Core.Managed-2.3.1">
+      <HintPath>dll\cntk\x64\Cntk.Core.Managed-2.3.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorButton">
+      <HintPath>dll\control\ColorButton.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorTabControl">
+      <HintPath>dll\control\ColorTabControl.dll</HintPath>
+    </Reference>
+    <Reference Include="ComboBoxEx">
+      <HintPath>dll\control\ComboBoxEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewEx">
+      <HintPath>dll\control\DataGridViewEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>dll\control\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet">
+      <HintPath>dll\halcon\x64\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="HTHalControl">
+      <HintPath>dll\htcontrol\x64\HTHalControl.dll</HintPath>
+    </Reference>
+    <Reference Include="HTMappingControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=33c529013696584d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\HTMappingControl\HTMappingControl.dll</HintPath>
+    </Reference>
+    <Reference Include="htPanel">
+      <HintPath>dll\htcontrol\x64\htPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="htWindow">
+      <HintPath>..\htWindow\bin\Debug\htWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="HT_Lib.Csharp, Version=1.0.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\HT_Lib\x64\HT_Lib.Csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LFAOIModel">
+      <HintPath>dll\LFAOIModel\LFAOIModel.dll</HintPath>
+    </Reference>
+    <Reference Include="LFAOIReview, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\LFAOIReview\LFAOIReview.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\MathNet Numerics\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net, Version=2.2.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\MVSCam\X64\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\LFAOIReview\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>dll\sql\x64_4.5\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VaryCheckBox">
+      <HintPath>dll\control\VaryCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="VisionFlow.Csharp">
+      <HintPath>dll\VisionFlow\VisionFlow.Csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="VisionFlow_Funclib">
+      <HintPath>dll\VisionFlow\VisionFlow_Funclib.dll</HintPath>
+    </Reference>
+    <Reference Include="VisionFlow_Interface">
+      <HintPath>dll\VisionFlow\VisionFlow_Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseModule.cs" />
+    <Compile Include="BrightnessCalib\BrightnessCalibration .cs" />
+    <Compile Include="MainModule\MainModule.cs" />
+    <Compile Include="ModuleForms\BoxManage\BoxManager.cs" />
+    <Compile Include="ModuleForms\BoxManage\Form_BoxManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\BoxManage\Form_BoxManage.Designer.cs">
+      <DependentUpon>Form_BoxManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_Ec_Jet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_Ec_Jet.Designer.cs">
+      <DependentUpon>Form_Ec_Jet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_FixMapPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_FixMapPos.Designer.cs">
+      <DependentUpon>Form_FixMapPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_InputCode2D.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_InputCode2D.Designer.cs">
+      <DependentUpon>Form_InputCode2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\AutoMapping\FrmAutoMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\AutoMapping\FrmAutoMapping.Designer.cs">
+      <DependentUpon>FrmAutoMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\CalibrationUV2XY\CalibSearchRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\CalibrationUV2XY\CalibSearchRange.Designer.cs">
+      <DependentUpon>CalibSearchRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\CalibrationUV2XY\FormUV2XY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\CalibrationUV2XY\FormUV2XY.Designer.cs">
+      <DependentUpon>FormUV2XY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\CalibrationUV2XY\Model.cs" />
+    <Compile Include="ModuleForms\CalibrationUV2XY\Operations.cs" />
+    <Compile Include="ModuleForms\CaptureImage\frmCaputreImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\CaptureImage\frmCaputreImage.designer.cs">
+      <DependentUpon>frmCaputreImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\CaptureImage\ImageInformation.cs" />
+    <Compile Include="ModuleForms\ExternalDevices\ExternalDevices.cs" />
+    <Compile Include="ModuleForms\ExternalDevices\FormExternalDevices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ExternalDevices\FormExternalDevices.Designer.cs">
+      <DependentUpon>FormExternalDevices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Help\Form_Lv_Inf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\Help\Form_Lv_Inf.Designer.cs">
+      <DependentUpon>Form_Lv_Inf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Jobs\FormJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\Jobs\FormJobs.Designer.cs">
+      <DependentUpon>FormJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\LightModule\Light.cs" />
+    <Compile Include="ModuleForms\LightModule\OPTControllerAPI .cs" />
+    <Compile Include="ModuleForms\LoadModule\frmUnloadModules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\LoadModule\frmUnloadModules.Designer.cs">
+      <DependentUpon>frmUnloadModules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\LoadModule\frmLoadModules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\LoadModule\frmLoadModules.Designer.cs">
+      <DependentUpon>frmLoadModules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\LoadModule\UnLoadModule.cs" />
+    <Compile Include="ModuleForms\Log\frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\Log\frmLog.Designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\MobileShootingModule\MobileShootingImageCache.cs" />
+    <Compile Include="ModuleForms\MobileShootingModule\MobileShootingInspectionResult.cs" />
+    <Compile Include="ModuleForms\MobileShootingModule\MobileShootingModule.cs" />
+    <Compile Include="ModuleForms\MobileShootingModule\PointD.cs" />
+    <Compile Include="ModuleForms\ParaTest\FrmInspectPara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ParaTest\FrmInspectPara.Designer.cs">
+      <DependentUpon>FrmInspectPara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ParaTest\FrmScanTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ParaTest\FrmScanTest.Designer.cs">
+      <DependentUpon>FrmScanTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ParaTest\ParaTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ParaTest\ParaTest.Designer.cs">
+      <DependentUpon>ParaTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Product\frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\Product\frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Product\ProductMagzine.cs" />
+    <Compile Include="ModuleForms\ScanCode\frmScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ScanCode\frmScanner.Designer.cs">
+      <DependentUpon>frmScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ScanCode\ReadCode.cs" />
+    <Compile Include="ModuleForms\SystemConfig\frmSystemConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\SystemConfig\frmSystemConfig.Designer.cs">
+      <DependentUpon>frmSystemConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\SystemConfig\SystemConfig.cs" />
+    <Compile Include="ModuleForms\ChuckModule\ChuckModule.cs" />
+    <Compile Include="ModuleForms\ChuckModule\frmChuckModules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ChuckModule\frmChuckModules.Designer.cs">
+      <DependentUpon>frmChuckModules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\LoadModule\LoadModule.cs" />
+    <Compile Include="ModuleForms\ToolFrm\Form_InputLotId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_InputLotId.Designer.cs">
+      <DependentUpon>Form_InputLotId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\Form_Wait.Designer.cs">
+      <DependentUpon>Form_Wait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\FrmCamAxisMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\ToolFrm\FrmCamAxisMotion.Designer.cs">
+      <DependentUpon>FrmCamAxisMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Vision\AlgorithmAPP.cs" />
+    <Compile Include="ModuleForms\Vision\FunctionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\Vision\FunctionTest.designer.cs">
+      <DependentUpon>FunctionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Vision\HTV_Algorithm.cs" />
+    <Compile Include="ModuleForms\Vision\Obj_Camera.cs" />
+    <Compile Include="ModuleForms\Vision\Obj_CameraSoftUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\Vision\Obj_CameraSoftUI.Designer.cs">
+      <DependentUpon>Obj_CameraSoftUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Vision\Obj_CameraUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleForms\Vision\Obj_CameraUI.Designer.cs">
+      <DependentUpon>Obj_CameraUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForms\Vision\Vision.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Process\Process.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyHandle.cs" />
+    <Compile Include="UI\ControlWrap\ButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlWrap\ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlWrap\ComboBoxEx.Designer.cs">
+      <DependentUpon>ComboBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlWrap\ControlCommonEx.cs" />
+    <Compile Include="UI\ControlWrap\DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlWrap\DataGridViewEx.Designer.cs">
+      <DependentUpon>DataGridViewEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlWrap\ImageButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlWrap\PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlWrap\PictureBoxButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlWrap\RadioButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlWrap\RadioButtonEx.Designer.cs">
+      <DependentUpon>RadioButtonEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlWrap\RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DialogUI\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DialogUI\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DialogUI\Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DialogUI\Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DialogUI\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DialogUI\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DialogUI\ShowLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DialogUI\ShowLogo.Designer.cs">
+      <DependentUpon>ShowLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Utils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="ModuleForms\AutoMapping\FrmAutoMapping.resx">
+      <DependentUpon>FrmAutoMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\CalibrationUV2XY\CalibSearchRange.resx">
+      <DependentUpon>CalibSearchRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\CalibrationUV2XY\FormUV2XY.resx">
+      <DependentUpon>FormUV2XY.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\CaptureImage\frmCaputreImage.resx">
+      <DependentUpon>frmCaputreImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ExternalDevices\FormExternalDevices.resx">
+      <DependentUpon>FormExternalDevices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\Help\Form_Lv_Inf.resx">
+      <DependentUpon>Form_Lv_Inf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\Jobs\FormJobs.resx">
+      <DependentUpon>FormJobs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\LoadModule\frmUnloadModules.resx">
+      <DependentUpon>frmUnloadModules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\LoadModule\frmLoadModules.resx">
+      <DependentUpon>frmLoadModules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\Log\frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ParaTest\FrmInspectPara.resx">
+      <DependentUpon>FrmInspectPara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ParaTest\FrmScanTest.resx">
+      <DependentUpon>FrmScanTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ParaTest\ParaTest.resx">
+      <DependentUpon>ParaTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\Product\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ScanCode\frmScanner.resx">
+      <DependentUpon>frmScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\SystemConfig\frmSystemConfig.resx">
+      <DependentUpon>frmSystemConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ChuckModule\frmChuckModules.resx">
+      <DependentUpon>frmChuckModules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\BoxManage\Form_BoxManage.resx">
+      <DependentUpon>Form_BoxManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ToolFrm\Form_Ec_Jet.resx">
+      <DependentUpon>Form_Ec_Jet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ToolFrm\Form_FixMapPos.resx">
+      <DependentUpon>Form_FixMapPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ToolFrm\Form_InputCode2D.resx">
+      <DependentUpon>Form_InputCode2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ToolFrm\Form_InputLotId.resx">
+      <DependentUpon>Form_InputLotId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ToolFrm\Form_Wait.resx">
+      <DependentUpon>Form_Wait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\Vision\FunctionTest.resx">
+      <DependentUpon>FunctionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\ToolFrm\FrmCamAxisMotion.resx">
+      <DependentUpon>FrmCamAxisMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\Vision\Obj_CameraSoftUI.resx">
+      <DependentUpon>Obj_CameraSoftUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleForms\Vision\Obj_CameraUI.resx">
+      <DependentUpon>Obj_CameraUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlWrap\DataGridViewEx.resx">
+      <DependentUpon>DataGridViewEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlWrap\RichTextBoxEx.resx">
+      <DependentUpon>RichTextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DialogUI\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DialogUI\Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DialogUI\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DialogUI\ShowLogo.resx">
+      <DependentUpon>ShowLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\Utils.resx">
+      <DependentUpon>Utils.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Log4Net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="SetupUi.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HardWare\" />
+    <Folder Include="ModuleForms\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPort_Driver\SPort_Driver\SPort_Driver.csproj">
+      <Project>{13bc323c-00a6-428c-888b-af544cc27aae}</Project>
+      <Name>SPort_Driver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolKitsDll\ToolKitsDll.csproj">
+      <Project>{903fb89b-46e0-4b5d-8d94-cd35ed071932}</Project>
+      <Name>ToolKitsDll</Name>
+      <Aliases>global</Aliases>
+    </ProjectReference>
+    <ProjectReference Include="..\VisionMethonDll\VisionMethonDll.csproj">
+      <Project>{25e9ec7d-419b-4c90-92d8-557cd792c5a2}</Project>
+      <Name>VisionMethonDll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

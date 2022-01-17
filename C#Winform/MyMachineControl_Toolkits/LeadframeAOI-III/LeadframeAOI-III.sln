@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadframeAOI-III", "LeadframeAOI-III\LeadframeAOI-III.csproj", "{2639CD2B-DB88-4FD6-AC8E-1E4231561080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolKitsDll", "ToolKitsDll\ToolKitsDll.csproj", "{903FB89B-46E0-4B5D-8D94-CD35ED071932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionMethonDll", "VisionMethonDll\VisionMethonDll.csproj", "{25E9EC7D-419B-4C90-92D8-557CD792C5A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPort_Driver", "SPort_Driver\SPort_Driver\SPort_Driver.csproj", "{13BC323C-00A6-428C-888B-AF544CC27AAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2639CD2B-DB88-4FD6-AC8E-1E4231561080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2639CD2B-DB88-4FD6-AC8E-1E4231561080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2639CD2B-DB88-4FD6-AC8E-1E4231561080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2639CD2B-DB88-4FD6-AC8E-1E4231561080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903FB89B-46E0-4B5D-8D94-CD35ED071932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903FB89B-46E0-4B5D-8D94-CD35ED071932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903FB89B-46E0-4B5D-8D94-CD35ED071932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903FB89B-46E0-4B5D-8D94-CD35ED071932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E9EC7D-419B-4C90-92D8-557CD792C5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E9EC7D-419B-4C90-92D8-557CD792C5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E9EC7D-419B-4C90-92D8-557CD792C5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E9EC7D-419B-4C90-92D8-557CD792C5A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BC323C-00A6-428C-888B-AF544CC27AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BC323C-00A6-428C-888B-AF544CC27AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BC323C-00A6-428C-888B-AF544CC27AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BC323C-00A6-428C-888B-AF544CC27AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81AA34ED-810A-433C-B8D2-1BA04A5678B3}
+	EndGlobalSection
+EndGlobal

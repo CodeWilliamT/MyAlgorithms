@@ -1,0 +1,6 @@
+LeadframeAOI-III-主程序
+SPort_Driver-串口API
+ToolKitsDll-图像工具API
+VisionMethonDll-定位API
+
+各个窗口对应名字通过LeadframeAOI-III命名空间下SetuoUi界面查看。
