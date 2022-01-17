@@ -48,15 +48,6 @@
     <ClCompile Include="b4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0747.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="0373.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="1716.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

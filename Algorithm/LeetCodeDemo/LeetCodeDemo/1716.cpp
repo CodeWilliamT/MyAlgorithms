@@ -1,21 +1,17 @@
-﻿using namespace std;
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-//巧思计算
+﻿//巧思计算
+//等差数列
 class Solution {
 public:
     int totalMoney(int n) {
-        int rst = (n / 7) * 4*7 + (n / 7 * 7)/2*n/7+(n%7)*(n/7+(n%7+1+1)/2);
-        return rst;
+        int weeks = n / 7;
+        int firstWeek = 4 * 7;
+        int lastWeek = firstWeek+(weeks-1)*7;
+        int weeksAdd = (firstWeek + lastWeek) * weeks / 2;
+        int restDays = n % 7;
+        int firstDay = weeks + 1;
+        int lastDay = weeks + restDays;
+        int daysAdd = (firstDay + lastDay) * restDays / 2;
+        return weeksAdd+ daysAdd;
     }
 };
 //简单模拟
