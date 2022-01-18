@@ -45,9 +45,6 @@
     <ClCompile Include="0175.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="b4.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
