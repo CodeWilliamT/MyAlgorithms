@@ -1,16 +1,7 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
 #include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-//哈希表 数学推算 
+//哈希表 打草稿数学推算 
 class Solution {
 public:
     vector<long long> getDistances(vector<int>& arr) {
@@ -19,10 +10,10 @@ public:
         unordered_map<int, long long> total;   // 每个数值出现下标之和
         unordered_map<int, int> cnt;   // 每个数值出现次数
         // 正向遍历并更新两个哈希表以及间隔之和数组
-        for (int i = 0; i < n; ++i) {
+        for (long long i = 0; i < n; i++) {
             int val = arr[i];
             if (cnt.count(val)) {
-                res[i] += (long long)i * cnt[val] - total[val];
+                res[i] += i * cnt[val] - total[val];
             }
             total[val] += i;
             ++cnt[val];

@@ -45,6 +45,21 @@
     <ClCompile Include="0175.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="2029.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2119.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2120.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2121.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2122.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
