@@ -1,7 +1,7 @@
 ﻿using namespace std;
 #include <vector>
 #include <unordered_map>
-//哈希表 打草稿数学推算 
+//找规律 哈希表 打草稿数学推算
 class Solution {
 public:
     vector<long long> getDistances(vector<int>& arr) {

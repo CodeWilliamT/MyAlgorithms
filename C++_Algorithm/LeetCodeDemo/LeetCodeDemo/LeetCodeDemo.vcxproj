@@ -23,10 +23,6 @@
     <ClCompile Include="0175.cpp" />
     <ClCompile Include="0217.cpp" />
     <ClCompile Include="2029.cpp" />
-    <ClCompile Include="2119.cpp" />
-    <ClCompile Include="2120.cpp" />
-    <ClCompile Include="2121.cpp" />
-    <ClCompile Include="2122.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />

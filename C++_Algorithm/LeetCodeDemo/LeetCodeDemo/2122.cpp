@@ -1,15 +1,6 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
 #include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
 //找规律 枚举
 //若有解则存在俩等差数列，前n跟后n毫不交替,或者某个地方交替着。
 //所以需要确定俩等差数列。
