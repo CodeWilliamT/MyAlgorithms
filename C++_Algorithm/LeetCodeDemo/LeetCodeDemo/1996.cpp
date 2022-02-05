@@ -1,16 +1,6 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-//哈希
+//巧思 哈希
 //遍历一次，记录每个攻击下的最大防御
 //然后倒序遍历比较就能记录下，大于某个攻击的最大防御了
 //然后再遍历一次，比较当前攻击与大于当前攻击的最大防御。
