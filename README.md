@@ -2,7 +2,7 @@
 
 This is a repo that contains some my personal develop projects, toolkits and Leetcode algorithm codes with my solution comments.
 
-这个Repo包含了我一些个人开发的项目、工具，以及leetcode的算法代码及其题解注释。
+这个Repo包含了一些个人开发的项目、工具，以及leetcode的算法代码及其题解注释。
 包括:
 LeetCodeDemo:我的Leetcode算法A题Repo。注释包含处理思路。
 DoubleSubSwitcher:一个字幕交换器,C#winform。
