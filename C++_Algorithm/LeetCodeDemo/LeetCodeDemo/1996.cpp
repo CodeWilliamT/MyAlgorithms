@@ -3,7 +3,7 @@
 //巧思 哈希
 //遍历一次，记录每个攻击下的最大防御
 //然后倒序遍历比较就能记录下，大于某个攻击的最大防御了
-//然后再遍历一次，比较当前攻击与大于当前攻击的最大防御。
+//然后再遍历一次，比较当前项的防御与大于当前攻击的最大防御。
 class Solution {
 public:
     int numberOfWeakCharacters(vector<vector<int>>& properties) {
