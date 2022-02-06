@@ -1,4 +1,4 @@
-#include "Test4.cpp"
+#include "Test2.cpp"
 //bittree helper
 #include "0297.cpp"
 /*
@@ -29,7 +29,7 @@ int main()
 	vector<string> tuple2 = { "ju","fzjnm","x","e","zpmcz","h","q" };
 	vector<string> tuple3 = { "f","hveml","cpivl","d" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
- 	s.recoverArray(tuple);
+ 	s.smallestNumber(0);
 	/*string a = "())()))()(()(((())(()()))))((((()())(())";
 	string b = "1011101100010001001011000000110010100101";
 	s.canBeValid(a, b
