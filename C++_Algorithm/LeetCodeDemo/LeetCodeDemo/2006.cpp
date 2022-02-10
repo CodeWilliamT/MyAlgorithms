@@ -1,30 +1,17 @@
-using namespace std;
-#include <iostream>
+ï»¿using namespace std;
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-//Ìõ¼ş·ÖÎö
-//ÆÓËØÊµÏÖ£¬¼òµ¥Ìâ
+//å“ˆå¸Œ ç®€å•é¢˜
+//åŠ ä¹‹å‰å‡ºç°è¿‡çš„æ•°é‡
 class Solution {
 public:
     int countKDifference(vector<int>& nums, int k) {
-        int ans = 0;
-        int n = nums.size();
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = i + 1; j < n; j++)
-            {
-                if (abs(nums[i] - nums[j]) == k)
-                {
-                    ans++;
-                }
-            }
+        int v[101]{};
+        int rst = 0;
+        for (int& e : nums) {
+            if (e - k < 101 && e - k >= 0)rst += v[e - k];
+            if (e + k < 101 && e + k >= 0)rst += v[e + k];
+            v[e]++;
         }
-        return ans;
+        return rst;
     }
 };
