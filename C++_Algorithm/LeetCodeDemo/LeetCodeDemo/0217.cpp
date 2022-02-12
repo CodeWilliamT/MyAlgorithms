@@ -1,12 +1,17 @@
 ﻿using namespace std;
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
 #include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
+//哈希 简单
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> st;
+        for (int& e : nums) {
+            if (st.count(e)) {
+                return true;
+            }
+            else 
+                st.insert(e);
+        }
+        return false;
+    }
+};

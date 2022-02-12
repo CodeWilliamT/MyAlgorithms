@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0135.cpp" />
-    <ClCompile Include="0175.cpp" />
     <ClCompile Include="0217.cpp" />
     <ClCompile Include="1020.cpp" />
     <ClCompile Include="main.cpp" />
