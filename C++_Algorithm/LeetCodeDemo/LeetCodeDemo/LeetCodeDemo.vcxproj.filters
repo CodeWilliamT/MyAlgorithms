@@ -39,7 +39,13 @@
     <ClCompile Include="0135.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0016.cpp">
+    <ClCompile Include="0136.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0176.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0046.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
