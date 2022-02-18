@@ -1,16 +1,4 @@
-﻿using namespace std;
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-//动态规划
+﻿//动态规划
 //步骤，位置，指向概率 f[101][25][25]{}
 //答案为k步的概率和。
 //f[t][x][y] += f[t - 1][i][j] / 8;
