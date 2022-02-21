@@ -36,19 +36,10 @@
     <ClCompile Include="Test4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0019.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="0045.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="0051.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="0912.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="0969.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
