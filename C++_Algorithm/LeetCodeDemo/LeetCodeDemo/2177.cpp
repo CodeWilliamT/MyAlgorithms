@@ -1,15 +1,7 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
+//朴素模拟
+//能被3整除，就直接搞，不能就空
 class Solution {
 public:
     vector<long long> sumOfThree(long long num) {

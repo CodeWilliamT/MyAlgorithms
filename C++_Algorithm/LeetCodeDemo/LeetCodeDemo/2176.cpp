@@ -1,15 +1,6 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
+//朴素模拟
 class Solution {
 public:
     int countPairs(vector<int>& nums, int k) {
