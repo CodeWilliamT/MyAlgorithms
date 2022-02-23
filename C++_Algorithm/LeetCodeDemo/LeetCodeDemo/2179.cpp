@@ -1,37 +1,35 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-//树状数组 置换 巧思
+//树状数组 巧思 置换
 //找三个值，在两个数组中位置都是递增的。
-//转换出nums2值映射索引的数组mp,比nums2[i]索引大的数目为n-mp[nums2[i]]。
+//转换出nums1值映射索引的数组mp。
+//用y=mp[nums2[i]]构成新的数组。
+//则求新构成的数组中,左侧小于y的元素*右侧大于y的元素的乘积的总和。
+//然后值映射频率，转化为求至nums2[i]元素构成的 y 映射 y出现频率 数组中，小于y元素频率的前缀和。用树状数组计算。
 class Solution {
 public:
     long long goodTriplets(vector<int>& nums1, vector<int>& nums2) {
         int n = nums1.size();
-        vector<int> p(n);
-        for (int i = 0; i < n; ++i)
-            p[nums1[i]] = i;
-        long long ans = 0;
-        vector<int> tree(n + 1);
-        long long less = 0;
-        for (int i = 1; i < n - 1; ++i) {
-            for (int j = p[nums2[i - 1]] + 1; j <= n; j += j & -j) // 将 p[nums2[i-1]]+1 加入树状数组
-                ++tree[j];
-            int y = p[nums2[i]];
-            less = 0;
-            for (int j = y; j; j &= j - 1) // 计算 less
-                less += tree[j];
-            ans += less * (n - 1 - y - (i - less));
+        vector<int> mp(n),tree(n+1);
+        for (int i = 0; i < n; i++) {
+            mp[nums1[i]] = i;
         }
-        return ans;
+        long long cnt;
+        long long rst = 0;
+        int y;
+        for (int i = 0; i < n; i++) {
+            //查询前缀和
+            cnt = 0;
+            y = mp[nums2[i]];
+            for (int j = y; j > 0; j -= j & -j) {
+                cnt += tree[j];
+            }
+            rst += cnt * (n - 1- y - (i - cnt));
+            //修改前缀和
+            for (int j = y+1; j <= n; j += j & -j) {
+                tree[j]++;
+            }
+        }
+        return rst;
     }
 };

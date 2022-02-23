@@ -1,6 +1,6 @@
 ﻿using namespace std;
 #include <vector>
-//巧思
+//找规律 巧思
 //求finalSum拆分成最多数目的偶整数和
 //finalSum为奇数，返回空
 //累加偶数，直到和刚好大于finalSum,去掉差值偶数
