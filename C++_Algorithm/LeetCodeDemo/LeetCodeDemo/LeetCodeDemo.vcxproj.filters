@@ -42,9 +42,6 @@
     <ClCompile Include="0912.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0917.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
