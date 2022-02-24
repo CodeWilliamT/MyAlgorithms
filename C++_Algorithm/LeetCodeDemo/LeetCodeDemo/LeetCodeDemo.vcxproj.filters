@@ -36,9 +36,6 @@
     <ClCompile Include="Test4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0051.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="0912.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
