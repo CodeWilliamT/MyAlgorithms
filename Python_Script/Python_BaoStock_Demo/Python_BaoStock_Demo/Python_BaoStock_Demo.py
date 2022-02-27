@@ -130,10 +130,11 @@ lg = bs.login()
 # 显示登陆返回信息
 print('login respond error_code:'+lg.error_code)
 print('login respond  error_msg:'+lg.error_msg)
-dateS="2022-01-01"
-dateE="2022-01-09"
+dateS="2022-02-24"
+dateE="2022-02-27"
 outputPath="C:/Stock_Result/"
-os.mkdir(outputPath)
+if os.path.isdir(outputPath)==False:
+    os.mkdir(outputPath)
 #### 获取某一天的全市场的证券和指数代码 ####
 code_df=get_codeSet()
 df = pd.DataFrame()
@@ -161,17 +162,6 @@ for code in code_df['code']:
         #判定伞形线
         if IsSanxingxian(result,1):
             df=df.append(result.loc[1])
-            #open1=float(result.at[1,'open'])
-            #close1=float(result.at[1,'close'])
-            #low1=float(result.at[1,'low'])
-            #down1=min(open1,close1)
-            #buy=(low1+down1)/2
-            #low2=float(result.at[2,'low'])
-            #if low2<buy:
-            #    a=a+1
-            #    sell=float(result.at[3,'high'])
-            #    if sell/buy>1.01:
-            #        b=b+1
 
                 
 #### 结果集输出到csv文件 ####

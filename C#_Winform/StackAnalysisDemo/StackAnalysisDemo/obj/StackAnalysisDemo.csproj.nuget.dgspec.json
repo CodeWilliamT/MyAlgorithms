@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\v-wetong\\source\\repos\\MyProject\\MyProject\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj": {}
+    "C:\\Users\\v-wetong\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Winform\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\v-wetong\\source\\repos\\MyProject\\MyProject\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj": {
+    "C:\\Users\\v-wetong\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Winform\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\v-wetong\\source\\repos\\MyProject\\MyProject\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj",
+        "projectUniqueName": "C:\\Users\\v-wetong\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Winform\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj",
         "projectName": "StackAnalysisDemo",
-        "projectPath": "C:\\Users\\v-wetong\\source\\repos\\MyProject\\MyProject\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj",
+        "projectPath": "C:\\Users\\v-wetong\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Winform\\StackAnalysisDemo\\StackAnalysisDemo\\StackAnalysisDemo.csproj",
         "packagesPath": "C:\\Users\\v-wetong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\v-wetong\\source\\repos\\MyProject\\MyProject\\StackAnalysisDemo\\StackAnalysisDemo\\obj\\",
+        "outputPath": "C:\\Users\\v-wetong\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Winform\\StackAnalysisDemo\\StackAnalysisDemo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -60,7 +60,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }
