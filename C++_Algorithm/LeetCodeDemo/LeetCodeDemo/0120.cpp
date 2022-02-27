@@ -2,8 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-//动态规划空间优化
-//
+//动态规划 分治 空间优化
 class Solution {
 public:
     int minimumTotal(vector<vector<int>>& triangle) {

@@ -1,5 +1,7 @@
 ﻿using namespace std;
 #include <vector>
+//找规律
+//维护最大，最小;维护最小的时候注意最大维护成最小就完事了。
 class Solution {
 public:
     int maximumDifference(vector<int>& nums) {

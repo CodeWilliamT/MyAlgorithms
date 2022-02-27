@@ -1,9 +1,7 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
 #include <algorithm>
-//动态规划
+//动态规划 分治
 //状态量f[i]为i的最大套娃信封数
 //状态转移方程：f[i] = max(f[0],...,f[i-1]) + 1; 
 //边界： f[i]min=1;
