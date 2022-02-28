@@ -19,10 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2185.cpp" />
-    <ClCompile Include="2186.cpp" />
-    <ClCompile Include="2187.cpp" />
-    <ClCompile Include="2188.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />

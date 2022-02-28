@@ -2,7 +2,7 @@
 
 This repo contains some my personal small develop projects, toolkits and Leetcode algorithm codes with my pesonal solution comments.
 
-这个Repo主要包含了个人日常练习算法做的leetcode题目的代码、做题时的思路注释，以及一些个人自用开发的小软件、工具。
+这个Repo主要包含了个人日常练习算法做的leetcode题目的代码(C++)、做题时的思路注释，一个设备控制，图像处理的类库以及一些个人开发的小软件、工具。
 
 主要包括:
 
@@ -16,4 +16,4 @@ DoBinaryMap:一个二维码识别器,C#winform。
 
 Python_BaoStock_Demo:一个股票特征形态筛选的简易脚本,python。
 
-Samples\Scan_Machine_Working_Videos:AOI检测机的功能测试的Record Vedio。
+Samples\Scan_Machine_Working_Videos:AOI检测机的功能测试的Record Vedios。
