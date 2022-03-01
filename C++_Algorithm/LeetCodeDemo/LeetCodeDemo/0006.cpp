@@ -5,25 +5,23 @@
 class Solution {
 public:
     string convert(string s, int numRows) {
-        int n = s.size();
-        vector<string>  p(numRows);
+        if (numRows == 1)return s;
         string rst;
-        int cnt = 0, pa = cnt + numRows, pb = pa + numRows - 2;
-        for (int i = 0; i < n; i++) {
-            if (i < pa) {
-                p[i - cnt].push_back(s[i]);
-            }
-            else if (i < pb) {
-                p[numRows - 1 - (i - (pa - 1))].push_back(s[i]);
+        vector<string> vs(numRows);
+        int tmp;
+        for (int i = 0; i < s.size(); i++) {
+            tmp = i % (numRows * 2 - 2);
+            if (tmp < numRows) {
+                vs[tmp].push_back(s[i]);
             }
             else {
-                cnt = i;
-                pa = cnt + numRows, pb = pa + numRows - 2;
-                p[i - cnt].push_back(s[i]);
+                vs[numRows * 2 - 2 - tmp].push_back(s[i]);
             }
         }
-        for (auto& e : p) {
-            rst += e;
+        for (auto& e : vs) {
+            for (auto& c : e) {
+                rst.push_back(c);
+            }
         }
         return rst;
     }
