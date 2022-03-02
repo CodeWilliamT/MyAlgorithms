@@ -1,8 +1,9 @@
 # WilliamPublicRepo
 
-This repo contains some my personal small develop projects, scripts, toolkits and Leetcode algorithm codes with my pesonal solution comments.
+This repo contains some my personal small develop projects or scripts for hobbies, toolkits for machine control and my Leetcode algorithm Cpp codes with my personal solution comments.
 
 这个Repo主要包含了个人日常练习算法做的leetcode题目的代码(C++)、做题时的思路注释，一个本人整合编写的设备控制、图像处理的工具类库以及一些个人开发使用的小软件、脚本。
+
 
 主要包括:
 
