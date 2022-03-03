@@ -11,10 +11,10 @@ LeetCodeDemo:个人日常Leetcode算法做题Repo。注释包含自身的处理�
 
 MyMachineControl_Toolkits:一些硬件控制跟图像处理开发编写使用的类库和一些Demo,C#。
 
-DoubleSubSwitcher:一个简单的双语字幕上下行交换器,C#winform。
-
-DoBinaryMap:一个二维码识别器,C#winform。
+Samples\Scan_Machine_Working_Videos:AOI检测机的功能测试的Record Vedios。
 
 Python_BaoStock_Demo:一个股票特征形态筛选的简易脚本,python。
 
-Samples\Scan_Machine_Working_Videos:AOI检测机的功能测试的Record Vedios。
+DoubleSubSwitcher:一个简单的双语字幕上下行交换器,C#winform。
+
+DoBinaryMap:一个二维码识别器,C#winform。
