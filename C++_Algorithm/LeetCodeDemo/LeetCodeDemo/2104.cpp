@@ -3,20 +3,17 @@
 //动态规划
 class Solution {
 public:
-    long long subArrayRanges(vector<int>& nums) {
-        int n = nums.size();
-        vector<vector<int>> mx(n, vector<int>(n)), mn(n, vector<int>(n));
-
-        for (int i = 0; i < n; i++) {
-            mx[i][i] = nums[i];
-            mn[i][i] = nums[i];
-        }
+    long long subArrayRanges(vector<int>& a) {
+        int n = a.size();
         long long rst = 0;
+        int mx, mn;
         for (int i = 0; i < n; i++) {
-            for (int j = i+1; j < n; j++) {
-                mx[i][j] = max(mx[i][j - 1], nums[j]);
-                mn[i][j] = min(mn[i][j - 1], nums[j]);
-                rst += mx[i][j] - mn[i][j];
+            mx = a[i];
+            mn = a[i];
+            for (int j = i + 1; j < n; j++) {
+                mx = max(mx, a[j]);
+                mn = min(mn, a[j]);
+                rst += mx - mn;
             }
         }
         return rst;
