@@ -1,4 +1,4 @@
-#include "Test2.cpp"
+#include "Test3.cpp"
 //bittree helper
 #include "0297.cpp"
 /*
@@ -33,12 +33,13 @@ int main()
 {
 	Codec BitTreeHelper;
 	Solution s;
-	vector<int> tuple = { 2,10,6,4,8,12 };
-	vector<vector<int>> tuple1 = {{3, 2}, {4, 3}, {4, 4}, {2, 5}};
-	vector<string> tuple2 = { "ju","fzjnm","x","e","zpmcz","h","q" };
-	vector<string> tuple3 = { "f","hveml","cpivl","d" };
+	vector<int> tuple1 = { 9,8,7,6,5,4,3,2,1,0 };
+	vector<int> tuple2 = { 0,1,2,3,4,5,6,7,8,9 };
+	vector<vector<int>> tt1 = { {0,3} ,{0,4},{1,3},{2,4},{2,7},{3,5},{3,6},{3,7},{4,6} };
+	vector<string> tt2 = { "ju","fzjnm","x","e","zpmcz","h","q" };
+	vector<string> tt3 = { "f","hveml","cpivl","d" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
- 	s.smallestNumber(0);
+ 	s.getAncestors(8, tt1);
 	/*string a = "())()))()(()(((())(()()))))((((()())(())";
 	string b = "1011101100010001001011000000110010100101";
 	s.canBeValid(a, b

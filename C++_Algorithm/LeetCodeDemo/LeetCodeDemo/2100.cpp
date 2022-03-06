@@ -5,43 +5,32 @@
 //找波谷
 class Solution {
 public:
-    vector<int> goodDaysToRobBank(vector<int>& security, int time) {
-        int n = security.size();
-        vector<bool> noincrease(n,1);
-        vector<bool> nodecrease(n, 1);
-        for (int i = 1; i < n; i++)
-        {
-            noincrease[i] = security[i - 1] >= security[i];
-            nodecrease[i-1] = security[i - 1] <= security[i];
-        }
-        vector<bool> ans(n, 1);
-        int suml = 0;
-        int sumr = 0;
-        for (int i = 1; i < n-time; i++)
-        {
-            suml += noincrease[i];
-            sumr += nodecrease[n-1-i];
-            if (i >= time)
-            {
-                if (i > time)
-                {
-                    suml -= noincrease[i - time];
-                    sumr -= nodecrease[n - 1 - i+time];
-                }
-                if (suml != time)
-                {
-                    ans[i] = 0;
-                }
-                if (sumr != time)
-                {
-                    ans[n-1-i] = 0;
-                }
+    vector<int> goodDaysToRobBank(vector<int>& s, int t) {
+        bitset<100000> l, r;
+        int n = s.size();
+        for (int i = 0; i < n - 1; i++) {
+            if (s[i] >= s[i + 1]) {
+                l[i] = 1;
+            }
+            if (s[n - 1 - i] >= s[n - 2 - i]) {
+                r[n - 1 - i] = 1;
             }
         }
+        int left = 0, right = 0;
+        for (int i = 0; i < t; i++) {
+            left += l[i];
+            if (i + t + 1 < n)
+                right += r[i + t + 1];
+        }
         vector<int> rst;
-        for (int i = time; i < n - time; i++)
-        {
-            if (ans[i])rst.push_back(i);
+        for (int i = t; i < n - t; i++) {
+            if (left == t && right == t) {
+                rst.push_back(i);
+            }
+            left += l[i];
+            left -= l[i - t];
+            right += r[i + t + 1];
+            right -= r[i + 1];
         }
         return rst;
     }
