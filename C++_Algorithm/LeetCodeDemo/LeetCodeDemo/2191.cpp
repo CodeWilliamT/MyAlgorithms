@@ -1,7 +1,7 @@
 ﻿using namespace std;
 #include <vector>
 #include <algorithm>
-//模拟
+//麻烦题 模拟
 class Solution {
 public:
     vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
