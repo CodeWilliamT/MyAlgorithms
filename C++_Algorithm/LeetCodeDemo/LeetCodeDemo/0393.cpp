@@ -2,6 +2,7 @@
 #include <vector>
 #include <bitset>
 //麻烦题 模拟 位运算
+//前缀为哪一类，长度是否符合该类、前缀10
 class Solution {
 public:
     bool validUtf8(vector<int>& data) {
