@@ -8,16 +8,17 @@ class Solution {
     using pll = pair<long long, long long>;
     const long long INF = 100000000000;
     /// <summary>
-    /// get min cost from source to target.
-    /// From Same source to diff target.
-    /// use the min cost to max cost to get less cost,
+    /// 求从源点到终点的最短距离。
+    /// 求从单个源点出发，到各个节点的最短路(最小花费)
+    /// 尝试从源点src到某顶点d[v]的花费是否可变为更短的起点src到更近的点u花费d[u]+更近的点u到该点v的边的花费e.second。
+    /// 做完整个数组，就能得到从起点出发到各个点的最小花费的数组d。
     /// </summary>
-    /// <param name="g">g[from].(pair<int,int>){to,cost}</param>
+    /// <param name="g">g[from].(pair<int,int>){cost,to}</param>
     /// <param name="v">if visited</param>
-    /// <param name="d">source to points cost</param>
+    /// <param name="d">从源点到各个点的最小花费</param>
     /// <param name="src">source</param>
     /// <param name="tgt">target</param>
-    /// <returns>min cost from source to target</returns>
+    /// <returns>从源点到终点的最小花费,未连接则INF</returns>
     int Dijkstra(vector<vector<pll>>& g, vector<bool>& v, vector<long long>& d,int src,int tgt) {
         priority_queue<pll, vector<pll>, greater<pll> > q;
         int n = g.size();
@@ -58,6 +59,6 @@ public:
         for (int i = 0; i < n; i++) {
             rst = min(rst, dsrc1[i] + dsrc2[i] + sdest[i]);
         }
-        return rst== INF ?-1:rst;
+        return rst == INF ? -1 : rst;
     }
 };

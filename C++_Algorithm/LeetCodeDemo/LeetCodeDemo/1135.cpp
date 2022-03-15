@@ -4,6 +4,13 @@
 #include <functional>
 //图 并查集 最小生成树
 class Solution {
+    /// <summary>
+    /// 求联通所有点的最小花费。
+    /// 按花费从小到大遍历边，该边俩顶点不在一个并查集则连接，答案+=该边权重。
+    /// </summary>
+    /// <param name="n">节点数目</param>
+    /// <param name="edges">边集合({起点，终点，费用})</param>
+    /// <returns>求联通所有点的最小花费，不能连通返回-1</returns>
     int Kruskal(int n,vector<vector<int>>& edges)
     {
         int plus = 1;//编号从1开始为1，从0为0
