@@ -1,6 +1,9 @@
 ﻿using namespace std;
 #include <vector>
 #include <queue>
+using namespace std;
+#include <vector>
+#include <queue>
 //图 正权最短路
 //获取src1,src2到各个点的最小花费，各个点出发到dest的最小花费。
 //找到对同一个点和最小即答案。
@@ -13,13 +16,13 @@ class Solution {
     /// 尝试从源点src到某顶点d[v]的花费是否可变为更短的起点src到更近的点u花费d[u]+更近的点u到该点v的边的花费e.second。
     /// 做完整个数组，就能得到从起点出发到各个点的最小花费的数组d。
     /// </summary>
-    /// <param name="g">g[from].(pair<int,int>){cost,to}</param>
+    /// <param name="g">g[from].(pair<int,int>){to,cost}</param>
     /// <param name="v">if visited</param>
     /// <param name="d">从源点到各个点的最小花费</param>
     /// <param name="src">source</param>
     /// <param name="tgt">target</param>
     /// <returns>从源点到终点的最小花费,未连接则INF</returns>
-    int Dijkstra(vector<vector<pll>>& g, vector<bool>& v, vector<long long>& d,int src,int tgt) {
+    int Dijkstra(vector<vector<pll>>& g, vector<bool>& v, vector<long long>& d, int src, int tgt) {
         priority_queue<pll, vector<pll>, greater<pll> > q;
         int n = g.size();
         for (int i = 0; i < n; i++)
@@ -42,8 +45,8 @@ class Solution {
 public:
     long long minimumWeight(int n, vector<vector<int>>& edges, int src1, int src2, int dest) {
         vector<vector<pll>> g(n);
-        vector<bool> v(n,0);
-        vector<long long> dsrc1(n, 0), dsrc2(n, 0),sdest(n,0);
+        vector<bool> v(n, 0);
+        vector<long long> dsrc1(n, 0), dsrc2(n, 0), sdest(n, 0);
         for (auto& e : edges) {
             g[e[0]].push_back({ e[1],e[2] });
         }
