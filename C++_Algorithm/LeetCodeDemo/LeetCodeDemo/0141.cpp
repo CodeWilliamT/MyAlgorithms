@@ -7,6 +7,23 @@ struct ListNode {
     ListNode* next;
     ListNode(int x) : val(x), next(NULL) {}
 };
+
+//迭代
+class Solution {
+public:
+    unordered_set<ListNode*> posFlag;
+    bool hasCycle(ListNode* head) {
+        ListNode* cur = head;
+        unordered_set<ListNode*> st;
+        while (cur != nullptr)
+        {
+            if (st.count(cur))return true;
+            st.insert(cur);
+            cur = cur->next;
+        }
+        return false;
+    }
+};
 //递归
 class Solution {
 public:
@@ -19,36 +36,20 @@ public:
     }
 };
 
-//迭代
-//class Solution {
-//public:
-//    unordered_set<ListNode*> posFlag;
-//    bool hasCycle(ListNode* head) {
-//        ListNode* cur = head;
-//        unordered_set<ListNode*> posFlag;
-//        while (cur != nullptr)
-//        {
-//            if (posFlag.find(cur) != posFlag.end())return true;
-//            posFlag.insert(cur);
-//            cur = cur->next;
-//        }
-//        return false;
-//    }
-//};
 
 //fast&slow ptr
-//class Solution {
-//public:
-//    bool hasCycle(ListNode* head) {
-//        ListNode* slow = head;
-//        ListNode* fast = head;
-//        while (slow && fast)
-//        {
-//            slow = slow->next;
-//            if(!fast->next)return false;
-//            fast = fast->next->next;
-//            if (slow == fast)return true;
-//        }
-//        return false;
-//    }
-//};
+class Solution {
+public:
+    bool hasCycle(ListNode* head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while (slow && fast)
+        {
+            slow = slow->next;
+            if(!fast->next)return false;
+            fast = fast->next->next;
+            if (slow == fast)return true;
+        }
+        return false;
+    }
+};
