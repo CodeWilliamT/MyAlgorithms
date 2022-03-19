@@ -1,21 +1,20 @@
 ﻿using namespace std;
 #include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
 #include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-#include <bitset>
-//动态规划 贪心 前缀和 堆排序
+
+//重新思考
+//动态规划
+class Solution {
+public:
+    int minimumWhiteTiles(string floor, int numCarpets, int carpetLen) {
+
+    }
+};
+//堆排序 贪心 前缀和
 //让每块地毯遮挡的位置尽量多
 //统计i位置开始len长度地毯能遮盖的白块数。
 //开始遮盖最多的位置(相同则取靠左)，更新跟受影响的位置，直到用完。
-//
 class Solution {
     using pii = pair<int, int>;
 public:
