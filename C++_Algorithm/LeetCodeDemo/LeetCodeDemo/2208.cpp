@@ -1,7 +1,7 @@
 ﻿using namespace std;
 #include <vector>
 #include <queue>
-//堆排序
+//优先队列 堆排序
 //每次取最大的，和-掉该数，减半该数,重新求和。
 //坑:用double
 class Solution {

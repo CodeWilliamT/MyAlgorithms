@@ -1,7 +1,4 @@
-﻿using namespace std;
-#include <iostream>
-
- //Definition for singly-linked list.
+﻿//Definition for singly-linked list.
 struct ListNode {
     int val;
     ListNode* next;
@@ -13,9 +10,7 @@ struct ListNode {
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* pre = nullptr;
-        ListNode* cur = head;
-        ListNode* next;
+        ListNode* pre = nullptr, * cur = head, * next;
         while (cur) {
             next = cur->next;
             cur->next = pre;
@@ -26,14 +21,14 @@ public:
     }
 };
 //递归
-//class Solution {
-//public:
-//    ListNode* reverseList(ListNode* head) {
-//        if (!head)return head;
-//        if (!head->next)return head;
-//        ListNode* newHead = reverseList(head->next);
-//        head->next->next = head;
-//        head->next = nullptr;
-//        return newHead;
-//    }
-//};
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if (!head)return head;
+        if (!head->next)return head;
+        ListNode* newHead = reverseList(head->next);
+        head->next->next = head;
+        head->next = nullptr;
+        return newHead;
+    }
+};

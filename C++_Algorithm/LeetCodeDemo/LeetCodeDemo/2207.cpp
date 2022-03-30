@@ -1,16 +1,6 @@
 ﻿using namespace std;
 #include <iostream>
-#include <vector>
 #include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-#include <bitset>
 //找规律 
 //第二个匹配就加之前第一个的数目
 //比较加最前跟加最后的区别。
