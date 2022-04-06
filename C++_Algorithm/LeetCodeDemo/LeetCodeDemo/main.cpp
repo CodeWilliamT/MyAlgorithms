@@ -40,7 +40,8 @@ int main()
 	vector<string> vs1 = { "ju","fzjnm","x","e","zpmcz","h","q" };
 	vector<string> vs2 = { "f","hveml","cpivl","d" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
-	s.maxValueOfCoins(vv1,3);
+	s.convertTime("02:30",
+		"04:35");
 	/*string a = "())()))()(()(((())(()()))))((((()())(())";
 	string b = "1011101100010001001011000000110010100101";
 	s.canBeValid(a, b

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+//找规律 模拟
 //按小到大构造指定长度的回文数，时间复杂度nlogn内。
 //构造，排序
 class Solution {

@@ -1,36 +1,32 @@
 ﻿using namespace std;
 #include <vector>
-#include <unordered_set>
-#include <unordered_map>
 //哈希
-class Solution {
+//找有的，找不重的。
+class Solution { 
 public:
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
-        unordered_map<int,int> mp;
-        unordered_set<int> st1,st2;
+        bool mp1[2001]{}, mp2[2001]{}, mp[2001]{};
         for (int& e : nums1) {
-            if (!st1.count(e)) {
-                st1.insert(e);
-                mp[e]++;
+            if (!mp1[e+1000]) {
+                mp1[e + 1000]=1;
             }
         }
         for (int& e : nums2) {
-            if (!st2.count(e)) {
-                st2.insert(e);
-                mp[e]++;
+            if (!mp2[e + 1000]) {
+                mp2[e + 1000] = 1;
             }
         }
         vector<vector<int>> rst(2);
-        for (auto& e : mp) {
-            if (e.second == 1)
-            {
-                if (st1.count(e.first)) {
-                    rst[0].push_back(e.first);
-                }
-                else {
-
-                    rst[1].push_back(e.first);
-                }
+        for (int& e : nums1) {
+            if (!mp2[e + 1000]&&!mp[e+1000]) {
+                rst[0].push_back(e);
+                mp[e + 1000] = 1;
+            }
+        }
+        for (int& e : nums2) {
+            if (!mp1[e + 1000] && !mp[e + 1000]) {
+                rst[1].push_back(e);
+                mp[e + 1000] = 1;
             }
         }
         return rst;

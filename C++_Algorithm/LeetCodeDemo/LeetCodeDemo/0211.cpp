@@ -1,9 +1,7 @@
 ﻿using namespace std;
 #include <iostream>
 #include <vector>
-#include <string>
 #include <unordered_map>
-//前缀树Trie + 回溯
 //前缀树Trie，简单构造
 //深搜(回溯，递归)，查询
 class WordDictionary {
@@ -33,10 +31,10 @@ public:
         }
         cur->str = word;
     }
-    bool search(string word, int idx=0, TrieNode* cur = nullptr) {
-        if(cur== nullptr)cur = root;
+    bool search(string word, int idx = 0, TrieNode* cur = nullptr) {
+        if (cur == nullptr)cur = root;
 
-        for (int i=idx;i<word.size();i++)
+        for (int i = idx; i < word.size(); i++)
         {
             if (word[i] == '.')
             {

@@ -1,7 +1,7 @@
 ﻿using namespace std;
 #include <vector>
-//巧思
-//从右往左删
+//动态规划
+//从右往左删无后效
 class Solution {
 public:
     int minDeletion(vector<int>& nums) {

@@ -3,6 +3,7 @@
 #include <vector>
 #include <unordered_map>
 //前缀树 麻烦题 设计题 
+//需求：已有可匹配字典，需求O(n)的字符串多次匹配
 class Encrypter {
     struct TrieNode {
         unordered_map<char, TrieNode*> c;
@@ -38,7 +39,7 @@ public:
         return rst;
     }
     void dfs(int& rst,string& s,TrieNode* node,int idx, string& t) {
-        if (idx >= s.size()&&node->w!="") {
+        if (idx >= s.size()&&node->w.size()) {
             rst++;
         }
         string sub = s.substr(idx, 2);
