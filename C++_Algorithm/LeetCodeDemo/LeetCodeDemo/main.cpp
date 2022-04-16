@@ -33,15 +33,15 @@ int main()
 {
 	Codec BitTreeHelper;
 	Solution s;
-	vector<int> v1 = { 1,2,3,4,5,90 };
+	vector<int> v1 = { 9,20,6,4,11,12 };
 	vector<int> v2 = { 0,1,2,3,4,5,6,7,8,9 };
-	vector<vector<int>> vv1 = { {1,100,3} ,{7,8,9} };
-	vector<vector<int>> vv2 = { {0, 2}, {0, 3}, {0, 4}, {2, 0}, {2, 1}, {2, 2}, {2, 5}, {3, 0}, {3, 1}, {3, 3}, {3, 4}, {4, 0}, {4, 3}, {4, 5}, {5, 0}, {5, 1}, {5, 2}, {5, 4}, {5, 5} };
+	vector<vector<int>> vv1 = { {0,3},{5,3},{2,4},{1,3}};
+	vector<vector<int>> vv2 = {};
 	vector<string> vs1 = { "ju","fzjnm","x","e","zpmcz","h","q" };
 	vector<string> vs2 = { "f","hveml","cpivl","d" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
-	s.convertTime("02:30",
-		"04:35");
+	s.maximumScore(v1,
+		vv1);
 	/*string a = "())()))()(()(((())(()()))))((((()())(())";
 	string b = "1011101100010001001011000000110010100101";
 	s.canBeValid(a, b

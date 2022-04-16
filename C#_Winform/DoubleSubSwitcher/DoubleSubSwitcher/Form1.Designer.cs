@@ -43,9 +43,10 @@
             // btnBrowse
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowse.Location = new System.Drawing.Point(455, 21);
+            this.btnBrowse.Location = new System.Drawing.Point(910, 42);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.Size = new System.Drawing.Size(150, 46);
             this.btnBrowse.TabIndex = 0;
             this.btnBrowse.Text = "浏览";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -55,17 +56,19 @@
             // 
             this.tbSubfilepath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSubfilepath.Location = new System.Drawing.Point(99, 21);
+            this.tbSubfilepath.Location = new System.Drawing.Point(198, 42);
+            this.tbSubfilepath.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbSubfilepath.Name = "tbSubfilepath";
-            this.tbSubfilepath.Size = new System.Drawing.Size(350, 21);
+            this.tbSubfilepath.Size = new System.Drawing.Size(696, 35);
             this.tbSubfilepath.TabIndex = 1;
             // 
             // btnSwitch
             // 
             this.btnSwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSwitch.Location = new System.Drawing.Point(553, 21);
+            this.btnSwitch.Location = new System.Drawing.Point(1106, 42);
+            this.btnSwitch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSwitch.Name = "btnSwitch";
-            this.btnSwitch.Size = new System.Drawing.Size(75, 23);
+            this.btnSwitch.Size = new System.Drawing.Size(150, 46);
             this.btnSwitch.TabIndex = 2;
             this.btnSwitch.Text = "主次交换";
             this.btnSwitch.UseVisualStyleBackColor = true;
@@ -74,27 +77,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 26);
+            this.label1.Location = new System.Drawing.Point(38, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(130, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "字幕路径：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 90);
+            this.label2.Location = new System.Drawing.Point(36, 180);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.Size = new System.Drawing.Size(154, 24);
             this.label2.TabIndex = 7;
             this.label2.Text = "字幕文件夹：";
             // 
             // btnFolderSwitch
             // 
             this.btnFolderSwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFolderSwitch.Location = new System.Drawing.Point(553, 85);
+            this.btnFolderSwitch.Location = new System.Drawing.Point(1106, 170);
+            this.btnFolderSwitch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnFolderSwitch.Name = "btnFolderSwitch";
-            this.btnFolderSwitch.Size = new System.Drawing.Size(75, 23);
+            this.btnFolderSwitch.Size = new System.Drawing.Size(150, 46);
             this.btnFolderSwitch.TabIndex = 6;
             this.btnFolderSwitch.Text = "主次交换";
             this.btnFolderSwitch.UseVisualStyleBackColor = true;
@@ -104,17 +110,19 @@
             // 
             this.tbSubfoldername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSubfoldername.Location = new System.Drawing.Point(99, 85);
+            this.tbSubfoldername.Location = new System.Drawing.Point(198, 170);
+            this.tbSubfoldername.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbSubfoldername.Name = "tbSubfoldername";
-            this.tbSubfoldername.Size = new System.Drawing.Size(350, 21);
+            this.tbSubfoldername.Size = new System.Drawing.Size(696, 35);
             this.tbSubfoldername.TabIndex = 5;
             // 
             // btnFolderBrowse
             // 
             this.btnFolderBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFolderBrowse.Location = new System.Drawing.Point(455, 85);
+            this.btnFolderBrowse.Location = new System.Drawing.Point(910, 170);
+            this.btnFolderBrowse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnFolderBrowse.Name = "btnFolderBrowse";
-            this.btnFolderBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnFolderBrowse.Size = new System.Drawing.Size(150, 46);
             this.btnFolderBrowse.TabIndex = 4;
             this.btnFolderBrowse.Text = "浏览";
             this.btnFolderBrowse.UseVisualStyleBackColor = true;
@@ -124,9 +132,10 @@
             // 
             this.cbReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbReplace.AutoSize = true;
-            this.cbReplace.Location = new System.Drawing.Point(544, 128);
+            this.cbReplace.Location = new System.Drawing.Point(1094, 256);
+            this.cbReplace.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbReplace.Name = "cbReplace";
-            this.cbReplace.Size = new System.Drawing.Size(84, 16);
+            this.cbReplace.Size = new System.Drawing.Size(162, 28);
             this.cbReplace.TabIndex = 8;
             this.cbReplace.Text = "替换原文件";
             this.cbReplace.UseVisualStyleBackColor = true;
@@ -135,16 +144,17 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(409, 126);
+            this.comboBox1.Location = new System.Drawing.Point(818, 252);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.Size = new System.Drawing.Size(238, 32);
             this.comboBox1.TabIndex = 11;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 155);
+            this.ClientSize = new System.Drawing.Size(1302, 310);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cbReplace);
             this.Controls.Add(this.label2);
@@ -155,6 +165,7 @@
             this.Controls.Add(this.btnSwitch);
             this.Controls.Add(this.tbSubfilepath);
             this.Controls.Add(this.btnBrowse);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
