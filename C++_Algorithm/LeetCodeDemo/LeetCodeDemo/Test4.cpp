@@ -11,35 +11,29 @@
 #include <stack>
 #include <functional>
 #include <bitset>
-//无向图中找一条4节点的序列使得分数最大。
-//枚举 贪心 哈希
-//由图建立邻接表。
-//邻接表按权大到小排序。
-//枚举中间边集合。
+//回溯 树 邻接表
+//构建邻接表，遍历树
+//开个数组用作记录从每个节点出发的最长分支长度,取最大的原本的最长分支+1+现在遍历的节点的最长分支长度+1。
 class Solution {
 public:
-    int maximumScore(vector<int>& scores, vector<vector<int>>& edges) {
-        int n = scores.size();
+    int longestPath(vector<int>& parent, string s) {
+        int n = parent.size();
         vector<vector<int>> g(n);
-        for (auto& e : edges) {
-            g[e[0]].push_back(e[1]);
-            g[e[1]].push_back(e[0]);
+        for (int i = 1; i < n;i++) {
+            g[parent[i]].push_back(i);
         }
-        for (auto& v : g) {
-            sort(v.begin(), v.end(), [&](int& a, int& b) {return scores[a] > scores[b]; });
-        }
-        int rst = -1;
-        int tmp;
-        for (auto&e: edges) {
-            for (int i = 0; i < 4 && i < g[e[0]].size(); i++) {
-                for (int j = 0; j < 4 && j < g[e[1]].size(); j++) {
-                    if (e[0] != g[e[1]][j] && e[1] != g[e[0]][i] && g[e[0]][i] != g[e[1]][j]) {
-                        tmp = scores[e[0]] + scores[e[1]] + scores[g[e[0]][i]] + scores[g[e[1]][j]];
-                        rst = max(rst, tmp);
-                    }
+        vector<int> f(n, 0);
+        int rst = 1;
+        function<void(int)> dfs = [&](int x) {
+            for (auto& e : g[x]) {
+                dfs(e);
+                if (s[x] != s[e]) {
+                    rst = max(f[x] + 2 + f[e], rst);
+                    f[x] = max(f[x], 1 + f[e]);
                 }
             }
-        }
+        };
+        dfs(0);
         return rst;
     }
 };
