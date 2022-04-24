@@ -1,0 +1,262 @@
+[2018-10-10 15:46:07:0004] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-10-10 15:46:07:0004] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-10-10 15:46:07:0004] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:46:07:0004] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:46:07:0004] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[64713], devIP[c0a8000b]
+[2018-10-10 15:46:07:0006] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-10-10 15:46:07:0006] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:46:07:0007] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-10-10 15:46:07:0259] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:46:07:0415] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-10-10 15:46:07:0424] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[1780]
+[2018-10-10 15:48:00:0957] | GigEVisionManager.cpp-L2279: AppGetCount[1136], AppGetCountSucceed[3], ExpectRecv[3], NetRecv[3], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 15:48:00:0970] | GigEVisionManager.cpp-L2279: AppGetCount[1136], AppGetCountSucceed[3], ExpectRecv[3], NetRecv[3], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 15:48:00:0970] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-10-10 15:48:00:0983] | GigEVisionManager.cpp-L2279: AppGetCount[1136], AppGetCountSucceed[3], ExpectRecv[3], NetRecv[3], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 15:48:00:0983] | GigEVisionManager.cpp-L2678: SendRsdCmd thread stop
+[2018-10-10 15:48:01:0043] | GigEVisionManager.cpp-L2811: event thread stop
+[2018-10-10 15:48:01:0474] |   GigEVisionGVSP.cpp-L0416: [socket] NearBID[0], LastBID[0], output[0]
+[2018-10-10 15:52:32:0572] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-10-10 15:52:32:0572] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-10-10 15:52:32:0572] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:52:32:0572] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:52:32:0572] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[64724], devIP[c0a8000b]
+[2018-10-10 15:52:32:0574] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-10-10 15:52:32:0574] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:52:32:0575] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-10-10 15:52:32:0828] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:52:32:0985] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-10-10 15:52:32:0994] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[7540]
+[2018-10-10 15:55:35:0731] | GigEVisionManager.cpp-L2279: AppGetCount[1827], AppGetCountSucceed[0], ExpectRecv[0], NetRecv[0], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 15:55:35:0744] | GigEVisionManager.cpp-L2279: AppGetCount[1827], AppGetCountSucceed[0], ExpectRecv[0], NetRecv[0], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 15:55:35:0744] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-10-10 15:55:35:0757] | GigEVisionManager.cpp-L2279: AppGetCount[1827], AppGetCountSucceed[0], ExpectRecv[0], NetRecv[0], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 15:55:35:0757] | GigEVisionManager.cpp-L2678: SendRsdCmd thread stop
+[2018-10-10 15:55:35:0799] | GigEVisionManager.cpp-L2811: event thread stop
+[2018-10-10 15:55:36:0659] |   GigEVisionGVSP.cpp-L0416: [socket] NearBID[0], LastBID[0], output[0]
+[2018-10-10 15:59:44:0587] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-10-10 15:59:44:0587] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-10-10 15:59:44:0587] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:59:44:0587] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:59:44:0587] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[64735], devIP[c0a8000b]
+[2018-10-10 15:59:44:0588] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-10-10 15:59:44:0588] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:59:44:0590] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-10-10 15:59:44:0836] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 15:59:44:0987] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-10-10 15:59:44:0996] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[7244]
+[2018-10-10 16:11:45:0666] | GigEVisionManager.cpp-L2279: AppGetCount[7206], AppGetCountSucceed[1], ExpectRecv[1], NetRecv[1], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 16:11:45:0679] | GigEVisionManager.cpp-L2279: AppGetCount[7206], AppGetCountSucceed[1], ExpectRecv[1], NetRecv[1], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 16:11:45:0679] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-10-10 16:11:45:0692] | GigEVisionManager.cpp-L2279: AppGetCount[7206], AppGetCountSucceed[1], ExpectRecv[1], NetRecv[1], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-10-10 16:11:45:0692] | GigEVisionManager.cpp-L2678: SendRsdCmd thread stop
+[2018-10-10 16:11:45:0772] | GigEVisionManager.cpp-L2811: event thread stop
+[2018-10-10 16:11:46:0368] |   GigEVisionGVSP.cpp-L0416: [socket] NearBID[0], LastBID[0], output[0]
+[2018-10-10 16:14:13:0880] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-10-10 16:14:13:0880] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-10-10 16:14:13:0881] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 16:14:13:0881] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 16:14:13:0881] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[59691], devIP[c0a8000b]
+[2018-10-10 16:14:13:0883] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-10-10 16:14:13:0883] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 16:14:13:0884] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-10-10 16:14:14:0129] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-10-10 16:14:14:0281] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-10-10 16:14:14:0289] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[5460]
+[2018-11-02 13:16:59:0150] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:16:59:0150] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:16:59:0150] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:16:59:0150] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:16:59:0150] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[51750], devIP[c0a8000b]
+[2018-11-02 13:16:59:0151] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:16:59:0151] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:16:59:0152] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:16:59:0380] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:16:59:0523] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:16:59:0531] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[16744]
+[2018-11-02 13:18:58:0689] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:18:58:0689] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:18:58:0690] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:18:58:0690] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:18:58:0690] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[60496], devIP[c0a8000b]
+[2018-11-02 13:18:58:0695] | GigEVisionManager.cpp-L0882: GVCP_GetAccessPrivilege [1][80000203]
+[2018-11-02 13:18:58:0695] | GigEVisionManager.cpp-L0737: connect device failed! [80000203]
+[2018-11-02 13:18:58:0695] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-11-02 13:18:58:0696] | GigEVisionManager.cpp-L1858: SetAcquisitionStop Execute Fails Feature not present (reference not valid) : AccessException thrown (file 'NodeMapRef.h', line 416)
+[2018-11-02 13:18:58:0696] | GigEVisionManager.cpp-L2279: AppGetCount[0], AppGetCountSucceed[0], ExpectRecv[0], NetRecv[0], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 13:19:36:0428] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:19:36:0428] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:19:36:0429] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:19:36:0429] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:19:36:0429] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[60504], devIP[c0a8000b]
+[2018-11-02 13:19:36:0430] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:19:36:0430] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:19:36:0431] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:19:36:0664] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:19:36:0814] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:19:36:0822] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[14844]
+[2018-11-02 13:19:57:0911] | GigEVisionManager.cpp-L4450: Lost Frame From Net[14], Total Frame Count[15], NetCount[1], CurBlock[15], LastBlock[0]
+[2018-11-02 13:36:36:0987] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:36:36:0987] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:36:36:0987] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:36:36:0988] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:36:36:0988] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[60523], devIP[c0a8000b]
+[2018-11-02 13:36:36:0989] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:36:36:0989] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:36:36:0990] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:36:37:0218] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:36:37:0364] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:36:37:0374] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[13348]
+[2018-11-02 13:37:36:0508] | GigEVisionManager.cpp-L4450: Lost Frame From Net[92], Total Frame Count[93], NetCount[1], CurBlock[93], LastBlock[0]
+[2018-11-02 13:43:54:0138] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:43:54:0138] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:43:54:0139] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:43:54:0139] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:43:54:0139] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[65198], devIP[c0a8000b]
+[2018-11-02 13:43:54:0140] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:43:54:0140] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:43:54:0141] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:43:54:0369] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:43:54:0514] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:43:54:0523] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[13528]
+[2018-11-02 13:44:39:0375] | GigEVisionManager.cpp-L4450: Lost Frame From Net[104], Total Frame Count[105], NetCount[1], CurBlock[105], LastBlock[0]
+[2018-11-02 13:46:42:0947] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:46:42:0947] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:46:42:0947] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:46:42:0947] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:46:42:0947] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[55165], devIP[c0a8000b]
+[2018-11-02 13:46:42:0948] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:46:42:0948] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:46:42:0950] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:46:43:0177] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:46:43:0321] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:46:43:0330] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[18588]
+[2018-11-02 13:47:24:0729] | GigEVisionManager.cpp-L4450: Lost Frame From Net[116], Total Frame Count[117], NetCount[1], CurBlock[117], LastBlock[0]
+[2018-11-02 13:50:17:0826] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:50:17:0826] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:50:17:0826] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:50:17:0826] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:50:17:0826] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[55177], devIP[c0a8000b]
+[2018-11-02 13:50:17:0827] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:50:17:0827] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:50:17:0829] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:50:18:0059] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:50:18:0209] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:50:18:0217] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[18208]
+[2018-11-02 13:51:01:0061] | GigEVisionManager.cpp-L4450: Lost Frame From Net[129], Total Frame Count[130], NetCount[1], CurBlock[130], LastBlock[0]
+[2018-11-02 13:52:37:0947] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:52:37:0947] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:52:37:0947] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:52:37:0947] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:52:37:0947] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[55189], devIP[c0a8000b]
+[2018-11-02 13:52:37:0953] | GigEVisionManager.cpp-L0882: GVCP_GetAccessPrivilege [1][80000203]
+[2018-11-02 13:52:37:0953] | GigEVisionManager.cpp-L0737: connect device failed! [80000203]
+[2018-11-02 13:52:37:0953] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-11-02 13:52:37:0953] | GigEVisionManager.cpp-L1858: SetAcquisitionStop Execute Fails Feature not present (reference not valid) : AccessException thrown (file 'NodeMapRef.h', line 416)
+[2018-11-02 13:52:37:0953] | GigEVisionManager.cpp-L2279: AppGetCount[0], AppGetCountSucceed[0], ExpectRecv[0], NetRecv[0], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 13:53:10:0523] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:53:10:0523] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:53:10:0523] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:53:10:0523] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:53:10:0523] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[55197], devIP[c0a8000b]
+[2018-11-02 13:53:10:0524] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:53:10:0524] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:53:10:0525] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:53:10:0756] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:53:10:0901] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:53:10:0910] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[17692]
+[2018-11-02 13:53:26:0561] | GigEVisionManager.cpp-L4450: Lost Frame From Net[145], Total Frame Count[146], NetCount[1], CurBlock[146], LastBlock[0]
+[2018-11-02 13:53:41:0824] | GigEVisionManager.cpp-L2279: AppGetCount[212], AppGetCountSucceed[1], ExpectRecv[146], NetRecv[1], ThrowAbnormalImage[0], NetLostFrame[145], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 13:53:41:0937] | GigEVisionManager.cpp-L2279: AppGetCount[212], AppGetCountSucceed[1], ExpectRecv[146], NetRecv[1], ThrowAbnormalImage[0], NetLostFrame[145], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 13:53:41:0937] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-11-02 13:53:41:0950] | GigEVisionManager.cpp-L2279: AppGetCount[212], AppGetCountSucceed[1], ExpectRecv[146], NetRecv[1], ThrowAbnormalImage[0], NetLostFrame[145], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 13:53:41:0950] | GigEVisionManager.cpp-L2678: SendRsdCmd thread stop
+[2018-11-02 13:53:42:0038] | GigEVisionManager.cpp-L2811: event thread stop
+[2018-11-02 13:53:42:0156] |   GigEVisionGVSP.cpp-L0416: [socket] NearBID[0], LastBID[0], output[0]
+[2018-11-02 13:54:22:0572] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 13:54:22:0572] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 13:54:22:0573] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:54:22:0573] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:54:22:0573] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[55209], devIP[c0a8000b]
+[2018-11-02 13:54:22:0574] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 13:54:22:0574] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:54:22:0575] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 13:54:22:0803] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 13:54:22:0949] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 13:54:22:0958] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[18196]
+[2018-11-02 14:07:21:0579] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 14:07:21:0579] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 14:07:21:0579] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:07:21:0579] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:07:21:0579] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[55222], devIP[c0a8000b]
+[2018-11-02 14:07:21:0581] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 14:07:21:0581] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:07:21:0582] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 14:07:21:0812] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:07:21:0957] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 14:07:21:0965] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[19208]
+[2018-11-02 14:07:53:0399] | GigEVisionManager.cpp-L4450: Lost Frame From Net[154], Total Frame Count[155], NetCount[1], CurBlock[155], LastBlock[0]
+[2018-11-02 14:10:04:0120] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 14:10:04:0120] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 14:10:04:0120] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:10:04:0120] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:10:04:0120] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[50149], devIP[c0a8000b]
+[2018-11-02 14:10:04:0126] | GigEVisionManager.cpp-L0882: GVCP_GetAccessPrivilege [1][80000203]
+[2018-11-02 14:10:04:0127] | GigEVisionManager.cpp-L0737: connect device failed! [80000203]
+[2018-11-02 14:10:04:0127] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-11-02 14:10:04:0127] | GigEVisionManager.cpp-L1858: SetAcquisitionStop Execute Fails Feature not present (reference not valid) : AccessException thrown (file 'NodeMapRef.h', line 416)
+[2018-11-02 14:10:04:0127] | GigEVisionManager.cpp-L2279: AppGetCount[0], AppGetCountSucceed[0], ExpectRecv[0], NetRecv[0], ThrowAbnormalImage[0], NetLostFrame[0], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 14:12:51:0956] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 14:12:51:0956] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 14:12:51:0956] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:12:51:0956] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:12:51:0956] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[50157], devIP[c0a8000b]
+[2018-11-02 14:12:51:0957] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 14:12:51:0957] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:12:51:0959] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 14:12:52:0190] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:12:52:0351] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 14:12:52:0374] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[20980]
+[2018-11-02 14:13:17:0101] | GigEVisionManager.cpp-L4450: Lost Frame From Net[281], Total Frame Count[282], NetCount[1], CurBlock[282], LastBlock[0]
+[2018-11-02 14:21:00:0283] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 14:21:00:0283] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 14:21:00:0283] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:21:00:0283] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:21:00:0283] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[50169], devIP[c0a8000b]
+[2018-11-02 14:21:00:0284] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 14:21:00:0284] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:21:00:0285] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 14:21:00:0518] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:21:00:0663] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 14:21:00:0672] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[5364]
+[2018-11-02 14:21:45:0666] | GigEVisionManager.cpp-L4450: Lost Frame From Net[460], Total Frame Count[461], NetCount[1], CurBlock[461], LastBlock[0]
+[2018-11-02 14:23:40:0264] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 14:23:40:0264] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 14:23:40:0265] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:23:40:0265] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:23:40:0265] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[50182], devIP[c0a8000b]
+[2018-11-02 14:23:40:0266] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 14:23:40:0266] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:23:40:0267] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 14:23:40:0496] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:23:40:0640] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 14:23:40:0649] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[12292]
+[2018-11-02 14:24:14:0549] | GigEVisionManager.cpp-L4450: Lost Frame From Net[472], Total Frame Count[473], NetCount[1], CurBlock[473], LastBlock[0]
+[2018-11-02 14:26:21:0905] | GigEVisionManager.cpp-L2279: AppGetCount[1636], AppGetCountSucceed[56], ExpectRecv[528], NetRecv[56], ThrowAbnormalImage[0], NetLostFrame[472], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 14:26:22:0018] | GigEVisionManager.cpp-L2279: AppGetCount[1636], AppGetCountSucceed[56], ExpectRecv[528], NetRecv[56], ThrowAbnormalImage[0], NetLostFrame[472], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 14:26:22:0018] | GigEVisionManager.cpp-L0898: disconnect device ...
+[2018-11-02 14:26:22:0031] | GigEVisionManager.cpp-L2279: AppGetCount[1636], AppGetCountSucceed[56], ExpectRecv[528], NetRecv[56], ThrowAbnormalImage[0], NetLostFrame[472], ThrowInBufList[0], LostPackets[0]
+[2018-11-02 14:26:22:0031] | GigEVisionManager.cpp-L2678: SendRsdCmd thread stop
+[2018-11-02 14:26:22:0081] | GigEVisionManager.cpp-L2811: event thread stop
+[2018-11-02 14:26:22:0712] |   GigEVisionGVSP.cpp-L0416: [socket] NearBID[0], LastBID[0], output[0]
+[2018-11-02 14:37:56:0592] | GigEVisionManager.cpp-L0272: driver mode start!
+[2018-11-02 14:37:56:0592] | GigEVisionManager.cpp-L0309: Driver Mode [1]
+[2018-11-02 14:37:56:0592] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:37:56:0592] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:37:56:0592] | GigEVisionManager.cpp-L0818: connecting device ... hostIP[c0a80001], hostPort[57713], devIP[c0a8000b]
+[2018-11-02 14:37:56:0593] | GigEVisionManager.cpp-L0572: m_nUpNetExport[c0a80001], m_nUpDevIP[c0a8000b]
+[2018-11-02 14:37:56:0594] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:37:56:0595] | GigEVisionManager.cpp-L2740: event thread start...
+[2018-11-02 14:37:56:0822] |           NetUDP.cpp-L0520: ReCreateSocket NewIp[0], SrcIP[c0a80001]
+[2018-11-02 14:37:56:0969] | GigEVisionManager.cpp-L1152: GetCurCompressMode Execute Fails Node is not readable. : AccessException thrown in node 'ImageCompressionMode' while calling 'ImageCompressionMode.GetIntValue()' (file 'EnumerationT.h', line 131)
+[2018-11-02 14:37:56:0977] | GigEVisionManager.cpp-L2632: GigE SendRsdCmdThread Start, ThreadId[6328]

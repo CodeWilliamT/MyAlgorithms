@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{903FB89B-46E0-4B5D-8D94-CD35ED071932}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToolKitsDll</RootNamespace>
+    <AssemblyName>ToolKitsDll</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\LeadframeAOI-III\dll\ToolKitsDll\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>..\LeadframeAOI-III\dll\ToolKitsDll\ToolKitsDll.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basler.Pylon">
+      <HintPath>toolkits\dlls\basler dll\x64\Basler.Pylon.dll</HintPath>
+    </Reference>
+    <Reference Include="ButtonEx">
+      <HintPath>toolkits\dlls\control\ButtonEx.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorButton">
+      <HintPath>toolkits\dlls\control\ColorButton.dll</HintPath>
+    </Reference>
+    <Reference Include="ComboBoxEx">
+      <HintPath>toolkits\dlls\control\ComboBoxEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewEx">
+      <HintPath>toolkits\dlls\control\DataGridViewEx.dll</HintPath>
+    </Reference>
+    <Reference Include="FlyCapture2Managed_v110">
+      <HintPath>toolkits\dlls\pointgrey dll\x64\FlyCapture2Managed_v110.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet">
+      <HintPath>toolkits\dlls\halcon dll\x64\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="HTHalControl">
+      <HintPath>toolkits\dlls\htcontrol dll\x64\HTHalControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.niimaqdx">
+      <HintPath>toolkits\dlls\ni dll\Interop.niimaqdx.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Matrox.MatroxImagingLibrary">
+      <HintPath>toolkits\dlls\matrox cameralink dll\x64\Matrox.MatroxImagingLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net">
+      <HintPath>toolkits\dlls\MVSCam\X64\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.CWIMAQdx.Interop">
+      <HintPath>toolkits\dlls\ni dll\NationalInstruments.CWIMAQdx.Interop.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VaryCheckBox">
+      <HintPath>toolkits\dlls\control\VaryCheckBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\Camera\BaseCamera.cs" />
+    <Compile Include="toolkits\Camera\CameraMgr.cs" />
+    <Compile Include="toolkits\Camera\DeriveCamera.cs" />
+    <Compile Include="toolkits\DialogUI\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toolkits\DialogUI\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\DialogUI\Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toolkits\DialogUI\Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\DialogUI\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toolkits\DialogUI\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\DialogUI\ShowLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toolkits\DialogUI\ShowLogo.Designer.cs">
+      <DependentUpon>ShowLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\FunctionModule\CommonMethod.cs" />
+    <Compile Include="toolkits\FunctionModule\DataModule.cs" />
+    <Compile Include="toolkits\FunctionModule\FunctionModule.cs" />
+    <Compile Include="toolkits\IniDll.cs" />
+    <Compile Include="toolkits\RegionModify\RegionModifyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\RegionModify\RegionModifyForm.Designer.cs">
+      <DependentUpon>RegionModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\SerialClass.cs" />
+    <Compile Include="toolkits\TemplateEdit\BaseForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MainTemplateForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MainTemplateForm.Designer.cs">
+      <DependentUpon>MainTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\DefPointForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\DefPointForm.Designer.cs">
+      <DependentUpon>DefPointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\ForeGroundForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\ForeGroundForm.Designer.cs">
+      <DependentUpon>ForeGroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\MatchRegionForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\MatchRegionForm.Designer.cs">
+      <DependentUpon>MatchRegionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\ModelRegionForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\ModelRegionForm.Designer.cs">
+      <DependentUpon>ModelRegionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\RejectRegionForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\RejectRegionForm.Designer.cs">
+      <DependentUpon>RejectRegionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\RotateForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\RotateForm.Designer.cs">
+      <DependentUpon>RotateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\ShowContourForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\ShowContourForm.Designer.cs">
+      <DependentUpon>ShowContourForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\TmpPrmForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\MatchTmpEdit\TmpPrmForm.Designer.cs">
+      <DependentUpon>TmpPrmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DDistPointForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DDistPointForm.Designer.cs">
+      <DependentUpon>Measure2DDistPointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DObjectsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DObjectsForm.Designer.cs">
+      <DependentUpon>Measure2DObjectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DParamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DParamForm.Designer.cs">
+      <DependentUpon>Measure2DParamForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="toolkits\Camera\dlls\basler dll\x64\Basler.Pylon.dll" />
+    <Content Include="toolkits\Camera\dlls\basler dll\x64\Basler.Pylon.xml" />
+    <Content Include="toolkits\Camera\dlls\basler dll\x86\Basler.Pylon.dll" />
+    <Content Include="toolkits\Camera\dlls\basler dll\x86\Basler.Pylon.xml" />
+    <Content Include="toolkits\Camera\dlls\halcon dll\x64\halcon.dll" />
+    <Content Include="toolkits\Camera\dlls\halcon dll\x64\halcondotnet.dll" />
+    <Content Include="toolkits\Camera\dlls\halcon dll\x86\halcon.dll" />
+    <Content Include="toolkits\Camera\dlls\halcon dll\x86\halcondotnet.dll" />
+    <Content Include="toolkits\Camera\dlls\htcontrol dll\x64\HTHalControl.dll" />
+    <Content Include="toolkits\Camera\dlls\htcontrol dll\x86\HTHalControl.dll" />
+    <Content Include="toolkits\Camera\dlls\htcontrol dll\x86\HTHalControl1.dll" />
+    <Content Include="toolkits\Camera\dlls\matrox cameralink dll\x64\Matrox.MatroxImagingLibrary.dll" />
+    <Content Include="toolkits\Camera\dlls\MVSCam\X64\MvCameraControl.Net.dll" />
+    <Content Include="toolkits\Camera\dlls\MVSCam\X86\MvCameraControl.Net.dll" />
+    <Content Include="toolkits\Camera\dlls\ni dll\Interop.niimaqdx.dll" />
+    <Content Include="toolkits\Camera\dlls\ni dll\NationalInstruments.AxCWIMAQControlsLib.Interop.dll" />
+    <Content Include="toolkits\Camera\dlls\ni dll\NationalInstruments.CWIMAQdx.Interop.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x64\FlyCapture2Managed.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x64\FlyCapture2Managed_v100.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x64\FlyCapture2Managed_v110.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x64\FlyCapture2Managed_v90.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x86\FlyCapture2Managed.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x86\FlyCapture2Managed_v100.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x86\FlyCapture2Managed_v110.dll" />
+    <Content Include="toolkits\Camera\dlls\pointgrey dll\x86\FlyCapture2Managed_v90.dll" />
+    <Content Include="toolkits\TemplateEdit\Resources\circle.jpg" />
+    <Content Include="toolkits\TemplateEdit\Resources\ellipse.jpg" />
+    <Content Include="toolkits\TemplateEdit\Resources\line.jpg" />
+    <Content Include="toolkits\TemplateEdit\Resources\point.jpg" />
+    <Content Include="toolkits\TemplateEdit\Resources\rect1.jpg" />
+    <Content Include="toolkits\TemplateEdit\Resources\rect2.jpg" />
+    <Content Include="toolkits\TemplateEdit\Resources\region.jpg" />
+    <Content Include="toolkits\TemplateEdit\Resources\xld.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\DialogUI\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\DialogUI\Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\DialogUI\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\DialogUI\ShowLogo.resx">
+      <DependentUpon>ShowLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\RegionModify\RegionModifyForm.resx">
+      <DependentUpon>RegionModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MainTemplateForm.resx">
+      <DependentUpon>MainTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\DefPointForm.resx">
+      <DependentUpon>DefPointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\ForeGroundForm.resx">
+      <DependentUpon>ForeGroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\MatchRegionForm.resx">
+      <DependentUpon>MatchRegionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\ModelRegionForm.resx">
+      <DependentUpon>ModelRegionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\RejectRegionForm.resx">
+      <DependentUpon>RejectRegionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\RotateForm.resx">
+      <DependentUpon>RotateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\ShowContourForm.resx">
+      <DependentUpon>ShowContourForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\MatchTmpEdit\TmpPrmForm.resx">
+      <DependentUpon>TmpPrmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DDistPointForm.resx">
+      <DependentUpon>Measure2DDistPointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DObjectsForm.resx">
+      <DependentUpon>Measure2DObjectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toolkits\TemplateEdit\Measure2DTmpEdit\Measure2DParamForm.resx">
+      <DependentUpon>Measure2DParamForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="toolkits\TemplateEdit\MeasureTmpEdit\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

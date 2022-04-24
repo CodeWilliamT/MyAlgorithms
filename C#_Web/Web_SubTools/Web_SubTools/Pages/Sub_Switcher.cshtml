@@ -1,0 +1,34 @@
+﻿@page
+@model Web_SubTools.Pages.Sub_SwitcherModel
+@{
+}
+
+<div class="text-center">
+    <h2 class="display-5">Sub Switcher</h2>
+
+    <h3 class="display-6">What for?</h3>
+    <p>In most double-sub, your native language is the first line. To switch double-sub file's line language order.</p>
+    <h3 class="display-6">How to use it?</h3>
+    <p>
+        Select you srt/ass double-sub title file. Then click <B>Switch</B> button. You will see the content in the text field. Check if it's OK. If OK, copy it into your original file's copy.
+    </p>
+    <div class="row" style="height:100%">
+        <div class="col-md-4">
+            <form method="post" enctype="multipart/form-data" style="width:100%">
+                <div class="form-group">
+                    <label asp-for="SubFile.SubFormFile" class="control-label"></label>
+                    <input asp-for="SubFile.SubFormFile" type="file" class="form-control" style="height:auto" />
+                    <span asp-validation-for="SubFile.SubFormFile" class="text-danger"></span>
+                </div>
+                <input type="submit" value="Switch" class="btn-default" />
+            </form>
+        </div>
+        <div class="col-md-8">
+            <label class="control-label">Switched Sub Title Content</label>
+            <br />
+            <textarea class="form-control" style="min-height:600px;overflow:scroll">
+                @Model.switchedResult
+            </textarea>
+        </div>
+    </div>
+</div>

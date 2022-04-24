@@ -10,16 +10,16 @@ using System.Windows.Forms;
 using System.IO;
 using System.Configuration;
 using System.Diagnostics;
+using System.Threading;
+using Utils;
 
 namespace DoubleSubSwicher
 {
     public partial class Form1 : Form
     {
-        Configuration config;
         public Form1()
         {
             InitializeComponent();
-            config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             tbSubfilepath.Text = ConfigurationManager.AppSettings["Subfilepath"];
             tbSubfoldername.Text = ConfigurationManager.AppSettings["Subfoldername"];
             comboBox1.Items.Clear();
@@ -45,6 +45,7 @@ namespace DoubleSubSwicher
 
         private void btnSwitch_Click(object sender, EventArgs e)
         {
+            toolStripStatusLabel1.Text = "操作中";
             FileInfo fi = new FileInfo(tbSubfilepath.Text);
             string savepath = tbSubfilepath.Text;
             if (!cbReplace.Checked)
@@ -64,10 +65,17 @@ namespace DoubleSubSwicher
                         break;
                 }
             }
-            switchSubText(tbSubfilepath.Text, savepath);
+            SubHelper.switchSubText(tbSubfilepath.Text, savepath);
             SaveConfig();
-            MessageBox.Show("操作完成");
-
+            toolStripStatusLabel1.Text = "操作完成";
+            Task.Run(new Action(() =>
+            {
+                Thread.Sleep(2000);
+                this.BeginInvoke(new MethodInvoker(() =>
+                {
+                    toolStripStatusLabel1.Text = "准备";
+                }));
+            }));
         }
 
         private void btnFolderBrowse_Click(object sender, EventArgs e)
@@ -82,6 +90,7 @@ namespace DoubleSubSwicher
 
         private void btnFolderSwitch_Click(object sender, EventArgs e)
         {
+            toolStripStatusLabel1.Text = "操作中";
             string savefolder = tbSubfoldername.Text;
 
             if (!cbReplace.Checked)
@@ -112,10 +121,19 @@ namespace DoubleSubSwicher
             foreach (FileInfo f in di_FileInfo)
             {
                 string savepath = savefolder + @"\" + f.Name;
-                switchSubText(f.FullName, savepath);
+                SubHelper.switchSubText(f.FullName, savepath);
             }
             SaveConfig();
-            MessageBox.Show("操作完成");
+            toolStripStatusLabel1.Text = "操作完成";
+            Task.Run(new Action(() =>
+            {
+                Thread.Sleep(2000);
+                this.BeginInvoke(new MethodInvoker(() =>
+                {
+                    toolStripStatusLabel1.Text = "准备";
+                }));
+            }));
+
         }
         #endregion
 
@@ -143,153 +161,6 @@ namespace DoubleSubSwicher
             }
         }
 
-        private void switchSubText(string filepath, string savepath)
-        {
-            FileInfo fi = new FileInfo(filepath);
-            StringBuilder newsubtext = new StringBuilder();
-            Encoding ecd= GetFileEncodeType(filepath);
-            string substr, newsubstr;
-            switch (fi.Extension.ToLower())
-            {
-                case ".ass":
-                    {
-                        using (StreamReader sr = new StreamReader(filepath,ecd))
-                        {
-                            substr = sr.ReadLine();
-                            while (substr != null)
-                            {
-                                newsubstr = switchAssSubStr(substr);
-                                newsubtext.Append(newsubstr + "\n");
-                                substr = sr.ReadLine();
-                            }
-                            break;
-                        }
-                    }
-                case ".srt":
-                    {
-                        using (StreamReader sr = new StreamReader(filepath, ecd))
-                        {
-                            substr = sr.ReadLine();
-                            while (substr != null)
-                            {
-                                if (substr == "")
-                                {
-                                    newsubtext.Append(substr + "\n");
-                                    substr = sr.ReadLine();
-                                    newsubtext.Append(substr + "\n");
-                                    substr = sr.ReadLine();
-                                    newsubtext.Append(substr + "\n");
-                                    substr = sr.ReadLine();
-                                    newsubstr = substr;
-                                    substr = sr.ReadLine();
-                                    if (comboBox1.SelectedIndex != 2)
-                                    {
-                                        newsubtext.Append(substr + "\n");
-                                    }
-                                    if (comboBox1.SelectedIndex != 1)
-                                    {
-                                        newsubtext.Append(newsubstr + "\n");
-                                    }
-                                    substr = sr.ReadLine();
-                                }
-                                else
-                                {
-                                    newsubtext.Append(substr + "\n");
-                                    substr = sr.ReadLine();
-                                }
-                            }
-                            break;
-                        }
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
-            using (StreamWriter sw = new StreamWriter(savepath, false, ecd))
-            {
-                sw.Write(newsubtext);
-                sw.Flush();
-                sw.Close();
-            }
-        }
-        private string switchAssSubStr(string substr)
-        {
-            string resultstr = substr;
-            string chsstr, enustr;
-            int a, b, c, d;
-            string maska = @",";
-            string maskb = @"\N";
-            string maskc = @"}";
-            b = substr.IndexOf(maskb);
-            if (b == -1)
-                goto _end;
-            a = b;
-            while (substr.Substring(0, a).LastIndexOf(maska) == substr.Substring(0, a).LastIndexOf(maska + " "))
-            {
-                a = substr.Substring(0, a).LastIndexOf(maska + " ") - maska.Length;
-            }
-            a = substr.Substring(0, a).LastIndexOf(maska) + maska.Length;
-            c = substr.LastIndexOf(maskc);
-            if (c == -1 || c == substr.Length - 1)
-                c = b+ maskb.Length;
-            else
-                c = c + maskc.Length;
-            d = substr.Length;
-            if (a > b || b > c)
-                goto _end;
-            chsstr = substr.Substring(a, b - a);
-            enustr = substr.Substring(c, d - c);
-            if (comboBox1.SelectedIndex == 1 && enustr != "")
-            {
-                chsstr = "";
-                resultstr = substr.Substring(0, a) + enustr + substr.Substring(b, c - b).Replace(@"\N", "") + chsstr;
-                goto _end;
-            }
-            if (comboBox1.SelectedIndex == 2 && chsstr != "")
-            {
-                enustr = chsstr;
-                chsstr = "";
-                b = b + 2;
-                resultstr = substr.Substring(0, a) + enustr + substr.Substring(b, c - b).Replace(@"\N", "") + chsstr;
-                goto _end;
-            }
-            resultstr = substr.Substring(0, a) + enustr + substr.Substring(b, c - b) + chsstr;
-        _end:
-            return resultstr;
-        }
-
-        public System.Text.Encoding GetFileEncodeType(string filename)
-        {
-            System.IO.FileStream fs = new System.IO.FileStream(filename, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-            System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
-            Byte[] buffer = br.ReadBytes(2);
-            
-            if (buffer[0] == 0x0A && buffer[1] == 0x0A)
-            {
-                return System.Text.Encoding.UTF8;
-            }
-            else if (buffer[0] == 0xEF && buffer[1] == 0xBB)
-            {
-                return System.Text.Encoding.UTF8;
-            }
-            else if (buffer[0] == 0x5b && buffer[1] == 0x53)
-            {
-                return System.Text.Encoding.UTF8;
-            }
-            else if (buffer[0] == 0xFE && buffer[1] == 0xFF)
-            {
-                return System.Text.Encoding.BigEndianUnicode;
-            }
-            else if (buffer[0] == 0xFF && buffer[1] == 0xFE)
-            {
-                return System.Text.Encoding.Unicode;
-            }
-            else
-            {
-                return System.Text.Encoding.UTF8;
-            }
-        }
         #endregion
     }
 }

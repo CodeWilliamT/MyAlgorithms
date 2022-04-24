@@ -38,13 +38,16 @@
             this.btnFolderBrowse = new System.Windows.Forms.Button();
             this.cbReplace = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBrowse
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowse.Location = new System.Drawing.Point(910, 42);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBrowse.Location = new System.Drawing.Point(909, 42);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(6);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(150, 46);
             this.btnBrowse.TabIndex = 0;
@@ -57,16 +60,16 @@
             this.tbSubfilepath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbSubfilepath.Location = new System.Drawing.Point(198, 42);
-            this.tbSubfilepath.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbSubfilepath.Margin = new System.Windows.Forms.Padding(6);
             this.tbSubfilepath.Name = "tbSubfilepath";
-            this.tbSubfilepath.Size = new System.Drawing.Size(696, 35);
+            this.tbSubfilepath.Size = new System.Drawing.Size(695, 35);
             this.tbSubfilepath.TabIndex = 1;
             // 
             // btnSwitch
             // 
             this.btnSwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSwitch.Location = new System.Drawing.Point(1106, 42);
-            this.btnSwitch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSwitch.Location = new System.Drawing.Point(1105, 42);
+            this.btnSwitch.Margin = new System.Windows.Forms.Padding(6);
             this.btnSwitch.Name = "btnSwitch";
             this.btnSwitch.Size = new System.Drawing.Size(150, 46);
             this.btnSwitch.TabIndex = 2;
@@ -97,8 +100,8 @@
             // btnFolderSwitch
             // 
             this.btnFolderSwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFolderSwitch.Location = new System.Drawing.Point(1106, 170);
-            this.btnFolderSwitch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFolderSwitch.Location = new System.Drawing.Point(1105, 170);
+            this.btnFolderSwitch.Margin = new System.Windows.Forms.Padding(6);
             this.btnFolderSwitch.Name = "btnFolderSwitch";
             this.btnFolderSwitch.Size = new System.Drawing.Size(150, 46);
             this.btnFolderSwitch.TabIndex = 6;
@@ -111,16 +114,16 @@
             this.tbSubfoldername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbSubfoldername.Location = new System.Drawing.Point(198, 170);
-            this.tbSubfoldername.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbSubfoldername.Margin = new System.Windows.Forms.Padding(6);
             this.tbSubfoldername.Name = "tbSubfoldername";
-            this.tbSubfoldername.Size = new System.Drawing.Size(696, 35);
+            this.tbSubfoldername.Size = new System.Drawing.Size(695, 35);
             this.tbSubfoldername.TabIndex = 5;
             // 
             // btnFolderBrowse
             // 
             this.btnFolderBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFolderBrowse.Location = new System.Drawing.Point(910, 170);
-            this.btnFolderBrowse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFolderBrowse.Location = new System.Drawing.Point(909, 170);
+            this.btnFolderBrowse.Margin = new System.Windows.Forms.Padding(6);
             this.btnFolderBrowse.Name = "btnFolderBrowse";
             this.btnFolderBrowse.Size = new System.Drawing.Size(150, 46);
             this.btnFolderBrowse.TabIndex = 4;
@@ -132,8 +135,8 @@
             // 
             this.cbReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbReplace.AutoSize = true;
-            this.cbReplace.Location = new System.Drawing.Point(1094, 256);
-            this.cbReplace.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbReplace.Location = new System.Drawing.Point(1093, 256);
+            this.cbReplace.Margin = new System.Windows.Forms.Padding(6);
             this.cbReplace.Name = "cbReplace";
             this.cbReplace.Size = new System.Drawing.Size(162, 28);
             this.cbReplace.TabIndex = 8;
@@ -145,16 +148,34 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(818, 252);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(238, 32);
             this.comboBox1.TabIndex = 11;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 291);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1301, 42);
+            this.statusStrip1.TabIndex = 12;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(65, 32);
+            this.toolStripStatusLabel1.Text = "准备";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 310);
+            this.ClientSize = new System.Drawing.Size(1301, 333);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cbReplace);
             this.Controls.Add(this.label2);
@@ -165,9 +186,11 @@
             this.Controls.Add(this.btnSwitch);
             this.Controls.Add(this.tbSubfilepath);
             this.Controls.Add(this.btnBrowse);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +208,8 @@
         private System.Windows.Forms.Button btnFolderBrowse;
         private System.Windows.Forms.CheckBox cbReplace;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

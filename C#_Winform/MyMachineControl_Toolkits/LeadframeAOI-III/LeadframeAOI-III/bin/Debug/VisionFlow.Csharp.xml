@@ -1,0 +1,499 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VisionFlow</name>
+    </assembly>
+    <members>
+        <member name="T:VisionFlow.GeneralObjType">
+            <summary>
+            通用数据类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HObject">
+            <summary>
+            The HObject类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HImage">
+            <summary>
+            The Halcon Image类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HRegion">
+            <summary>
+            The Halcon Region类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HContour">
+            <summary>
+            The Halcon Contour类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HObjectVector">
+            <summary>
+            The halcon object vector
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HTuple">
+            <summary>
+            The halcon tuple
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HNccModelID">
+            <summary>
+            The halcon NCC model identifier
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HShapeModelID">
+            <summary>
+            The halcon shape model identifier
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HMeasureID">
+            <summary>
+            The halcon measure identifier
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.HTupleVector">
+            <summary>
+            The halcon tuple vecotr
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.Int">
+            <summary>
+            The int 类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.String">
+            <summary>
+            The string 类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.Double">
+            <summary>
+            The double 类型
+            </summary>
+        </member>
+        <member name="F:VisionFlow.GeneralObjType.Boolean">
+            <summary>
+            The boolean类型
+            </summary>
+        </member>
+        <member name="T:VisionFlow.GeneralObj">
+            <summary>
+            数据结构
+            </summary>
+        </member>
+        <member name="P:VisionFlow.GeneralObj.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VisionFlow.GeneralObj.Type">
+            <summary>
+            Gets the type of the object。
+            </summary>
+            <value>
+            The type.
+            </value>        
+        </member>
+        <member name="P:VisionFlow.GeneralObj.Inherited">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VisionFlow.GeneralObj"/> is inherited.
+            </summary>
+            <value>
+              <c>true</c> if inherited; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VisionFlow.GeneralObj.Tunable">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VisionFlow.GeneralObj"/> is tunable.
+            </summary>
+            <value>
+            <c>true</c> if tunable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VisionFlow.GeneralObj.Valid">
+            <summary>
+             <see cref="T:VisionFlow.GeneralObj"/> is valid.
+            </summary>
+            <value>
+              <c>true</c> if valid; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.#ctor(VisionFlow.GeneralObjType,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VisionFlow.GeneralObj"/> class.
+            </summary>
+            <param name="type_">The type.</param>
+            <param name="name_">The name.</param>
+            <param name="inherited">是否由上层流入，如果选择是则务必保证name和上层对应的输出端口name相同</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj._connectedTo(VisionFlow.GeneralObj)">
+            <summary>
+            连接两个对象，从对象中浅拷贝（拷贝部分信息）.
+            </summary>
+            <param name="parent">The parent.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.SetValue(System.Object)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="obj_">The object.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(HalconDotNet.HObject@)">
+            <summary>
+            Gets the HObject value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(HalconDotNet.HTuple@)">
+            <summary>
+            Gets the HTuple value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(System.Double@)">
+            <summary>
+            Gets the double value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(System.Int32@)">
+            <summary>
+            Gets the int value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(System.String@)">
+            <summary>
+            Gets the string value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(System.Boolean@)">
+            <summary>
+            Gets the Boolean value.
+            </summary>
+            <param name="value">if set to <c>true</c> [value].</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(HalconDotNet.HTupleVector@)">
+            <summary>
+            Gets the HTupleVector value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue(HalconDotNet.HObjectVector@)">
+            <summary>
+            Gets the HObjectVector value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.GetValue">
+            <summary>
+            Gets the value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.Save(System.String)">
+            <summary>
+            Saves the specified file name without extension.
+            </summary>
+            <param name="fileNameWithoutExtension">The file name without extension.</param>
+        </member>
+        <member name="M:VisionFlow.GeneralObj.Read(System.String)">
+            <summary>
+            Reads the specified file name without extension.
+            </summary>
+            <param name="fileNameWithoutExtension">The file name without extension.</param>
+        </member>
+        <member name="T:VisionFlow.Layer">
+            <summary>
+            计算图中的层（执行块）
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Layer.Name">
+            <summary>
+            标志图层的名字，在单个图中图层名不允许重复
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Layer.ParentNames">
+            <summary>
+            父图层名字
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Layer.FuncName">
+            <summary>
+            函数名字，配合计算图中的算法库字典使用
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Layer.Inputs">
+            <summary>
+            层输入
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Layer.Outputs">
+            <summary>
+            层的输出
+            </summary>
+        </member>
+        <member name="T:VisionFlow.Layer.FuncType">
+            <summary>
+            功能函数类型
+            </summary>
+            <param name="inputs">The inputs.</param>
+            <param name="outputs">The outputs.</param>
+            <returns>返回0表示执行成功，其它表示错误码</returns>
+        </member>
+        <member name="M:VisionFlow.Layer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VisionFlow.Layer"/> class.
+            </summary>
+        </member>
+        <member name="M:VisionFlow.Layer.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VisionFlow.Layer"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="P:VisionFlow.Layer.RunMilliseconds">
+            <summary>
+            Gets the run milliseconds.
+            </summary>
+            <value>
+            The run milliseconds.
+            </value>
+        </member>
+        <member name="M:VisionFlow.Layer.Run">
+            <summary>
+            执行当前层.
+            </summary>
+            <returns>0表示执行成功，其它表示错误码或其它信息</returns>
+        </member>
+        <member name="M:VisionFlow.Layer.Save(System.String)">
+            <summary>
+            Saves the specified path.
+            </summary>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:VisionFlow.Layer.Read(System.String)">
+            <summary>
+            Reads the specified path.
+            </summary>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:VisionFlow.Layer.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:VisionFlow.Network">
+            <summary>
+            计算网络图
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.Layers">
+            <summary>
+            网络图中的所有层
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.Name">
+            <summary>
+            网络图的名称
+            </summary>
+        </member>
+        <member name="P:VisionFlow.Network.RunMilliseconds">
+            <summary>
+            Gets the run milliseconds.
+            </summary>
+            <value>
+            The run milliseconds.
+            </value>
+        </member>
+        <member name="P:VisionFlow.Network.LastExceptionLayerName">
+            <summary>
+            Gets the last name of the exception layer.
+            </summary>
+            <value>
+            The last name of the exception layer.
+            </value>
+        </member>
+        <member name="P:VisionFlow.Network.LastErrorCode">
+            <summary>
+            Gets the last error code.
+            </summary>
+            <value>
+            The last error code.
+            </value>
+        </member>
+        <member name="P:VisionFlow.Network.LastErrorString">
+            <summary>
+            Gets the last error string.
+            </summary>
+            <value>
+            The last error string.
+            </value>
+        </member>
+        <member name="P:VisionFlow.Network.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:VisionFlow.Layer"/> with the specified layer name.
+            </summary>
+            <value>
+            The <see cref="T:VisionFlow.Layer"/>.
+            </value>
+            <param name="layerName">Name of the layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VisionFlow.Network.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VisionFlow.Network"/> class.
+            </summary>
+        </member>
+        <member name="M:VisionFlow.Network.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VisionFlow.Network"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="F:VisionFlow.Network.FuncDict">
+            <summary>
+            算子库，算子类型应符合Layer.FuncType的类型，即int func(List of GeneralObjType inputs, ref List of GeneralObjType outputs)
+            </summary>
+        </member>
+        <member name="M:VisionFlow.Network.LoadFuncDll(System.String)">
+            <summary>自动从Dll内的程序集中加载所有的类中，符合FuncType类型的方法，到FuncDict, 如果FuncDict字典中已经存在同名方法，则忽略不添加。因此如果需要重新导入方法，需要调用FuncDict.Clear()方法先清空原有字典。</summary>
+            <param name="dllFullName">包含dll文件路径的全文件名</param>
+        </member>
+        <member name="M:VisionFlow.Network.LoadFuncAssembly(System.String)">
+            <summary>自动从指定的程序集中加载所有的类中，符合FuncType类型的方法，到FuncDict, 如果FuncDict字典中已经存在同名方法，则忽略不添加。因此如果需要重新导入方法，需要调用FuncDict.Clear()方法先清空原有字典。</summary>
+            <param name="assemblyName">Name of the assembly.</param>
+        </member>
+        <member name="T:VisionFlow.Network.GraphDirection">
+            <summary>
+            算法流示意图方向布局
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphDirection.Top2Bottom">
+            <summary>
+            从上到下
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphDirection.Left2Right">
+            <summary>
+            从左到右
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphDirection.Bottom2Top">
+            <summary>
+            从下到上
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphDirection.Right2Left">
+            <summary>
+            从右到左
+            </summary>
+        </member>
+        <member name="T:VisionFlow.Network.GraphNodeShape">
+            <summary>
+            算法流示意图节点形状
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphNodeShape.Circle">
+            <summary>
+            圆环
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphNodeShape.DoubleCircle">
+            <summary>
+            双圆环
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphNodeShape.Octagon">
+            <summary>
+            八边形
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphNodeShape.Diamond">
+            <summary>
+            菱形
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphNodeShape.Rectangle">
+            <summary>
+            矩形
+            </summary>
+        </member>
+        <member name="F:VisionFlow.Network.GraphNodeShape.Ellipse">
+            <summary>
+            椭圆形
+            </summary>
+        </member>
+        <member name="M:VisionFlow.Network.ShowGraphUi(VisionFlow.Network.GraphDirection,VisionFlow.Network.GraphNodeShape)">
+            <summary>
+            显示计算网络图..
+            </summary>
+            <param name="dir">图方向.默认从上到下</param>
+            <param name="shape">节点形状，默认矩形</param>
+        </member>
+        <member name="M:VisionFlow.Network.LoadNetwork(System.String)">
+            <summary>
+            Loads the network.
+            </summary>
+            <param name="jsonFileName">Name of the json file.</param>
+        </member>
+        <member name="M:VisionFlow.Network.SaveNetwork(System.String)">
+            <summary>
+            Saves the network.
+            </summary>
+            <param name="jsonFileName">Name of the json file.</param>
+        </member>
+        <member name="M:VisionFlow.Network.sortLayers">
+            <summary>
+            Sorts the layers.排序并验证是否有环存在
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisionFlow.Network.Validate">
+            <summary>
+            验证网络是否可以正常执行, 包括1.层是否有重名，2.每层内输入/输出是否有重名, 3.每一层的算子是否都在字典中，4.是否有环存在，5.排序.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisionFlow.Network.connectLayers">
+            <summary>
+            Connects the layers. 将父层的输出绑定到子层的输入上，连接成一个网
+            </summary>
+        </member>
+        <member name="M:VisionFlow.Network.Run">
+            <summary>
+            执行网络，如果没有被Validate过，首先会进行Validate，然后执行.
+            </summary>
+            <returns>返回true代表是正确执行，false表明有错误发生</returns>
+        </member>
+        <member name="M:VisionFlow.Network.SaveData(System.String)">
+            <summary>
+            Saves the data.
+            </summary>
+            <param name="path">路径.</param>
+        </member>
+        <member name="M:VisionFlow.Network.LoadData(System.String)">
+            <summary>
+            Loads the data.
+            </summary>
+            <param name="path">路径.</param>
+        </member>
+        <member name="M:VisionFlow.Network.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+    </members>
+</doc>

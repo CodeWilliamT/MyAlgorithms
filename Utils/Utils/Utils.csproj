@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="halcondotnet">
+      <HintPath>lib\x64\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="HTHalControl">
+      <HintPath>lib\x64\HTHalControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

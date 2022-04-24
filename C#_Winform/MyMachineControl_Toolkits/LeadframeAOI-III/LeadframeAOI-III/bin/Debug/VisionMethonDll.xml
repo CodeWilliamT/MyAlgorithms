@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VisionMethonDll</name>
+    </assembly>
+    <members>
+        <member name="M:VisionMethonDll.VisionMethon.gen_map_images(HalconDotNet.HObject@,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@)">
+            <summary>
+            生成图谱
+            </summary>
+            <param name="ho_mapImage">生成的大图</param>
+            <param name="hv_imageFolderPath">采样图的路径</param>
+            <param name="hv_uvHxy">变换矩阵</param>
+            <param name="hv_zoomFactor">缩放系数</param>
+            <param name="hv_xSnapPosLT">大图0点为中心时轴坐标x</param>
+            <param name="hv_ySnapPosLT">大图0点为中心时轴坐标y</param>
+            <param name="hv_iFlag">字符串，为""无错</param>
+        </member>
+        <member name="M:VisionMethonDll.VisionMethon.get_mapping_coords(HalconDotNet.HObject,HalconDotNet.HObject,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@)">
+            <summary>
+            生成图谱点位
+            </summary>
+            <param name="ho_image">大图</param>
+            <param name="ho_showContour">显示区</param>
+            <param name="hv_modelType">模板类型</param>
+            <param name="hv_modelID">模板id</param>
+            <param name="hv_defRow">参考点横坐标</param>
+            <param name="hv_defCol">参考点纵坐标</param>
+            <param name="hv_scoreThresh">匹配分数</param>
+            <param name="hv_xSnapPosLT">大图0点为中心时轴坐标x</param>
+            <param name="hv_ySnapPosLT">大图0点为中心时轴坐标y</param>
+            <param name="hv_uvHxy">Uv2Xy矩阵</param>
+            <param name="hv_zoomFactor">降采样比例</param>
+            <param name="hv_mapRowCnt">图谱行数</param>
+            <param name="hv_mapColCnt">图谱列数</param>
+            <param name="hv_mapX">图谱点位，三字扫描序，X</param>
+            <param name="hv_mapY">图谱点位，三字扫描序，Y</param>
+            <param name="hv_mapRow">图谱点位，三字扫描序，芯片在整个料片横坐标，0始</param>
+            <param name="hv_mapCol">图谱点位，三字扫描序，芯片在整个料片纵坐标，0始</param>
+            <param name="hv_mapU"></param>
+            <param name="hv_mapV"></param>
+            <param name="hv_dieWidth">缩放后芯片最小包围矩像素宽度</param>
+            <param name="hv_dieHeight">缩放后芯片最小包围矩像素高度</param>
+            <param name="hv_iFlag">操作成功标记，字符串，""成功</param>
+        </member>
+        <member name="M:VisionMethonDll.VisionMethon.get_mapping_coords_ext(HalconDotNet.HObject,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@)">
+            <summary>
+            将区域转化为坐标
+            </summary>
+            <param name="ho_updateShowContour">芯片XLD</param>
+            <param name="hv_xSnapPosLT">大图0点为中心时轴坐标x</param>
+            <param name="hv_ySnapPosLT">大图0点为中心时轴坐标y</param>
+            <param name="hv_uvHxy">Uv2Xy矩阵</param>
+            <param name="hv_zoomFactor">降采样比例</param>
+            <param name="hv_mapRowCnt">图谱行数</param>
+            <param name="hv_mapColCnt">图谱列数</param>
+            <param name="hv_mapX">图谱点位，三字扫描序，X</param>
+            <param name="hv_mapY">图谱点位，三字扫描序，Y</param>
+            <param name="hv_mapRow">图谱点位，三字扫描序，芯片在整个料片横坐标，0始</param>
+            <param name="hv_mapCol">图谱点位，三字扫描序，芯片在整个料片纵坐标，0始</param>
+            <param name="hv_mapU"></param>
+            <param name="hv_mapV"></param>
+            <param name="hv_dieWidth">缩放后芯片最小包围矩像素宽度</param>
+            <param name="hv_dieHeight">缩放后芯片最小包围矩像素高度</param>
+            <param name="hv_iFlag">操作成功标记，字符串，""成功</param>
+        </member>
+        <member name="M:VisionMethonDll.VisionMethon.get_scan_points(HalconDotNet.HObject@,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@)">
+            <summary>
+            获取扫描点位
+            </summary>
+            <param name="hv_imageWidth">原始图宽</param>
+            <param name="hv_imageHeight">原始图高</param>
+            <param name="hv_widthFactor">原始图宽使用比例</param>
+            <param name="hv_heightFactor">原始图高使用比例</param>
+            <param name="hv_zoomFactor">缩放比例，跟前用保持一致</param>
+            <param name="hv_dieWidth">缩放后芯片最小包围矩像素宽度</param>
+            <param name="hv_dieHeight">缩放后芯片最小包围矩像素高度</param>
+            <param name="hv_mapX">图谱点位，三字扫描序，X</param>
+            <param name="hv_mapY">图谱点位，三字扫描序，Y</param>
+            <param name="hv_uvHxy">映射矩阵</param>
+            <param name="hv_xSnapPosLT">大图0点为中心时轴坐标X</param>
+            <param name="hv_ySnapPosLT">大图0点为中心时轴坐标Y</param>
+            <param name="hv_mapRowCnt">图谱行数</param>
+            <param name="hv_mapColCnt">图谱列数</param>
+            <param name="hv_M">视野内芯片行数</param>
+            <param name="hv_N">视野内芯片列数</param>
+            <param name="hv_snapMapX">拍照点位X</param>
+            <param name="hv_snapMapY">拍照点Y</param>
+            <param name="hv_iFlag">错误，""无错</param>
+        </member>
+        <member name="M:VisionMethonDll.VisionMethon.update_map_points(HalconDotNet.HObject,HalconDotNet.HObject,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@)">
+            <summary>
+            根据矫正点位更新芯片点位扫描点位
+            </summary>
+            <param name="ho_image">矫正点图片</param>
+            <param name="ho_matchRegion">模板匹配区</param>
+            <param name="hv_modelType">模板类型</param>
+            <param name="hv_modelID">模板ID</param>
+            <param name="hv_scoreThresh">匹配分数</param>
+            <param name="hv_mapX">芯片X</param>
+            <param name="hv_mapY">芯片Y</param>
+            <param name="hv_snapMapX">扫描点X</param>
+            <param name="hv_snapMapY">扫描点Y</param>
+            <param name="hv_uvHxy">变换矩阵</param>
+            <param name="hv_updateMapX">更新后芯片点X</param>
+            <param name="hv_updateMapY">更新后芯片点Y</param>
+            <param name="hv_updateSnapMapX">更新后扫描点X</param>
+            <param name="hv_updateSnapMapY">更新后扫描点Y</param>
+            <param name="hv_iFlag">标志</param>
+        </member>
+        <member name="M:VisionMethonDll.VisionMethon.gen_die_match_region(HalconDotNet.HObject@,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@)">
+            <summary>
+            生成芯片匹配区
+            </summary>
+            <param name="ho_dieMatchRegion">芯片匹配区</param>
+            <param name="hv_imgCenterX">图片中心X</param>
+            <param name="hv_imgCenterY">图片中心Y</param>
+            <param name="hv_dieWidth">芯片宽度</param>
+            <param name="hv_dieHeight">芯片高度</param>
+            <param name="hv_dieX">芯片X坐标</param>
+            <param name="hv_dieY">芯片Y坐标</param>
+            <param name="hv_uvHxy">UV2XY矩阵</param>
+            <param name="hv_imgWidth">图片宽度</param>
+            <param name="hv_imgHeight">图片高度</param>
+            <param name="hv_imgWidthFactor">图片宽度有效比例</param>
+            <param name="hv_imgHeightFactor">图片高度有效比例</param>
+            <param name="hv_zoomFactor">缩放比例</param>
+            <param name="hv_dilationSize">外扩尺寸,单位像素</param>
+            <param name="hv_mapRowCnt">芯片总行数</param>
+            <param name="hv_mapColCnt">芯片总列数</param>
+            <param name="hv_dieRow">芯片当前行</param>
+            <param name="hv_dieCol">芯片当前列</param>
+            <param name="hv_iFlag">成功标志</param>
+        </member>
+        <member name="M:VisionMethonDll.VisionMethon.TrainDataCode2D(HalconDotNet.HObject,HalconDotNet.HObject,HalconDotNet.HObject@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@,HalconDotNet.HTuple@)">
+             <summary>
+            1.训练二维码
+            1.1 移动至二维码拍照位,采集图像
+            1.2 交互画一个临时的包含二维码的区域ho_dataCode2DRegion
+            1.3 调用函数TrainDataCode2D训练二维码
+             </summary>
+             <param name="ho_image"></param>
+             <param name="ho_dataCode2DRegion"></param>
+             <param name="ho_dataCode2DContour"></param>
+             <param name="hv_dataCodeHandle"></param>
+             <param name="hv_dataCodeType"></param>
+             <param name="hv_dataCodeString"></param>
+             <param name="hv_iFlag"></param>
+        </member>
+    </members>
+</doc>
