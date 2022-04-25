@@ -65,7 +65,7 @@ namespace DoubleSubSwicher
                         break;
                 }
             }
-            SubHelper.switchSubText(tbSubfilepath.Text, savepath);
+            SubHelper.switchSubTextFile(tbSubfilepath.Text, savepath);
             SaveConfig();
             toolStripStatusLabel1.Text = "操作完成";
             Task.Run(new Action(() =>
@@ -111,7 +111,7 @@ namespace DoubleSubSwicher
                 }
             }
             DirectoryInfo di = new DirectoryInfo(tbSubfoldername.Text);
-            FileInfo[] di_FileInfo = di.GetFiles();
+            FileInfo[] di_FileInfo = di.GetFiles("*", SearchOption.AllDirectories);
             if (di_FileInfo.Count() == 0)
             {
                 MessageBox.Show("该目录下没有字幕文件");
@@ -120,8 +120,10 @@ namespace DoubleSubSwicher
             Directory.CreateDirectory(savefolder);
             foreach (FileInfo f in di_FileInfo)
             {
-                string savepath = savefolder + @"\" + f.Name;
-                SubHelper.switchSubText(f.FullName, savepath);
+                string savepath = savefolder + @"\" +
+                    f.FullName.Substring(tbSubfoldername.Text.Length, f.FullName.Length - tbSubfoldername.Text.Length);
+                Directory.CreateDirectory(savepath.Substring(0, savepath.Length - f.Name.Length));
+                SubHelper.switchSubTextFile(f.FullName, savepath);
             }
             SaveConfig();
             toolStripStatusLabel1.Text = "操作完成";

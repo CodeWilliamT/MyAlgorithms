@@ -14,7 +14,7 @@ namespace Utils
         /// </summary>
         /// <param name="filepath">双字幕文件路径</param>
         /// <param name="savepath">转化后保存的文件路径</param>
-        public static void switchSubText(string filepath, string savepath)
+        public static void switchSubTextFile(string filepath, string savepath)
         {
             FileInfo fi = new FileInfo(filepath);
             Encoding ecd = GetFileEncodeType(filepath);
@@ -57,25 +57,26 @@ namespace Utils
         public static void switchSrtSubStr(StreamReader sr, StringBuilder newsubtext)
         {
             string substr, newsubstr;
-            substr = sr.ReadLine();
-            while (substr != null)
+            while (!sr.EndOfStream)
             {
-                if (substr == "")
+                substr = sr.ReadLine();
+                if (substr != "")
                 {
-                    newsubtext.Append(substr + "\n");
-                    substr = sr.ReadLine();
                     newsubtext.Append(substr + "\n");
                     substr = sr.ReadLine();
                     newsubtext.Append(substr + "\n");
                     substr = sr.ReadLine();
                     newsubstr = substr;
                     substr = sr.ReadLine();
-                    substr = sr.ReadLine();
-                }
-                else
-                {
                     newsubtext.Append(substr + "\n");
+                    newsubtext.Append(newsubstr + "\n");
                     substr = sr.ReadLine();
+                    while (substr != "")
+                    {
+                        newsubtext.Append(substr + "\n");
+                        substr = sr.ReadLine();
+                    }
+                    newsubtext.Append(substr + "\n");
                 }
             }
         }
@@ -162,5 +163,6 @@ namespace Utils
                 return System.Text.Encoding.UTF8;
             }
         }
+
     }
 }

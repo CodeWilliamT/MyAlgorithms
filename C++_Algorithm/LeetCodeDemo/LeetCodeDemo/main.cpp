@@ -1,4 +1,4 @@
-#include "Test3.cpp"
+#include "Test4.cpp"
 //bittree helper
 #include "0297.cpp"
 /*
@@ -33,14 +33,14 @@ int main()
 {
 	Codec BitTreeHelper;
 	Solution s;
-	vector<int> v1 = { 9,20,6,4,11,12 };
+	vector<int> v1 = { 3,3,2 };
 	vector<int> v2 = { 0,1,2,3,4,5,6,7,8,9 };
-	vector<vector<int>> vv1 = { {10},{6},{5}};
-	vector<vector<int>> vv2 = {};
+	vector<vector<int>> vv1 = {{1, 10}, {3, 3}};
+	vector<vector<int>> vv2 = {{2, 1}, {2, 8}, {8, 4}, {10, 8}, {5, 6}, {1, 4}, {2, 4}, {2, 2}, {6, 10}};
 	vector<string> vs1 = { "ju","fzjnm","x","e","zpmcz","h","q" };
 	vector<string> vs2 = { "f","hveml","cpivl","d" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
-	s.maxTrailingZeros(vv1);
+	s.fullBloomFlowers(vv1,v1);
 	/*string a = "())()))()(()(((())(()()))))((((()())(())";
 	string b = "1011101100010001001011000000110010100101";
 	s.canBeValid(a, b

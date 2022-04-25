@@ -38,3 +38,4 @@ C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\obj\Release\netcoreapp3.1\Web_SubTools.csproj.CopyComplete
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\obj\Release\netcoreapp3.1\Razor\Pages\Sub_Switcher.cshtml.g.cs
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\obj\Release\netcoreapp3.1\Razor\Pages\Sub_Translator.cshtml.g.cs
+C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll

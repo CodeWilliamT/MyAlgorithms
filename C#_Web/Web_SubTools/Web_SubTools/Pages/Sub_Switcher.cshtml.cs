@@ -14,7 +14,7 @@ namespace Web_SubTools.Pages
     public class Sub_SwitcherModel : PageModel
     {
         [BindProperty]
-        public SubFile SubFile { get; set; }
+        public Model_Sub_Switcher SubFile { get; set; }
 
         public string switchedResult { get; set; }
         public void OnGet()
