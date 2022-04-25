@@ -14,7 +14,7 @@ namespace Web_SubTools.Pages
     public class Sub_SwitcherModel : PageModel
     {
         [BindProperty]
-        public Model_Sub_Switcher SubFile { get; set; }
+        public Model_Sub_Switcher Model_Sub_Switcher { get; set; }
 
         public string switchedResult { get; set; }
         public void OnGet()
@@ -22,15 +22,15 @@ namespace Web_SubTools.Pages
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            int extIdx = SubFile.SubFormFile.FileName.LastIndexOf('.');
-            int len = SubFile.SubFormFile.FileName.Length;
-            string ext = SubFile.SubFormFile.FileName.Substring(extIdx, len- extIdx).ToLower();
+            int extIdx = Model_Sub_Switcher.SubFormFile.FileName.LastIndexOf('.');
+            int len = Model_Sub_Switcher.SubFormFile.FileName.Length;
+            string ext = Model_Sub_Switcher.SubFormFile.FileName.Substring(extIdx, len- extIdx).ToLower();
             StringBuilder newsubtext = new StringBuilder();
             switch (ext)
             {
                 case ".ass":
                     {
-                        using (StreamReader sr = new StreamReader(SubFile.SubFormFile.OpenReadStream()))
+                        using (StreamReader sr = new StreamReader(Model_Sub_Switcher.SubFormFile.OpenReadStream()))
                         {
                             SubHelper.switchAssSubStr(sr, newsubtext);
                             break;
@@ -38,7 +38,7 @@ namespace Web_SubTools.Pages
                     }
                 case ".srt":
                     {
-                        using (StreamReader sr = new StreamReader(SubFile.SubFormFile.OpenReadStream()))
+                        using (StreamReader sr = new StreamReader(Model_Sub_Switcher.SubFormFile.OpenReadStream()))
                         {
                             SubHelper.switchSrtSubStr(sr, newsubtext);
                             break;

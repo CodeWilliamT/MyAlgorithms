@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Utils;
 using Web_SubTools.Models;
 
@@ -15,41 +16,53 @@ namespace Web_SubTools.Pages
     {
         [BindProperty]
         public Model_Sub_Translator Model_Sub_Translator { get; set; }
-
+        public SelectList SListLanguages { get; set; }
+        List<string> listLanguages;
         public string switchedResult { get; set; }
         public void OnGet()
         {
+            listLanguages = new List<string>();
+            foreach (var e in MSTranslatorHelper.Language)
+            {
+                listLanguages.Add(e.Key);
+            }
+            SListLanguages = new SelectList(listLanguages);
         }
         public async Task<IActionResult> OnPostAsync()
         {
+            MSTranslatorHelper.From = Model_Sub_Translator.From;
+            MSTranslatorHelper.To = Model_Sub_Translator.To;
             int extIdx = Model_Sub_Translator.SubFormFile.FileName.LastIndexOf('.');
             int len = Model_Sub_Translator.SubFormFile.FileName.Length;
             string ext = Model_Sub_Translator.SubFormFile.FileName.Substring(extIdx, len - extIdx).ToLower();
             StringBuilder newsubtext = new StringBuilder();
-            switch (ext)
+            await Task.Run(new Action(() =>
             {
-                case ".ass":
-                    {
-                        using (StreamReader sr = new StreamReader(Model_Sub_Translator.SubFormFile.OpenReadStream()))
+                switch (ext)
+                {
+                    case ".ass":
                         {
-                            SubHelper.switchAssSubStr(sr, newsubtext);
+                            using (StreamReader sr = new StreamReader(Model_Sub_Translator.SubFormFile.OpenReadStream()))
+                            {
+                                MSTranslatorHelper.TranslateAssSubStr(sr, newsubtext);
+                                break;
+                            }
+                        }
+                    case ".srt":
+                        {
+                            using (StreamReader sr = new StreamReader(Model_Sub_Translator.SubFormFile.OpenReadStream()))
+                            {
+                                MSTranslatorHelper.TranslateSrtSubStr(sr, newsubtext);
+                                break;
+                            }
+                        }
+                    default:
+                        {
                             break;
                         }
-                    }
-                case ".srt":
-                    {
-                        using (StreamReader sr = new StreamReader(Model_Sub_Translator.SubFormFile.OpenReadStream()))
-                        {
-                            SubHelper.switchSrtSubStr(sr, newsubtext);
-                            break;
-                        }
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
-            switchedResult = MSTranslatorHelper.TranslateText("Hello");
+                }
+                switchedResult = newsubtext.ToString();
+            }));
             return Page();
         }
 

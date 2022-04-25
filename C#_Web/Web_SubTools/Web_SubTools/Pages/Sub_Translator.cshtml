@@ -15,9 +15,21 @@
         <div class="col-md-4">
             <form method="post" enctype="multipart/form-data" style="width:100%">
                 <div class="form-group">
-                    <label asp-for="SubFile.SubFormFile" class="control-label"></label>
-                    <input asp-for="SubFile.SubFormFile" type="file" class="form-control" style="height:auto" />
-                    <span asp-validation-for="SubFile.SubFormFile" class="text-danger"></span>
+                    <label asp-for="Model_Sub_Translator.From" class="control-label"></label>
+                    <br />
+                    <select asp-for="Model_Sub_Translator.From" asp-items="Model.SListLanguages">
+                        <option value="English">English</option>
+                    </select>
+                    <br />
+                    <label asp-for="Model_Sub_Translator.To" class="control-label"></label>
+                    <br />
+                    <select asp-for="Model_Sub_Translator.To" asp-items="Model.SListLanguages">
+                        <option value="Chinese Simplified">Chinese Simplified</option>
+                    </select>
+                    <br />
+                    <label asp-for="Model_Sub_Translator.SubFormFile" class="control-label"></label>
+                    <input asp-for="Model_Sub_Translator.SubFormFile" type="file" class="form-control" style="height:auto" />
+                    <span asp-validation-for="Model_Sub_Translator.SubFormFile" class="text-danger"></span>
                 </div>
                 <input type="submit" value="Translate" class="btn-default" />
             </form>
