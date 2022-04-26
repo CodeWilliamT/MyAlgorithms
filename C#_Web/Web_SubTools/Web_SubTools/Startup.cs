@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +24,8 @@ namespace Web_SubTools
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            services.AddRazorPages().AddViewLocalization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,13 +42,23 @@ namespace Web_SubTools
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //启用本地化中间件
+            string[] cultures = new[] { "zh-CN", "en"};
+            app.UseRequestLocalization(
+                 new RequestLocalizationOptions().SetDefaultCulture(cultures[0]) //设置多语言的默认值是 en
+                        .AddSupportedCultures(cultures).AddSupportedUICultures(cultures)
+            );
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

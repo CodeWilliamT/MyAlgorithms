@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Web_SubTools.Models;
 using Utils;
+using System.Globalization;
 
 namespace Web_SubTools.Pages
 {
@@ -17,6 +18,7 @@ namespace Web_SubTools.Pages
         public Model_Sub_Switcher Model_Sub_Switcher { get; set; }
 
         public string switchedResult { get; set; }
+        public string fileWarning { get; set; }
         public void OnGet()
         {
         }
@@ -46,6 +48,7 @@ namespace Web_SubTools.Pages
                     }
                 default:
                     {
+                        fileWarning = string.Format(CultureInfo.CurrentCulture, "The input file must be .ass or .srt file!");
                         break;
                     }
             }

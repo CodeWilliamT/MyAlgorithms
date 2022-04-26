@@ -37,3 +37,5 @@ C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\obj\Debug\netcoreapp3.1\Web_SubTools.Views.pdb
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\obj\Debug\netcoreapp3.1\Web_SubTools.genruntimeconfig.cache
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\obj\Debug\netcoreapp3.1\Web_SubTools.csproj.CopyComplete
+C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Web\Web_SubTools\Web_SubTools\obj\Debug\netcoreapp3.1\Web_SubTools.csproj.AssemblyReference.cache

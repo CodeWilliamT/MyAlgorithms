@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Utils;
 using Web_SubTools.Models;
+using System.Globalization;
 
 namespace Web_SubTools.Pages
 {
@@ -19,6 +20,7 @@ namespace Web_SubTools.Pages
         public SelectList SListLanguages { get; set; }
         List<string> listLanguages;
         public string switchedResult { get; set; }
+        public string fileWarning { get; set; }
         public void OnGet()
         {
             listLanguages = new List<string>();
@@ -58,6 +60,7 @@ namespace Web_SubTools.Pages
                         }
                     default:
                         {
+                            fileWarning = string.Format(CultureInfo.CurrentCulture, "The input file must be .ass or .srt file!");
                             break;
                         }
                 }

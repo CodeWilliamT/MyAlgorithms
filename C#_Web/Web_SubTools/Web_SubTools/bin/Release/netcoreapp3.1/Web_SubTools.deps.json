@@ -318,6 +318,14 @@
         "runtime": {
           "Web_SubTools.dll": {}
         },
+        "resources": {
+          "en/Web_SubTools.resources.dll": {
+            "locale": "en"
+          },
+          "zh-CN/Web_SubTools.resources.dll": {
+            "locale": "zh-CN"
+          }
+        },
         "compile": {
           "Web_SubTools.dll": {}
         }

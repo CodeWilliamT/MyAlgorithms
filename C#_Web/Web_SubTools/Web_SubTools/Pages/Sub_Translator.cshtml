@@ -1,41 +1,45 @@
 ﻿@page
 @model Web_SubTools.Pages.Sub_TranslatorModel
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IHtmlLocalizer<CommonResources> Localizer
 @{
 }
 <div class="text-center">
-    <h2 class="display-5">Sub Translator</h2>
+    <h2 class="display-5">@Localizer["Sub Translator"]</h2>
 
-    <h3 class="display-6">What for?</h3>
-    <p>To translate double-sub file's line order.</p>
-    <h3 class="display-6">How to use it?</h3>
+    <h3 class="display-6">@Localizer["What for?"]</h3>
+    <p>@Localizer["To translate one-line-sub file's line to double-line-sub file."]</p>
+    <h3 class="display-6">@Localizer["How to use it?"]</h3>
     <p>
-        Select you srt/ass one-line-sub title file. Then click <B>Translate</B> button. You will see the content in the text field. Check if it's OK. If OK, copy it into your original file's copy.
+        @Localizer["Select your srt/ass one-line-sub title file. Then click"]
+        <B>@Localizer["Translate"]</B>
+        @Localizer["button. You will see the result content in the text field. Check if it's OK. If OK, copy it into your original file's copy."]
     </p>
     <div class="row" style="height:100%">
         <div class="col-md-4">
             <form method="post" enctype="multipart/form-data" style="width:100%">
                 <div class="form-group">
-                    <label asp-for="Model_Sub_Translator.From" class="control-label"></label>
+                    <label class="control-label">@Localizer["Translate From"]</label>
                     <br />
                     <select asp-for="Model_Sub_Translator.From" asp-items="Model.SListLanguages">
                         <option value="English">English</option>
                     </select>
                     <br />
-                    <label asp-for="Model_Sub_Translator.To" class="control-label"></label>
+                    <label class="control-label">@Localizer["Translate To"]</label>
                     <br />
                     <select asp-for="Model_Sub_Translator.To" asp-items="Model.SListLanguages">
                         <option value="Chinese Simplified">Chinese Simplified</option>
                     </select>
                     <br />
-                    <label asp-for="Model_Sub_Translator.SubFormFile" class="control-label"></label>
+                    <label class="control-label">@Localizer["Sub File"]</label>
                     <input asp-for="Model_Sub_Translator.SubFormFile" type="file" class="form-control" style="height:auto" />
-                    <span asp-validation-for="Model_Sub_Translator.SubFormFile" class="text-danger"></span>
+                    <span asp-validation-for="Model_Sub_Translator.SubFormFile" class="text-danger">@Model.fileWarning</span>
                 </div>
-                <input type="submit" value="Translate" class="btn-default" />
+                <input type="submit" value=@Localizer["Translate"] class="btn-default" />
             </form>
         </div>
         <div class="col-md-8">
-            <label class="control-label">Switched Sub Title Content</label>
+            <label class="control-label">@Localizer["Translated Sub Title Content"]</label>
             <br />
             <textarea class="form-control" style="min-height:600px;overflow:scroll">
                 @Model.switchedResult
