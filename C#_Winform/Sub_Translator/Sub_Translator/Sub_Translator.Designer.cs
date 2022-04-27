@@ -1,7 +1,7 @@
 ﻿
 namespace Sub_Translator
 {
-    partial class Form1
+    partial class Sub_Translator
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -187,7 +187,7 @@ namespace Sub_Translator
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(525, 257);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 48);
+            this.label3.Size = new System.Drawing.Size(70, 24);
             this.label3.TabIndex = 15;
             this.label3.Text = "From:";
             // 
@@ -196,11 +196,11 @@ namespace Sub_Translator
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(811, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 48);
+            this.label4.Size = new System.Drawing.Size(46, 24);
             this.label4.TabIndex = 16;
             this.label4.Text = "To:";
             // 
-            // Form1
+            // Sub_Translator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -220,8 +220,8 @@ namespace Sub_Translator
             this.Controls.Add(this.tbSubfilepath);
             this.Controls.Add(this.btnBrowse);
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Sub_Translator";
+            this.Text = "Sub_Translator";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

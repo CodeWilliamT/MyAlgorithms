@@ -3,6 +3,13 @@
 @using Microsoft.AspNetCore.Mvc.Localization;
 @inject IHtmlLocalizer<CommonResources> Localizer
 @{
+
+    Model.listLanguages = new List<string>();
+    foreach (var e in Utils.MSTranslatorHelper.Language)
+    {
+        Model.listLanguages.Add(e.Key);
+    }
+    Model.SListLanguages = new SelectList(Model.listLanguages);
 }
 <div class="text-center">
     <h2 class="display-5">@Localizer["Sub Translator"]</h2>

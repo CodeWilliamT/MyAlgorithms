@@ -18,17 +18,11 @@ namespace Web_SubTools.Pages
         [BindProperty]
         public Model_Sub_Translator Model_Sub_Translator { get; set; }
         public SelectList SListLanguages { get; set; }
-        List<string> listLanguages;
+        public List<string> listLanguages { get; set; }
         public string switchedResult { get; set; }
         public string fileWarning { get; set; }
         public void OnGet()
         {
-            listLanguages = new List<string>();
-            foreach (var e in MSTranslatorHelper.Language)
-            {
-                listLanguages.Add(e.Key);
-            }
-            SListLanguages = new SelectList(listLanguages);
         }
         public async Task<IActionResult> OnPostAsync()
         {

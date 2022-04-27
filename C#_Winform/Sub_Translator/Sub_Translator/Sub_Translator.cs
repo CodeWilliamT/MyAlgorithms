@@ -14,9 +14,9 @@ using Utils;
 
 namespace Sub_Translator
 {
-    public partial class Form1 : Form
+    public partial class Sub_Translator : Form
     {
-        public Form1()
+        public Sub_Translator()
         {
             InitializeComponent();
             foreach(var e in MSTranslatorHelper.Language)

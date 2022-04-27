@@ -43,7 +43,7 @@ namespace Web_SubTools
             }
 
             //启用本地化中间件
-            string[] cultures = new[] { "zh-CN", "en"};
+            string[] cultures = new[] { "en", "zh-CN"};
             app.UseRequestLocalization(
                  new RequestLocalizationOptions().SetDefaultCulture(cultures[0]) //设置多语言的默认值是 en
                         .AddSupportedCultures(cultures).AddSupportedUICultures(cultures)
