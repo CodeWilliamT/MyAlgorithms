@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LBeCs8MjMrzGPlV2+V3jL53MWNvbd18wB+3irvmWfZ8uXVdKKQtJchK5E2LxcW/f0KGfLRY9XQEn5CF664RDYA==",
+  "dgSpecHash": "BGSz2tg3ryLKFUN0HUAW3njRPfo5r+Ic1whlSeHdFntTitGjJ7Xj7rEBs0yAEq7p2Ca+0MUXo07IdAUjAPca6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\me\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

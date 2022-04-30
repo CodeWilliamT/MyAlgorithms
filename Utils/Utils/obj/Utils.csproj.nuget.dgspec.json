@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj": {}
+    "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj": {
+    "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj",
+        "projectUniqueName": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\Me\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\Utils\\Utils\\obj\\",
+        "projectPath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\Utils\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\Utils\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
