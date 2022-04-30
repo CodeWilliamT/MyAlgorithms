@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,7 +57,7 @@
     <Compile Include="Sub_Translator.Designer.cs">
       <DependentUpon>Sub_Translator.cs</DependentUpon>
     </Compile>
-    <Compile Include="MSTranslatorHelper.cs" />
+    <Compile Include="TranslatorHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Sub_Translator.resx">

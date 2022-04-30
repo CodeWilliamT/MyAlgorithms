@@ -19,11 +19,17 @@ namespace Sub_Translator
         public Sub_Translator()
         {
             InitializeComponent();
-            foreach(var e in MSTranslatorHelper.Language)
+            foreach(var e in TranslatorHelper.Language)
             {
                 comboBoxFrom.Items.Add(e.Key);
                 comboBoxTo.Items.Add(e.Key);
             }
+
+            foreach (var e in TranslatorHelper.SuporttedFormat)
+            {
+                comboBox_Format.Items.Add(e);
+            }
+            comboBox_Format.SelectedIndex = 0;
             comboBoxFrom.SelectedItem = "English";
             comboBoxTo.SelectedItem = "Chinese Simplified";
             tbSubfilepath.Text = ConfigurationManager.AppSettings["Subfilepath"];
@@ -49,15 +55,13 @@ namespace Sub_Translator
         private void btnTranslate_Click(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "操作中";
-            MSTranslatorHelper.From = comboBoxFrom.Text;
-            MSTranslatorHelper.To = comboBoxTo.Text;
             FileInfo fi = new FileInfo(tbSubfilepath.Text);
             string savepath = tbSubfilepath.Text;
             if (!cbReplace.Checked)
             {
                 savepath = fi.DirectoryName + @"\" + fi.Name.Replace(fi.Extension, "") + "_Trans" + fi.Extension;
             }
-            MSTranslatorHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath);
+            TranslatorHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath, comboBox_Format.SelectedIndex, comboBoxFrom.Text, comboBoxTo.Text);
             SaveConfig();
             toolStripStatusLabel1.Text = "操作完成";
             Task.Run(new Action(() =>
@@ -83,8 +87,6 @@ namespace Sub_Translator
         private void btnFolderTranslate_Click(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "操作中";
-            MSTranslatorHelper.From = comboBoxFrom.Text;
-            MSTranslatorHelper.To = comboBoxTo.Text;
             string savefolder = tbSubfoldername.Text;
             if (!cbReplace.Checked)
             {
@@ -106,7 +108,7 @@ namespace Sub_Translator
                     string savepath = savefolder + @"\" +
                         f.FullName.Substring(tbSubfoldername.Text.Length, f.FullName.Length - tbSubfoldername.Text.Length);
                     Directory.CreateDirectory(savepath.Substring(0, savepath.Length - f.Name.Length));
-                    MSTranslatorHelper.TranslateSubTextFile(f.FullName, savepath);
+                    TranslatorHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath, comboBox_Format.SelectedIndex, comboBoxFrom.Text, comboBoxTo.Text);
                     Thread.Sleep(1000);
                 }
                 SaveConfig();
