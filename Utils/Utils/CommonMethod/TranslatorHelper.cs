@@ -16,27 +16,17 @@ namespace Utils
 {
     public class TranslatorHelper
     {
-        //定义一个StrModel的类，用于接受从srt/ass文件读取的文件格式
-        private class SubLineModel
+        public class BaiduTransObj
         {
-            public string BeginTime { get; set; }
-            public string EndTime { get; set; }
-            public string MainLine { get; set; }
-            public string SecondLine { get; set; }
+            public string from { set; get; }
+            public string to { set; get; }
+            public List<BaiduTransResult> trans_result { set; get; }
         }
-        
-            public class BaiduTransObj
-            {
-                //注意：就是此类的三个属性名称必须和json数据里面的key一致
-                public string from { set; get; }
-                public string to { set; get; }
-                public List<BaiduTransResult> trans_result { set; get; }
-            }
-            public class BaiduTransResult
-            {
-                public string src { set; get; }
-                public string dst { set; get; }
-            }
+        public class BaiduTransResult
+        {
+            public string src { set; get; }
+            public string dst { set; get; }
+        }
         public static readonly Dictionary<string,string> Language=new Dictionary<string, string>(){
         {"Afrikaans","af"},{"Albanian","sq"},{"Amharic","am"},{"Armenian","hy"},{"Assamese","as"},{"Azerbaijani","az"},
         {"Bangla","bn"},{"Bashkir","ba"},{"Basque","eu"},{"Bosnian(Latin)","bs"},{"Bulgarian","bg"},
@@ -62,8 +52,6 @@ namespace Utils
         {"Vietnamese","vi"},{"Welsh","cy"},{"Yucatec Maya","yua"},{"Zulu","zu"},
         };
         public static readonly string[] TranslateServer = { "Baidu","Bing"};
-        public static readonly int TransServerUsing = 0;
-        public static readonly string[] SuporttedFormat={ "ass", "srt" };
 
         //Baidu Fanyi Server Info
         private static readonly string baiduAppId = "20220430001197782";
@@ -77,10 +65,11 @@ namespace Utils
         // This is required if using a Cognitive Services resource.
         private static readonly string location = "eastasia";
 
-        private static readonly string spiltMark = "&#";
+        private static readonly string[] ContactMark = { "\n&#", "\r\n" };
+        private static readonly string[] SpiltMark = { "&#", "\\r\\n" };
         private static readonly string assHeader = "[Script Info]\n; This is an Advanced Sub Station Alpha v4+ script.\nTitle: \nScriptType: v4.00+\nPlayDepth: 0\nScaledBorderAndShadow: Yes\n\n[V4 + Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\nStyle: Default,Arial,20,&H00FFFFFF,&H0000FFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,1,2,10,10,10,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n";
 
-        public static string TranslateText(string textToTranslate, string from = "en", string to = "zh-Hans")
+        public static string TranslateText(string textToTranslate, string from = "en", string to = "zh-Hans", int TransServerUsing = 0)
         {
             switch (TransServerUsing)
             {
@@ -92,16 +81,19 @@ namespace Utils
                     return "";
             }
         }
-        public static string BDTranslateText(string textToTranslate, string from = "en", string to = "zh")
+        /// <summary>
+        /// 百度翻译
+        /// </summary>
+        /// <param name="textToTranslate"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
+        public static string BDTranslateText(string textToTranslate,string from = "en", string to = "zh")
         {
-            // 原文
             string q = textToTranslate;
-            // 改成您的APP ID
             string appId = baiduAppId;
-            // 改成您的APP ID
             Random rd = new Random();
             string salt = rd.Next(100000).ToString();
-            // 改成您的密钥
             string secretKey = baiduKey;
             string sign = EncryptString(appId + q + salt + secretKey);
             string url = "http://api.fanyi.baidu.com/api/trans/vip/translate?";
@@ -147,8 +139,9 @@ namespace Utils
             // 返回加密的字符串
             return sb.ToString();
         }
+
         /// <summary>
-        /// 翻译并输出翻译后的文本
+        /// Azure Translator Bing翻译并输出翻译后的文本 用的MSDN样例修改
         /// </summary>
         /// <param name="textToTranslate">需要翻译的文本</param>
         /// <param name="from">从什么语言</param>
@@ -188,7 +181,7 @@ namespace Utils
         /// </summary>
         /// <param name="filepath">字幕文件路径</param>
         /// <param name="savepath">翻译后保存的文件路径</param>
-        public static void TranslateSubTextFile(string filepath, string savepath, int subFormat, string from= "English", string to= "Chinese Simplified")
+        public static void TranslateSubTextFile(string filepath, string savepath, SubType subFormat, string from= "English", string to= "Chinese Simplified", int TransServerUsing = 0)
         {
             FileInfo fi = new FileInfo(filepath);
             Encoding ecd = GetFileEncodeType(filepath);
@@ -199,7 +192,7 @@ namespace Utils
                     {
                         using (StreamReader sr = new StreamReader(filepath, ecd))
                         {
-                            rst=TranslateAssSubStr(sr,from,to);
+                            rst=TranslateAssSubStr(sr,from,to, TransServerUsing);
                             break;
                         }
                     }
@@ -207,7 +200,7 @@ namespace Utils
                     {
                         using (StreamReader sr = new StreamReader(filepath, ecd))
                         {
-                            rst=TranslateSrtSubStr(sr, from, to);
+                            rst=TranslateSrtSubStr(sr, from, to, TransServerUsing);
                             break;
                         }
                     }
@@ -218,7 +211,7 @@ namespace Utils
             }
             using (StreamWriter sw = new StreamWriter(savepath, false, ecd))
             {
-                sw.Write(rst[subFormat].ToString());
+                sw.Write(rst[((int)subFormat)].ToString());
                 sw.Flush();
                 sw.Close();
             }
@@ -228,47 +221,50 @@ namespace Utils
         /// </summary>
         /// <param name="sr">Srt格式的文本流</param>
         /// <param name="newsubtext">翻译后的文本</param>
-        public static List<StringBuilder> TranslateSrtSubStr(StreamReader sr, string from = "English", string to = "Chinese Simplified")
+        public static List<StringBuilder> TranslateSrtSubStr(StreamReader sr, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
         {
             List<SubLineModel> SubModel = new List<SubLineModel>();
-            string substr;
+            string substr,beginTimeStr, endTimeStr;
             StringBuilder subLines=new StringBuilder();
-            string newsubstr;
+            string line;
             while (!sr.EndOfStream)
             {
                 substr = sr.ReadLine();
                 if (substr != "")
                 {
-                    newsubstr = "";
                     SubLineModel slm = new SubLineModel();
                     substr = sr.ReadLine();
-                    slm.BeginTime = substr.Substring(0,substr.IndexOf('-'));
-                    slm.EndTime = substr.Substring(substr.LastIndexOf('>')+2, substr.Length-(substr.LastIndexOf('>') +2));
+                    beginTimeStr = substr.Substring(0,substr.IndexOf('-')-1).Replace(",",".");
+                    endTimeStr = substr.Substring(substr.LastIndexOf('>')+2, substr.Length-(substr.LastIndexOf('>') +2)).Replace(",", ".");
+                    slm.BeginTime = TimeSpan.Parse(beginTimeStr);
+                    slm.EndTime = TimeSpan.Parse(endTimeStr);
                     substr = sr.ReadLine();
-                    slm.MainLine = "";
+                    slm.MainLine = substr;
+                    substr = sr.ReadLine();
                     while (substr != "")
                     {
-                        slm.MainLine += substr+"\n";
-                        newsubstr += substr+"\n";
+                        slm.MainLine += " " + substr;
                         substr = sr.ReadLine();
                     }
-                    slm.MainLine += substr;
+                    line = slm.MainLine;
+                    slm.MainLine = line.Replace("<i>", "").Replace("</i>", "");
                     SubModel.Add(slm);
-                    subLines.Append(newsubstr + spiltMark);
+                    subLines.Append(slm.MainLine + ContactMark[TransServerUsing]);
                 }
             }
-            string transedSubLineAll = TranslateText(subLines.ToString(), Language[from], Language[to]);
-            string[] transedSubLines = transedSubLineAll.Split(new string[] { spiltMark }, StringSplitOptions.RemoveEmptyEntries);
+            string transedSubLineAll = TranslateText(subLines.ToString(), Language[from], Language[to], TransServerUsing);
+            string[] transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
+            transedSubLineAll.Remove(transedSubLineAll.Length - transedSubLines[transedSubLines.Length - 1].Length, transedSubLines[transedSubLines.Length - 1].Length);
             while (transedSubLines.Length < SubModel.Count())
             {
                 subLines.Clear();
-                for (int i = transedSubLines.Length; i < SubModel.Count(); i++)
+                for (int i = transedSubLines.Length-1; i < SubModel.Count(); i++)
                 {
-                    subLines.Append(SubModel[i].MainLine + spiltMark);
+                    subLines.Append(SubModel[i].MainLine + ContactMark[TransServerUsing]);
                 }
                 Thread.Sleep(baiduRequestDelayTime);
-                transedSubLineAll += TranslateText(subLines.ToString(), Language[from], Language[to]);
-                transedSubLines = transedSubLineAll.Split(new string[] { spiltMark }, StringSplitOptions.RemoveEmptyEntries);
+                transedSubLineAll += TranslateText(subLines.ToString(), Language[from], Language[to], TransServerUsing);
+                transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
             }
             return GenerateResultTxt(SubModel, transedSubLines);
         }
@@ -277,10 +273,10 @@ namespace Utils
         /// </summary>
         /// <param name="sr">Ass格式的文本流</param>
         /// <param name="newsubtext">翻译后的文本</param>
-        public static List<StringBuilder> TranslateAssSubStr(StreamReader sr, string from = "English", string to = "Chinese Simplified")
+        public static List<StringBuilder> TranslateAssSubStr(StreamReader sr,string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
         {
             List<SubLineModel> SubModel = new List<SubLineModel>();
-            string substr;
+            string substr, beginTimeStr, endTimeStr;
             StringBuilder subLines = new StringBuilder();
             Queue<string> substrs = new Queue<string>();
             string line;
@@ -300,27 +296,30 @@ namespace Utils
                     c = substr.IndexOf(',') + 1;
                     d = substr.IndexOf(',', c)+1;
                     e = substr.IndexOf(',', d);
-                    slm.BeginTime = substr.Substring(c, d-c-1);
-                    slm.EndTime = substr.Substring(d, e-d);
-                    x = Math.Max(a+2, b+1);
+                    beginTimeStr= substr.Substring(c, d - c - 1);
+                    endTimeStr= substr.Substring(d, e - d);
+                    slm.BeginTime = TimeSpan.Parse(beginTimeStr);
+                    slm.EndTime = TimeSpan.Parse(endTimeStr);
+                    x = a+2;
                     line = substr.Substring(x, substr.Length - x);
-                    slm.MainLine = line;
+                    slm.MainLine = line.Replace(@"\N", " ").Replace("{\\i1}", "").Replace("{\\i0}", "");
                     SubModel.Add(slm);
-                    subLines.Append(line + spiltMark);
+                    subLines.Append(slm.MainLine + ContactMark[TransServerUsing]);
                 }
             }
-            string transedSubLineAll = TranslateText(subLines.ToString(),Language[from], Language[to]);
-            string[] transedSubLines = transedSubLineAll.Split(new string[] { spiltMark }, StringSplitOptions.RemoveEmptyEntries);
+            string transedSubLineAll = TranslateText(subLines.ToString(), Language[from], Language[to], TransServerUsing);
+            string[] transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
+            transedSubLineAll.Remove(transedSubLineAll.Length - transedSubLines[transedSubLines.Length - 1].Length, transedSubLines[transedSubLines.Length - 1].Length);
             while (transedSubLines.Length < SubModel.Count())
             {
                 subLines.Clear();
-                Thread.Sleep(baiduRequestDelayTime);
-                for (int i = transedSubLines.Length; i < SubModel.Count(); i++)
+                for (int i = transedSubLines.Length - 1; i < SubModel.Count(); i++)
                 {
-                    subLines.Append(SubModel[i].MainLine + spiltMark);
+                    subLines.Append(SubModel[i].MainLine + ContactMark[TransServerUsing]);
                 }
-                transedSubLineAll +=TranslateText(subLines.ToString(), Language[from], Language[to]);
-                transedSubLines = transedSubLineAll.Split(new string[] { spiltMark }, StringSplitOptions.RemoveEmptyEntries);
+                Thread.Sleep(baiduRequestDelayTime);
+                transedSubLineAll += TranslateText(subLines.ToString(), Language[from], Language[to], TransServerUsing);
+                transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
             }
             return GenerateResultTxt(SubModel, transedSubLines);
         }
@@ -371,12 +370,15 @@ namespace Utils
 
             for (int i = 0; i < SubModel.Count(); i++)
             {
+                transedSubLines[i].Replace("\n","");
+                transedSubLines[i].Replace(@"\n", "");
+                SubModel[i].SecondLine = transedSubLines[i];
                 SubModel[i].SecondLine = transedSubLines[i];
                 srtTxt.Append((i + 1).ToString() + "\n");
-                srtTxt.Append(SubModel[i].BeginTime + " --> " + SubModel[i].EndTime + "\n");
+                srtTxt.Append(SubModel[i].SrtBeginTime + " --> " + SubModel[i].SrtEndTime + "\n");
                 srtTxt.Append(SubModel[i].MainLine + "\n");
                 srtTxt.Append(SubModel[i].SecondLine + "\n\n");
-                assTxt.Append("Dialogue: 0," + SubModel[i].BeginTime + "," + SubModel[i].EndTime + ",Default,,0,0,0,," + SubModel[i].MainLine + @"\N" + SubModel[i].SecondLine + "\n");
+                assTxt.Append("Dialogue: 0," + SubModel[i].AssBeginTime + "," + SubModel[i].AssEndTime + ",Default,,0,0,0,," + SubModel[i].MainLine + @"\N" + SubModel[i].SecondLine + "\n");
             }
             return new List<StringBuilder>() { assTxt,srtTxt};
         }

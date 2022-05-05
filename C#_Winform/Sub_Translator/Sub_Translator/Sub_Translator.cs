@@ -25,20 +25,25 @@ namespace Sub_Translator
                 comboBoxTo.Items.Add(e.Key);
             }
 
-            foreach (var e in TranslatorHelper.SuporttedFormat)
+            foreach (var e in Enum.GetNames(typeof(SubHelper.SubType)))
             {
                 comboBox_Format.Items.Add(e);
             }
+            foreach (var e in TranslatorHelper.TranslateServer)
+            {
+                comboBox_Server.Items.Add(e);
+            }
+            comboBox_Server.SelectedIndex = 0;
             comboBox_Format.SelectedIndex = 0;
             comboBoxFrom.SelectedItem = "English";
             comboBoxTo.SelectedItem = "Chinese Simplified";
-            tbSubfilepath.Text = ConfigurationManager.AppSettings["Subfilepath"];
-            tbSubfoldername.Text = ConfigurationManager.AppSettings["Subfoldername"];
+            tbSubfilepath.Text = AppConfigHelper.LoadKey("Subfilepath");
+            tbSubfoldername.Text = AppConfigHelper.LoadKey("Subfilepath");
         }
         private void SaveConfig()
         {
-            AddUpdateAppSettings("Subfilepath", tbSubfilepath.Text);
-            AddUpdateAppSettings("Subfoldername", tbSubfoldername.Text);
+            AppConfigHelper.UpdateKey("Subfilepath", tbSubfilepath.Text);
+            AppConfigHelper.UpdateKey("Subfoldername", tbSubfoldername.Text);
         }
         #region event
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -54,22 +59,42 @@ namespace Sub_Translator
 
         private void btnTranslate_Click(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "操作中";
-            FileInfo fi = new FileInfo(tbSubfilepath.Text);
-            string savepath = tbSubfilepath.Text;
-            if (!cbReplace.Checked)
+            if (!File.Exists(tbSubfilepath.Text))
             {
-                savepath = fi.DirectoryName + @"\" + fi.Name.Replace(fi.Extension, "") + "_Trans" + fi.Extension;
+                MessageBox.Show("该路径下没有字幕文件");
+                return;
             }
-            TranslatorHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath, comboBox_Format.SelectedIndex, comboBoxFrom.Text, comboBoxTo.Text);
-            SaveConfig();
-            toolStripStatusLabel1.Text = "操作完成";
+            toolStripStatusLabel1.Text = "操作中";
+            toolStripProgressBar1.Visible = true;
+            toolStripProgressBar1.Value = 25;
+            btnTranslate.Enabled = false;
+            btnFolderTranslate.Enabled = false;
+            int idx_Format = comboBox_Format.SelectedIndex;
+            string str_From = comboBoxFrom.Text;
+            string str_To = comboBoxTo.Text;
+            int idx_Server = comboBox_Server.SelectedIndex;
+            FileInfo fi = new FileInfo(tbSubfilepath.Text);
+            string savepath = fi.DirectoryName + @"\" + fi.Name.Replace(fi.Extension, "") + "_Trans" + "."+ ((SubHelper.SubType)idx_Format).ToString();
             Task.Run(new Action(() =>
             {
-                Thread.Sleep(2000);
+                SubHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath, (SubHelper.SubType)idx_Format, str_From, str_To, idx_Server);
+                SaveConfig();
                 this.BeginInvoke(new MethodInvoker(() =>
                 {
-                    toolStripStatusLabel1.Text = "准备";
+                    toolStripProgressBar1.Value = 100;
+                    toolStripStatusLabel1.Text = "操作完成";
+                    btnTranslate.Enabled = true;
+                    btnFolderTranslate.Enabled = true;
+                }));
+                Task.Run(new Action(() =>
+                {
+                    Thread.Sleep(2000);
+                    this.BeginInvoke(new MethodInvoker(() =>
+                    {
+                        toolStripProgressBar1.Visible = false;
+                        toolStripProgressBar1.Value = 0;
+                        toolStripStatusLabel1.Text = "准备";
+                    }));
                 }));
             }));
         }
@@ -86,12 +111,6 @@ namespace Sub_Translator
 
         private void btnFolderTranslate_Click(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "操作中";
-            string savefolder = tbSubfoldername.Text;
-            if (!cbReplace.Checked)
-            {
-                savefolder = tbSubfoldername.Text + "_Trans";
-            }
             DirectoryInfo di = new DirectoryInfo(tbSubfoldername.Text);
             FileInfo[] di_FileInfo = di.GetFiles("*", SearchOption.AllDirectories);
             if (di_FileInfo.Count() == 0)
@@ -99,21 +118,33 @@ namespace Sub_Translator
                 MessageBox.Show("该目录下没有字幕文件");
                 return;
             }
+            toolStripStatusLabel1.Text = "操作中";
+            toolStripProgressBar1.Visible = true;
             btnTranslate.Enabled = false;
             btnFolderTranslate.Enabled = false;
+            int idx_Format = comboBox_Format.SelectedIndex;
+            string str_From = comboBoxFrom.Text;
+            string str_To=comboBoxTo.Text;
+            int idx_Server = comboBox_Server.SelectedIndex;
+            string savefolder = tbSubfoldername.Text + "_Trans";
             Task.Run(new Action(() =>
             {
                 foreach (FileInfo f in di_FileInfo)
                 {
                     string savepath = savefolder + @"\" +
-                        f.FullName.Substring(tbSubfoldername.Text.Length, f.FullName.Length - tbSubfoldername.Text.Length);
+                        f.FullName.Substring(tbSubfoldername.Text.Length, f.FullName.Length - tbSubfoldername.Text.Length-f.Extension.Length) + "." + ((SubHelper.SubType)idx_Format).ToString();
                     Directory.CreateDirectory(savepath.Substring(0, savepath.Length - f.Name.Length));
-                    TranslatorHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath, comboBox_Format.SelectedIndex, comboBoxFrom.Text, comboBoxTo.Text);
+                    SubHelper.TranslateSubTextFile(f.FullName, savepath, (SubHelper.SubType)idx_Format, str_From, str_To, idx_Server);
+                    this.BeginInvoke(new MethodInvoker(() =>
+                    {
+                        toolStripProgressBar1.Value += 100 / di_FileInfo.Length;
+                    }));
                     Thread.Sleep(1000);
                 }
                 SaveConfig();
                 this.BeginInvoke(new MethodInvoker(() =>
                 {
+                    toolStripProgressBar1.Value = 100;
                     toolStripStatusLabel1.Text = "操作完成";
                     btnTranslate.Enabled = true;
                     btnFolderTranslate.Enabled = true;
@@ -123,6 +154,8 @@ namespace Sub_Translator
                     Thread.Sleep(2000);
                     this.BeginInvoke(new MethodInvoker(() =>
                     {
+                        toolStripProgressBar1.Value = 0;
+                        toolStripProgressBar1.Visible = false;
                         toolStripStatusLabel1.Text = "准备";
                     }));
                 }));
@@ -131,30 +164,5 @@ namespace Sub_Translator
         }
         #endregion
 
-        #region function
-        private void AddUpdateAppSettings(string key, string value)
-        {
-            try
-            {
-                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                var settings = configFile.AppSettings.Settings;
-                if (settings[key] == null)
-                {
-                    settings.Add(key, value);
-                }
-                else
-                {
-                    settings[key].Value = value;
-                }
-                configFile.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
-            }
-            catch (ConfigurationErrorsException)
-            {
-                Console.WriteLine("Error writing app settings");
-            }
-        }
-
-        #endregion
     }
 }

@@ -37,7 +37,6 @@ namespace Sub_Translator
             this.btnFolderTranslate = new System.Windows.Forms.Button();
             this.tbSubfoldername = new System.Windows.Forms.TextBox();
             this.btnFolderBrowse = new System.Windows.Forms.Button();
-            this.cbReplace = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.comboBoxFrom = new System.Windows.Forms.ComboBox();
@@ -46,6 +45,9 @@ namespace Sub_Translator
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox_Format = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox_Server = new System.Windows.Forms.ComboBox();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,23 +139,12 @@ namespace Sub_Translator
             this.btnFolderBrowse.UseVisualStyleBackColor = true;
             this.btnFolderBrowse.Click += new System.EventHandler(this.btnFolderBrowse_Click);
             // 
-            // cbReplace
-            // 
-            this.cbReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbReplace.AutoSize = true;
-            this.cbReplace.Location = new System.Drawing.Point(1157, 267);
-            this.cbReplace.Margin = new System.Windows.Forms.Padding(6);
-            this.cbReplace.Name = "cbReplace";
-            this.cbReplace.Size = new System.Drawing.Size(149, 29);
-            this.cbReplace.TabIndex = 8;
-            this.cbReplace.Text = "替换原文件";
-            this.cbReplace.UseVisualStyleBackColor = true;
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripProgressBar1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 323);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1352, 42);
@@ -220,11 +211,37 @@ namespace Sub_Translator
             this.label5.TabIndex = 18;
             this.label5.Text = "Format:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(52, 271);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 25);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Server:";
+            // 
+            // comboBox_Server
+            // 
+            this.comboBox_Server.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Server.FormattingEnabled = true;
+            this.comboBox_Server.Location = new System.Drawing.Point(139, 263);
+            this.comboBox_Server.Name = "comboBox_Server";
+            this.comboBox_Server.Size = new System.Drawing.Size(174, 33);
+            this.comboBox_Server.TabIndex = 19;
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 30);
+            this.toolStripProgressBar1.Visible = false;
+            // 
             // Sub_Translator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1352, 365);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox_Server);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox_Format);
             this.Controls.Add(this.label4);
@@ -232,7 +249,6 @@ namespace Sub_Translator
             this.Controls.Add(this.comboBoxTo);
             this.Controls.Add(this.comboBoxFrom);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.cbReplace);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFolderTranslate);
             this.Controls.Add(this.tbSubfoldername);
@@ -261,7 +277,6 @@ namespace Sub_Translator
         private System.Windows.Forms.Button btnFolderTranslate;
         private System.Windows.Forms.TextBox tbSubfoldername;
         private System.Windows.Forms.Button btnFolderBrowse;
-        private System.Windows.Forms.CheckBox cbReplace;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ComboBox comboBoxFrom;
@@ -270,6 +285,9 @@ namespace Sub_Translator
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox_Format;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox_Server;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
 

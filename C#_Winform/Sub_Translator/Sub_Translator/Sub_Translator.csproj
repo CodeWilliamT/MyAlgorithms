@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppConfigHelper.cs" />
+    <Compile Include="SubHelper.cs" />
     <Compile Include="Sub_Translator.cs">
       <SubType>Form</SubType>
     </Compile>
