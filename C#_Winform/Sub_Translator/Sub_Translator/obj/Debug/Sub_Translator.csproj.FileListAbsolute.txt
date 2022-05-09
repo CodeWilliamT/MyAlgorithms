@@ -11,7 +11,6 @@ C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Winform\Sub_Translato
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.pdb
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.csproj.AssemblyReference.cache
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.Sub_Translator.resources
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.csproj.AssemblyReference.cache
 C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.Sub_Translator.resources
 C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.Properties.Resources.resources
 C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.csproj.GenerateResource.cache
@@ -24,3 +23,4 @@ C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translat
 C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\bin\Debug\Newtonsoft.Json.dll
 C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\bin\Debug\Newtonsoft.Json.xml
 C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.csproj.CopyComplete
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\Sub_Translator\Sub_Translator\obj\Debug\Sub_Translator.csproj.AssemblyReference.cache

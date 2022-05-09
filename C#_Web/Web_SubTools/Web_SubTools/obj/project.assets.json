@@ -48,19 +48,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Me\\.nuget\\packages\\": {}
+    "C:\\Users\\me\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Web\\Web_SubTools\\Web_SubTools\\Web_SubTools.csproj",
+      "projectUniqueName": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_Web\\Web_SubTools\\Web_SubTools\\Web_SubTools.csproj",
       "projectName": "Web_SubTools",
-      "projectPath": "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Web\\Web_SubTools\\Web_SubTools\\Web_SubTools.csproj",
-      "packagesPath": "C:\\Users\\Me\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Me\\source\\repos\\WeiliangTong\\WilliamPublicRepo\\C#_Web\\Web_SubTools\\Web_SubTools\\obj\\",
+      "projectPath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_Web\\Web_SubTools\\Web_SubTools\\Web_SubTools.csproj",
+      "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_Web\\Web_SubTools\\Web_SubTools\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

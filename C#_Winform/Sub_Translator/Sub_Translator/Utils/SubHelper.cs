@@ -12,8 +12,9 @@ namespace Utils
     {
         private static readonly string assHeader = "[Script Info]\n; This is an Advanced Sub Station Alpha v4+ script.\nTitle: \nScriptType: v4.00+\nPlayDepth: 0\nScaledBorderAndShadow: Yes\n\n[V4 + Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\nStyle: Default,Arial,20,&H00FFFFFF,&H0000FFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,1,2,10,10,10,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n";
 
-        private static readonly string[] ContactMark = { "\n&#", "\r\n" };
+        private static readonly string[] ContactMark = { "\n&#\n", "\r\n" };
         private static readonly string[] SpiltMark = { "&#", "\\r\\n" };
+        private const int TransLinesMax = 500;
 
         public enum SubType { ass, srt }
         //用于接受从srt/ass文件读取的文件格式
@@ -58,6 +59,10 @@ namespace Utils
         /// </summary>
         /// <param name="filepath">字幕文件路径</param>
         /// <param name="savepath">翻译后保存的文件路径</param>
+        /// <param name="subFormat">希望转化为的字幕格式</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">翻译为什么语言</param>
+        /// <param name="TransServerUsing">用哪个翻译服务</param>
         public static void TranslateSubTextFile(string filepath, string savepath, SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
         {
             FileInfo fi = new FileInfo(filepath);
@@ -69,7 +74,7 @@ namespace Utils
                     {
                         using (StreamReader sr = new StreamReader(filepath, ecd))
                         {
-                            SubModel = GetAssSubModel(sr);
+                            SubModel = GetAssSingleSubModel(sr);
                             break;
                         }
                     }
@@ -77,17 +82,17 @@ namespace Utils
                     {
                         using (StreamReader sr = new StreamReader(filepath, ecd))
                         {
-                            SubModel = GetSrtSubModel(sr);
+                            SubModel = GetSrtSingleSubModel(sr);
                             break;
                         }
                     }
                 default:
                     {
-                        return;
+                        throw new Exception("It's not a supported sub type.");
                     }
             }
-            string[] transedSubLines = GetTranslatedSubLines(SubModel,from, to, TransServerUsing);
-            List<StringBuilder> rst= GetTransMergedTxt(SubModel, transedSubLines);
+            string[] transedSubLines = GetTranslatedSubLines(SubModel, from, to, TransServerUsing);
+            List<StringBuilder> rst = GetTransMergedTxt(SubModel, transedSubLines);
             using (StreamWriter sw = new StreamWriter(savepath, false, ecd))
             {
                 sw.Write(rst[((int)subFormat)].ToString());
@@ -96,11 +101,47 @@ namespace Utils
             }
         }
         /// <summary>
-        /// 将Srt格式文本流转化为模型
+        /// 翻译字幕文件流
+        /// </summary>
+        /// <param name="sr">字幕文件的文件信息</param>
+        /// <param name="subFormat">希望转化为的字幕格式</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">翻译为什么语言</param>
+        /// <param name="TransServerUsing">用哪个翻译服务</param>
+        public static List<StringBuilder> TranslateSubTextStream(string fileName, StreamReader sr, SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        {
+            List<SubLineModel> SubModel;
+            int extIdx = fileName.LastIndexOf('.');
+            int len = fileName.Length;
+            string ext = fileName.Substring(extIdx, len - extIdx).ToLower();
+            switch (ext)
+            {
+                case ".ass":
+                    {
+                        SubModel = GetAssSingleSubModel(sr);
+                        break;
+                    }
+                case ".srt":
+                    {
+                        SubModel = GetSrtSingleSubModel(sr);
+                        break;
+                    }
+                default:
+                    {
+                        throw new Exception("It's not a supported sub type.");
+                    }
+            }
+            string[] transedSubLines = GetTranslatedSubLines(SubModel, from, to, TransServerUsing);
+            List<StringBuilder> rst = GetTransMergedTxt(SubModel, transedSubLines);
+            return rst;
+        }
+
+        /// <summary>
+        /// 将Srt格式单字幕文本流转化为模型
         /// </summary>
         /// <param name="sr"></param>
         /// <returns></returns>
-        public static List<SubLineModel> GetSrtSubModel(StreamReader sr)
+        public static List<SubLineModel> GetSrtSingleSubModel(StreamReader sr)
         {
             List<SubLineModel> SubModel = new List<SubLineModel>();
             string substr, beginTimeStr, endTimeStr;
@@ -131,11 +172,11 @@ namespace Utils
             }
             return SubModel;
         }/// <summary>
-        /// 将Ass格式文本流转化为模型
-        /// </summary>
-        /// <param name="sr"></param>
-        /// <returns></returns>
-        public static List<SubLineModel> GetAssSubModel(StreamReader sr)
+         /// 将单字幕Ass格式文本流转化为模型
+         /// </summary>
+         /// <param name="sr"></param>
+         /// <returns></returns>
+        public static List<SubLineModel> GetAssSingleSubModel(StreamReader sr)
         {
             List<SubLineModel> SubModel = new List<SubLineModel>();
             string substr, beginTimeStr, endTimeStr;
@@ -169,17 +210,25 @@ namespace Utils
             }
             return SubModel;
         }
-        //根据模型生成翻译后的每一句字幕的数组
+        /// <summary>
+        /// 根据模型生成翻译后的每一句字幕的数组
+        /// </summary>
+        /// <param name="SubModel"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="TransServerUsing"></param>
+        /// <returns></returns>
         private static string[] GetTranslatedSubLines(List<SubLineModel> SubModel, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
         {
-            StringBuilder subLines=new StringBuilder();
+            StringBuilder subLines = new StringBuilder();
             string transedSubLineAll = "";
             string[] transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
             while (transedSubLines.Length < SubModel.Count())
             {
-                if(string.IsNullOrEmpty(transedSubLineAll)) transedSubLineAll.Remove(transedSubLineAll.Length - transedSubLines[transedSubLines.Length - 1].Length, transedSubLines[transedSubLines.Length - 1].Length);
+                if (!string.IsNullOrEmpty(transedSubLineAll))
+                    transedSubLineAll.Remove(transedSubLineAll.Length - transedSubLines[transedSubLines.Length - 1].Length, transedSubLines[transedSubLines.Length - 1].Length);
                 subLines.Clear();
-                for (int i = transedSubLines.Length - 1; i < SubModel.Count(); i++)
+                for (int i = Math.Max(transedSubLines.Length - 1, 0), cnt = 0; i < SubModel.Count() && cnt < TransLinesMax; i++, cnt++)
                 {
                     subLines.Append(SubModel[i].MainLine + ContactMark[TransServerUsing]);
                 }

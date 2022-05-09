@@ -56,6 +56,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\SubHelper.cs" />
+    <Compile Include="Utils\TranslatorHelper.cs" />
     <EmbeddedResource Include="DoubleSubSwitcher.resx">
       <DependentUpon>DoubleSubSwitcher.cs</DependentUpon>
     </EmbeddedResource>

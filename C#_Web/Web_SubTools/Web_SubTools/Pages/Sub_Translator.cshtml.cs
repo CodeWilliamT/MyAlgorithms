@@ -26,39 +26,22 @@ namespace Web_SubTools.Pages
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            MSTranslatorHelper.From = Model_Sub_Translator.From;
-            MSTranslatorHelper.To = Model_Sub_Translator.To;
-            int extIdx = Model_Sub_Translator.SubFormFile.FileName.LastIndexOf('.');
-            int len = Model_Sub_Translator.SubFormFile.FileName.Length;
-            string ext = Model_Sub_Translator.SubFormFile.FileName.Substring(extIdx, len - extIdx).ToLower();
-            StringBuilder newsubtext = new StringBuilder();
             await Task.Run(new Action(() =>
             {
-                switch (ext)
+                List<StringBuilder> rst;
+                try
                 {
-                    case ".ass":
-                        {
-                            using (StreamReader sr = new StreamReader(Model_Sub_Translator.SubFormFile.OpenReadStream()))
-                            {
-                                MSTranslatorHelper.TranslateAssSubStr(sr, newsubtext);
-                                break;
-                            }
-                        }
-                    case ".srt":
-                        {
-                            using (StreamReader sr = new StreamReader(Model_Sub_Translator.SubFormFile.OpenReadStream()))
-                            {
-                                MSTranslatorHelper.TranslateSrtSubStr(sr, newsubtext);
-                                break;
-                            }
-                        }
-                    default:
-                        {
-                            fileWarning = string.Format(CultureInfo.CurrentCulture, "The input file must be .ass or .srt file!");
-                            break;
-                        }
+                    using (StreamReader sr = new StreamReader(Model_Sub_Translator.SubFormFile.OpenReadStream()))
+                    {
+                        rst = SubHelper.TranslateSubTextStream(Model_Sub_Translator.SubFormFile.FileName, sr, (SubHelper.SubType)0);
+                    }
                 }
-                switchedResult = newsubtext.ToString();
+                catch(Exception ex)
+                {
+                    switchedResult = ex.Message;
+                    return;
+                }  
+                switchedResult = rst[0].ToString();
             }));
             return Page();
         }

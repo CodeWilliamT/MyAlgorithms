@@ -134,7 +134,15 @@ namespace Sub_Translator
                     string savepath = savefolder + @"\" +
                         f.FullName.Substring(tbSubfoldername.Text.Length, f.FullName.Length - tbSubfoldername.Text.Length-f.Extension.Length) + "." + ((SubHelper.SubType)idx_Format).ToString();
                     Directory.CreateDirectory(savepath.Substring(0, savepath.Length - f.Name.Length));
-                    SubHelper.TranslateSubTextFile(f.FullName, savepath, (SubHelper.SubType)idx_Format, str_From, str_To, idx_Server);
+                    try
+                    {
+                        SubHelper.TranslateSubTextFile(f.FullName, savepath, (SubHelper.SubType)idx_Format, str_From, str_To, idx_Server);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
                     this.BeginInvoke(new MethodInvoker(() =>
                     {
                         toolStripProgressBar1.Value += 100 / di_FileInfo.Length;

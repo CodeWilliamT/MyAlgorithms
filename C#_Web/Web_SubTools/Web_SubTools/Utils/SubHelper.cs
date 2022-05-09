@@ -3,12 +3,263 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Utils
 {
     public class SubHelper
     {
+        private static readonly string assHeader = "[Script Info]\n; This is an Advanced Sub Station Alpha v4+ script.\nTitle: \nScriptType: v4.00+\nPlayDepth: 0\nScaledBorderAndShadow: Yes\n\n[V4 + Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\nStyle: Default,Arial,20,&H00FFFFFF,&H0000FFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,1,2,10,10,10,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n";
+
+        private static readonly string[] ContactMark = { "\n&#\n", "\r\n" };
+        private static readonly string[] SpiltMark = { "&#", "\\r\\n" };
+        private const int TransLinesMax = 500;
+
+        public enum SubType { ass, srt }
+        //用于接受从srt/ass文件读取的文件格式
+        public class SubLineModel
+        {
+            public TimeSpan BeginTime { get; set; }
+            public TimeSpan EndTime { get; set; }
+            public string AssBeginTime
+            {
+                get
+                {
+                    return BeginTime.ToString(@"h\:mm\:ss\.ff");
+                }
+            }
+            public string AssEndTime
+            {
+                get
+                {
+                    return EndTime.ToString(@"h\:mm\:ss\.ff");
+                }
+            }
+            public string SrtBeginTime
+            {
+                get
+                {
+                    return BeginTime.ToString(@"hh\:mm\:ss\,fff");
+                }
+            }
+            public string SrtEndTime
+            {
+                get
+                {
+                    return EndTime.ToString(@"hh\:mm\:ss\,fff");
+                }
+            }
+            public string MainLine { get; set; }
+            public string SecondLine { get; set; }
+        }
+
+        /// <summary>
+        /// 翻译字幕文件
+        /// </summary>
+        /// <param name="filepath">字幕文件路径</param>
+        /// <param name="savepath">翻译后保存的文件路径</param>
+        /// <param name="subFormat">希望转化为的字幕格式</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">翻译为什么语言</param>
+        /// <param name="TransServerUsing">用哪个翻译服务</param>
+        public static void TranslateSubTextFile(string filepath, string savepath, SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        {
+            FileInfo fi = new FileInfo(filepath);
+            Encoding ecd = GetFileEncodeType(filepath);
+            List<SubLineModel> SubModel;
+            switch (fi.Extension.ToLower())
+            {
+                case ".ass":
+                    {
+                        using (StreamReader sr = new StreamReader(filepath, ecd))
+                        {
+                            SubModel = GetAssSingleSubModel(sr);
+                            break;
+                        }
+                    }
+                case ".srt":
+                    {
+                        using (StreamReader sr = new StreamReader(filepath, ecd))
+                        {
+                            SubModel = GetSrtSingleSubModel(sr);
+                            break;
+                        }
+                    }
+                default:
+                    {
+                        throw new Exception("It's not a supported sub type.");
+                    }
+            }
+            string[] transedSubLines = GetTranslatedSubLines(SubModel, from, to, TransServerUsing);
+            List<StringBuilder> rst = GetTransMergedTxt(SubModel, transedSubLines);
+            using (StreamWriter sw = new StreamWriter(savepath, false, ecd))
+            {
+                sw.Write(rst[((int)subFormat)].ToString());
+                sw.Flush();
+                sw.Close();
+            }
+        }
+        /// <summary>
+        /// 翻译字幕文件流
+        /// </summary>
+        /// <param name="sr">字幕文件的文件信息</param>
+        /// <param name="subFormat">希望转化为的字幕格式</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">翻译为什么语言</param>
+        /// <param name="TransServerUsing">用哪个翻译服务</param>
+        public static List<StringBuilder> TranslateSubTextStream(string fileName, StreamReader sr, SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        {
+            List<SubLineModel> SubModel;
+            int extIdx = fileName.LastIndexOf('.');
+            int len = fileName.Length;
+            string ext = fileName.Substring(extIdx, len - extIdx).ToLower();
+            switch (ext)
+            {
+                case ".ass":
+                    {
+                        SubModel = GetAssSingleSubModel(sr);
+                        break;
+                    }
+                case ".srt":
+                    {
+                        SubModel = GetSrtSingleSubModel(sr);
+                        break;
+                    }
+                default:
+                    {
+                        throw new Exception("It's not a supported sub type.");
+                    }
+            }
+            string[] transedSubLines = GetTranslatedSubLines(SubModel, from, to, TransServerUsing);
+            List<StringBuilder> rst = GetTransMergedTxt(SubModel, transedSubLines);
+            return rst;
+        }
+
+        /// <summary>
+        /// 将Srt格式单字幕文本流转化为模型
+        /// </summary>
+        /// <param name="sr"></param>
+        /// <returns></returns>
+        public static List<SubLineModel> GetSrtSingleSubModel(StreamReader sr)
+        {
+            List<SubLineModel> SubModel = new List<SubLineModel>();
+            string substr, beginTimeStr, endTimeStr;
+            string line;
+            while (!sr.EndOfStream)
+            {
+                substr = sr.ReadLine();
+                if (substr != "")
+                {
+                    SubLineModel slm = new SubLineModel();
+                    substr = sr.ReadLine();
+                    beginTimeStr = substr.Substring(0, substr.IndexOf('-') - 1).Replace(",", ".");
+                    endTimeStr = substr.Substring(substr.LastIndexOf('>') + 2, substr.Length - (substr.LastIndexOf('>') + 2)).Replace(",", ".");
+                    slm.BeginTime = TimeSpan.Parse(beginTimeStr);
+                    slm.EndTime = TimeSpan.Parse(endTimeStr);
+                    substr = sr.ReadLine();
+                    slm.MainLine = substr;
+                    substr = sr.ReadLine();
+                    while (substr != "")
+                    {
+                        slm.MainLine += " " + substr;
+                        substr = sr.ReadLine();
+                    }
+                    line = slm.MainLine;
+                    slm.MainLine = line.Replace("<i>", "").Replace("</i>", "");
+                    SubModel.Add(slm);
+                }
+            }
+            return SubModel;
+        }/// <summary>
+         /// 将单字幕Ass格式文本流转化为模型
+         /// </summary>
+         /// <param name="sr"></param>
+         /// <returns></returns>
+        public static List<SubLineModel> GetAssSingleSubModel(StreamReader sr)
+        {
+            List<SubLineModel> SubModel = new List<SubLineModel>();
+            string substr, beginTimeStr, endTimeStr;
+            Queue<string> substrs = new Queue<string>();
+            string line;
+            int a, b, x, c, d, e;
+            string maska, maskb;
+            while (!sr.EndOfStream)
+            {
+                substr = sr.ReadLine();
+                maska = @",,";
+                maskb = @"}";
+                x = substr.Length - 1;
+                a = substr.LastIndexOf(maska);
+                b = substr.LastIndexOf(maskb);
+                if (a != -1 || b != -1)
+                {
+                    SubLineModel slm = new SubLineModel();
+                    c = substr.IndexOf(',') + 1;
+                    d = substr.IndexOf(',', c) + 1;
+                    e = substr.IndexOf(',', d);
+                    beginTimeStr = substr.Substring(c, d - c - 1);
+                    endTimeStr = substr.Substring(d, e - d);
+                    slm.BeginTime = TimeSpan.Parse(beginTimeStr);
+                    slm.EndTime = TimeSpan.Parse(endTimeStr);
+                    x = a + 2;
+                    line = substr.Substring(x, substr.Length - x);
+                    slm.MainLine = line.Replace(@"\N", " ").Replace("{\\i1}", "").Replace("{\\i0}", "");
+                    SubModel.Add(slm);
+                }
+            }
+            return SubModel;
+        }
+        /// <summary>
+        /// 根据模型生成翻译后的每一句字幕的数组
+        /// </summary>
+        /// <param name="SubModel"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="TransServerUsing"></param>
+        /// <returns></returns>
+        private static string[] GetTranslatedSubLines(List<SubLineModel> SubModel, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        {
+            StringBuilder subLines = new StringBuilder();
+            string transedSubLineAll = "";
+            string[] transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
+            while (transedSubLines.Length < SubModel.Count())
+            {
+                if (!string.IsNullOrEmpty(transedSubLineAll))
+                    transedSubLineAll.Remove(transedSubLineAll.Length - transedSubLines[transedSubLines.Length - 1].Length, transedSubLines[transedSubLines.Length - 1].Length);
+                subLines.Clear();
+                for (int i = Math.Max(transedSubLines.Length - 1, 0), cnt = 0; i < SubModel.Count() && cnt < TransLinesMax; i++, cnt++)
+                {
+                    subLines.Append(SubModel[i].MainLine + ContactMark[TransServerUsing]);
+                }
+                Thread.Sleep(TranslatorHelper.LimitRequestDelay);
+                transedSubLineAll += TranslatorHelper.TranslateText(subLines.ToString(), TranslatorHelper.Language[from], TranslatorHelper.Language[to], TransServerUsing);
+                transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
+            }
+            return transedSubLines;
+        }
+        private static List<StringBuilder> GetTransMergedTxt(List<SubLineModel> SubModel, string[] transedSubLines)
+        {
+            StringBuilder srtTxt = new StringBuilder();
+            StringBuilder assTxt = new StringBuilder();
+            assTxt.Append(assHeader);
+
+            for (int i = 0; i < SubModel.Count(); i++)
+            {
+                transedSubLines[i].Replace("\n", "");
+                transedSubLines[i].Replace(@"\n", "");
+                SubModel[i].SecondLine = transedSubLines[i];
+                SubModel[i].SecondLine = transedSubLines[i];
+                srtTxt.Append((i + 1).ToString() + "\n");
+                srtTxt.Append(SubModel[i].SrtBeginTime + " --> " + SubModel[i].SrtEndTime + "\n");
+                srtTxt.Append(SubModel[i].MainLine + "\n");
+                srtTxt.Append(SubModel[i].SecondLine + "\n\n");
+                assTxt.Append("Dialogue: 0," + SubModel[i].AssBeginTime + "," + SubModel[i].AssEndTime + ",Default,,0,0,0,," + SubModel[i].MainLine + @"\N" + SubModel[i].SecondLine + "\n");
+            }
+            return new List<StringBuilder>() { assTxt, srtTxt };
+        }
+
+
         /// <summary>
         /// 交换某路径的双字幕文件的字幕，并保存到一路径
         /// </summary>

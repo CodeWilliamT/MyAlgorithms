@@ -52,14 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfigHelper.cs" />
-    <Compile Include="SubHelper.cs" />
+    <Compile Include="Utils\SubHelper.cs" />
     <Compile Include="Sub_Translator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sub_Translator.Designer.cs">
       <DependentUpon>Sub_Translator.cs</DependentUpon>
     </Compile>
-    <Compile Include="TranslatorHelper.cs" />
+    <Compile Include="Utils\TranslatorHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Sub_Translator.resx">
