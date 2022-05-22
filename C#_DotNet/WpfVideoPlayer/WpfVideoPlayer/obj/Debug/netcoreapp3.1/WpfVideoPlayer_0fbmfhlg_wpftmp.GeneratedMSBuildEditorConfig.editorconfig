@@ -1,0 +1,9 @@
+is_global = true
+build_property.ApplicationManifest = 
+build_property.StartupObject = WpfVideoPlayer.Program
+build_property.ApplicationDefaultFont = 
+build_property.ApplicationHighDpiMode = 
+build_property.ApplicationUseCompatibleTextRendering = 
+build_property.ApplicationVisualStyles = 
+build_property.RootNamespace = WpfVideoPlayer_0fbmfhlg_wpftmp
+build_property.ProjectDir = C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\

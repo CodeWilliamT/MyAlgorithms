@@ -35,13 +35,13 @@ int main()
 	Solution s;
 	vector<int> v1 = { 2,5,3,9,5,3 };
 	vector<int> v2 = { 0,1,2,3,4,5,6,7,8,9 };
-	vector<vector<int>> vvi1 = {{0, 2, 0, 0, 0, 0, 0}, {0, 0, 0, 2, 2, 1, 0}, {0, 2, 0, 0, 1, 2, 0}, {0, 0, 2, 2, 2, 0, 2}, {0, 0, 0, 0, 0, 0, 0}};
+	vector<vector<int>> vvi1 = { {8051, 8057}, {8074, 8089}, {7994, 7995}, {7969, 7987}, {8013, 8020}, {8123, 8139}, {7930, 7950}, {8096, 8104}, {7917, 7925}, {8027, 8035}, {8003, 8011} };
 	vector<vector<int>> vvi2 = {{2, 1}, {1, 2}, {0, 1}, {1, 0}};
 	vector<vector<char>> vvc = {{'(', '(', '('}, {')', '(', ')'}, {'(', '(', ')'}, {'(', '(', ')'}};
 	vector<string> vs1 = { "ju","fzjnm","x","e","zpmcz","h","q" };
 	vector<string> vs2 = { "f","hveml","cpivl","d" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
-	s.hasValidPath(vvc);
+	s.largestVariance("ababa");
 	/*string a = "())()))()(()(((())(()()))))((((()())(())";
 	string b = "1011101100010001001011000000110010100101";
 	s.canBeValid(a, b

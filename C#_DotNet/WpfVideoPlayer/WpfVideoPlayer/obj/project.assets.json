@@ -1,0 +1,93 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "SubtitlesParser/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SubtitlesParser.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SubtitlesParser.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SubtitlesParser/1.0.0": {
+      "type": "project",
+      "path": "../SubtitlesParser/SubtitlesParser.csproj",
+      "msbuildProject": "../SubtitlesParser/SubtitlesParser.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "SubtitlesParser >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\me\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_DotNet\\WpfVideoPlayer\\WpfVideoPlayer\\WpfVideoPlayer.csproj",
+      "projectName": "VPlayer",
+      "projectPath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_DotNet\\WpfVideoPlayer\\WpfVideoPlayer\\WpfVideoPlayer.csproj",
+      "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_DotNet\\WpfVideoPlayer\\WpfVideoPlayer\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows7.0",
+          "projectReferences": {
+            "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_DotNet\\WpfVideoPlayer\\SubtitlesParser\\SubtitlesParser.csproj": {
+              "projectPath": "C:\\Users\\me\\source\\repos\\Weiliang Tong\\WilliamPublicRepo\\C#_DotNet\\WpfVideoPlayer\\SubtitlesParser\\SubtitlesParser.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

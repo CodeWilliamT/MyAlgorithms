@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>WpfVideoPlayer.Program</StartupObject>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+    <AssemblyName>VPlayer</AssemblyName>
+    <PackageIcon>AppIcon.ico</PackageIcon>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\SubtitlesParser\SubtitlesParser.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\BlackBorder.png" />
+    <Resource Include="Images\Close.png" />
+    <Resource Include="Images\Last.png" />
+    <Resource Include="Images\Max.png" />
+    <Resource Include="Images\Min.png" />
+    <Resource Include="Images\Next.png" />
+    <Resource Include="Images\NotTop.png" />
+    <Resource Include="Images\OpenFile.png" />
+    <Resource Include="Images\Pause.png" />
+    <Resource Include="Images\Return.png" />
+    <Resource Include="Images\Screen.png" />
+    <Resource Include="Images\Silence.png" />
+    <Resource Include="Images\Sound.png" />
+    <Resource Include="Images\Start.png" />
+    <Resource Include="Images\Stop.png" />
+    <Resource Include="Images\Sub.png" />
+    <Resource Include="Images\ToLeft.png" />
+    <Resource Include="Images\Top.png" />
+    <Resource Include="Images\ToRight.png" />
+    <Resource Include="Images\半透明的图片.png" />
+    <Resource Include="Images\完全透明的图片.png" />
+    <Resource Include="Images\播放器图标.png" />
+    <Resource Include="Images\无标题.png" />
+  </ItemGroup>
+
+</Project>

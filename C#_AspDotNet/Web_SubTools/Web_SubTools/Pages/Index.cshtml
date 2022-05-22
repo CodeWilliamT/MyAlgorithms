@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IHtmlLocalizer<Utils.CommonResources> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Home"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Localizer["Welcome to"]
+    <br/>
+    @Localizer["SubTools"]</h1>
+</div>

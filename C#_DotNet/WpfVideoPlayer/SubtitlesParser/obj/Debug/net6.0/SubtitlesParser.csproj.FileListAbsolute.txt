@@ -1,0 +1,36 @@
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.deps.json
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.dll
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.pdb
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.csproj.AssemblyReference.cache
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.AssemblyInfoInputs.cache
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.AssemblyInfo.cs
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.dll
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\refint\SubtitlesParser.dll
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.pdb
+C:\Users\me\source\repos\SubtitlesParser\SubtitlesParser\obj\Debug\net6.0\ref\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.deps.json
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.pdb
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.csproj.AssemblyReference.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.AssemblyInfoInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.AssemblyInfo.cs
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\refint\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.pdb
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\ref\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.deps.json
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\bin\Debug\net6.0\SubtitlesParser.pdb
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.csproj.AssemblyReference.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.AssemblyInfoInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.AssemblyInfo.cs
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\refint\SubtitlesParser.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\SubtitlesParser.pdb
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_DotNet\WpfVideoPlayer\SubtitlesParser\obj\Debug\net6.0\ref\SubtitlesParser.dll
