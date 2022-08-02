@@ -11,20 +11,25 @@
 #include <stack>
 #include <functional>
 #include <bitset>
-//简单模拟 字符串处理
-//子串作除数能整除原串的可能性数
+
+//模拟 数学
+//target每个字符 在s跟target中出现的次数的最小比值。计算
 class Solution {
 public:
-    int divisorSubstrings(int num, int k) {
-        string s = to_string(num);
-        int n = s.size(),subnum;
-        string subs;
-        int rst = 0;
-        for (int i = 0; i + k <= n; i++) {
-            subs = s.substr(i, k);
-            subnum = stoi(subs);
-            if (!subnum)continue;
-            if (num % subnum == 0)rst++;
+    int rearrangeCharacters(string s, string target) {
+        int cnts[26]{}, cntt[26]{};
+        for (auto& e : s) {
+            cnts[e - 'a']++;
+        }
+        for (auto& e : target) {
+            if(!cnts[e - 'a'])
+                return 0;
+            cntt[e - 'a']++;
+        }
+        int rst = 100;
+        for (int i = 0; i < 26; i++) {
+            if (!cntt[i])continue;
+            rst = min(rst, cnts[i] / cntt[i]);
         }
         return rst;
     }

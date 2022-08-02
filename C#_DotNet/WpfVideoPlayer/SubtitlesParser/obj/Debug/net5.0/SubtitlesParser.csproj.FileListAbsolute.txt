@@ -1,5 +1,0 @@
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net5.0\SubtitlesParser.csproj.AssemblyReference.cache
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net5.0\SubtitlesParser.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net5.0\SubtitlesParser.AssemblyInfoInputs.cache
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net5.0\SubtitlesParser.AssemblyInfo.cs
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\SubtitlesParser\obj\Debug\net5.0\SubtitlesParser.csproj.CoreCompileInputs.cache

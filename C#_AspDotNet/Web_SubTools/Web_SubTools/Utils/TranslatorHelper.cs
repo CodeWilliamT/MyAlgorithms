@@ -32,7 +32,7 @@ namespace Utils
         {"Bangla","bn"},{"Bashkir","ba"},{"Basque","eu"},{"Bosnian(Latin)","bs"},{"Bulgarian","bg"},
         {"Cantonese (Traditional)","yue"},{"Catalan","ca"},{"Chinese(Literary)","lzh"},{"Chinese Simplified","zh"},{"Chinese Traditional","zh-Hant"},{"Croatian","hr"},{"Czech","cs"},
         {"Danish","da"},{"Dari","prs"},{"Divehi","dv"},{"Dutch","nl"},
-        {"English","en"},{"Estonian","et"},
+        {"English","en"},{"English (United States)","en-US"},{"Estonian","et"},
         {"Fijian","fj"},{"Filipino","fil"},{"Finnish","fi"},{"French","fr"},{"French(Canada)","fr-ca"},
         {"Galician","gl"},{"Georgian","ka"},{"German","de"},{"Greek","el"},{"Gujarati","gu"},
         {"Haitian Creole","ht"},{"Hebrew","he"},{"Hindi","hi"},{"Hmong Daw","mww"},{"Hungarian","hu"},
@@ -52,8 +52,12 @@ namespace Utils
         {"Vietnamese","vi"},{"Welsh","cy"},{"Yucatec Maya","yua"},{"Zulu","zu"},
         };
         public static readonly string[] TranslateServer = { "Baidu","Bing"};
-        public static readonly int LimitRequestDelay = 3000;
+        public static readonly int[] LimitRequestDelay = new int[] { 5500,1100 };
 
+        //Private constent info
+        private static readonly string[] ContactMark = { "\n", "\r\n" };
+        private static readonly string[] SpiltMark = { "\\r\\n" };
+        private const int TransLinesMax = 9000;
         //Baidu Fanyi Server Info
         private static readonly string baiduAppId = "20220430001197782";
         private static readonly string baiduKey = "TXwFnIYmM5gUY58OTKi8";
@@ -78,7 +82,7 @@ namespace Utils
             }
         }
         /// <summary>
-        /// 百度翻译
+        /// 百度翻译 连续请求延迟需要5秒
         /// </summary>
         /// <param name="textToTranslate"></param>
         /// <param name="from"></param>
@@ -109,10 +113,14 @@ namespace Utils
             StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
             string gotString = myStreamReader.ReadToEnd();
             BaiduTransObj transObj = JsonConvert.DeserializeObject<BaiduTransObj>(gotString);
+            if (transObj==null||transObj.trans_result == null)
+            {
+                throw new Exception(gotString);
+            }
             string rst = "";
             foreach (var e in transObj.trans_result)
             {
-                rst += e.dst;
+                rst += e.dst+ "\\r\\n";
             }
             return rst;
         }
@@ -169,6 +177,105 @@ namespace Utils
                     rst = rst.Substring(start, len);
                 return rst;
             }
+        }
+        /// <summary>
+        /// 翻译字幕文件
+        /// </summary>
+        /// <param name="filepath">字幕文件路径</param>
+        /// <param name="savepath">翻译后保存的文件路径</param>
+        /// <param name="subFormat">希望转化为的字幕格式</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">翻译为什么语言</param>
+        /// <param name="TransServerUsing">用哪个翻译服务</param>
+        public static void TranslateSubTextFile(string filepath, string savepath, SubHelper.SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        {
+            FileInfo fi = new FileInfo(filepath);
+            Encoding ecd = SubHelper.GetFileEncodeType(filepath);
+            List<StringBuilder> rst;
+            using (StreamReader sr = new StreamReader(filepath, ecd))
+            {
+                rst=TranslateSubTextStream(filepath, sr, subFormat, from, to, TransServerUsing);
+            }
+            using (StreamWriter sw = new StreamWriter(savepath, false, ecd))
+            {
+                sw.Write(rst[((int)subFormat)].ToString());
+                sw.Flush();
+                sw.Close();
+            }
+        }
+        /// <summary>
+        /// 翻译字幕文件流
+        /// </summary>
+        /// <param name="sr">字幕文件的文件信息</param>
+        /// <param name="subFormat">希望转化为的字幕格式</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">翻译为什么语言</param>
+        /// <param name="TransServerUsing">用哪个翻译服务</param>
+        public static List<StringBuilder> TranslateSubTextStream(string fileName, StreamReader sr, SubHelper.SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        {
+            List<SubHelper.SubLineModel> SubModel;
+            int extIdx = fileName.LastIndexOf('.');
+            int len = fileName.Length;
+            string ext = fileName.Substring(extIdx, len - extIdx).ToLower();
+            switch (ext)
+            {
+                case ".ass":
+                    {
+                        SubModel = SubHelper.ParseAssFileStream(sr);
+                        break;
+                    }
+                case ".srt":
+                    {
+                        SubModel = SubHelper.ParseSrtFileStream(sr);
+                        break;
+                    }
+                default:
+                    {
+                        throw new Exception("It's not a supported sub type.");
+                    }
+            }
+            SubModel = SubHelper.GetSingleSubModel(SubModel);
+            string[] transedSubLines = GetTranslatedSubLines(SubModel, from, to, TransServerUsing);
+            SubModel=AddTransedSubLines(SubModel, transedSubLines);
+            List<StringBuilder> rst = SubHelper.GetTxtsFromSubModel(SubModel);
+            return rst;
+        }
+
+        /// <summary>
+        /// 根据模型生成翻译后的每一句字幕的数组
+        /// </summary>
+        /// <param name="SubModel"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="TransServerUsing"></param>
+        /// <returns></returns>
+        private static string[] GetTranslatedSubLines(List<SubHelper.SubLineModel> SubModel, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        {
+            StringBuilder subLines = new StringBuilder();
+            string transedSubLineAll = "";
+            string[] transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
+            while (transedSubLines.Length < SubModel.Count())
+            {
+                if (!string.IsNullOrEmpty(transedSubLineAll))
+                    transedSubLineAll = transedSubLineAll.Remove(transedSubLineAll.Length - transedSubLines[transedSubLines.Length - 1].Length, transedSubLines[transedSubLines.Length - 1].Length);
+                subLines.Clear();
+                for (int i = Math.Max(transedSubLines.Length - 1, 0), cnt = 0; i < SubModel.Count() && subLines.Length < TransLinesMax; i++, cnt++)
+                {
+                    subLines.Append(SubModel[i].RawLines[0] + ContactMark[TransServerUsing]);
+                }
+                Thread.Sleep(TranslatorHelper.LimitRequestDelay[TransServerUsing]);
+                transedSubLineAll += TranslatorHelper.TranslateText(subLines.ToString(), TranslatorHelper.Language[from], TranslatorHelper.Language[to], TransServerUsing);
+                transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
+            }
+            return transedSubLines;
+        }
+        private static List<SubHelper.SubLineModel> AddTransedSubLines(List<SubHelper.SubLineModel> SubModel, string[] transedSubLines)
+        {
+            for (int i = 0; i < SubModel.Count(); i++)
+            {
+                SubModel[i].RawLines.Add(transedSubLines[i]);
+            }
+            return SubModel;
         }
 
 

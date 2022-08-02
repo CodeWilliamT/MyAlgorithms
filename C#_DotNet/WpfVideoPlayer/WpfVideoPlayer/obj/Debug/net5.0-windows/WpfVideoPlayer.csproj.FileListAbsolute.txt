@@ -1,7 +1,0 @@
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\net5.0-windows\WpfVideoPlayer.csproj.AssemblyReference.cache
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\net5.0-windows\Resources\CustomWindowTemplete.baml
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\net5.0-windows\MainWindow.g.cs
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\net5.0-windows\App.g.cs
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\net5.0-windows\VPlayer_MarkupCompile.cache
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Winform\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\net5.0-windows\VPlayer_MarkupCompile.lref
