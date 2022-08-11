@@ -11,11 +11,6 @@
 #include <stack>
 #include <functional>
 #include <bitset>
-//每次删相邻递减的数，统计使得无序数组变为非递减数组的操作数。
-//找规律
-class Solution {
-public:
-    int totalSteps(vector<int>& nums) {
-
-    }
-};
+typedef long long ll;
+typedef pair<ll, ll> pll;
+typedef pair<int, int> pii;
