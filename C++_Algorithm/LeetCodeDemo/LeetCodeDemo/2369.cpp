@@ -1,7 +1,7 @@
 ﻿using namespace std;
 #include <iostream>
 #include <vector>
-//动态规划
+//动态规划 贪心
 //用个数组记录前x个是否为可行划分，遍历一遍，4个一判定，同位置已可行就不扫，不可行就继续扫。
 class Solution {
     bool check(vector<int>& nums,int l,int r) {
