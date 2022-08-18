@@ -126,15 +126,15 @@ namespace Utils
                     substr = sr.ReadLine();
                     slm.RawLines = new List<string>();
                     slm.Lines = new List<string>();
-                    slm.RawLines.Add(substr);
-                    substr = substr.Replace("<i>", "").Replace("</i>", "");
                     slm.Lines.Add(substr);
+                    substr = substr.Replace("<i>", "").Replace(@"</i>", "");
+                    slm.RawLines.Add(substr);
                     substr = sr.ReadLine();
                     while (substr != null&&substr != num.ToString())
                     {
-                        slm.RawLines.Add(substr);
-                        substr = substr.Replace("<i>", "").Replace("</i>", "");
                         slm.Lines.Add(substr);
+                        substr = substr.Replace("<i>", "").Replace(@"</i>", "");
+                        slm.RawLines.Add(substr);
                         substr = sr.ReadLine();
                     }
                     rst.Add(slm);
@@ -175,10 +175,10 @@ namespace Utils
                     slm.EndTime = TimeSpan.Parse(endTimeStr);
                     x = a + 2;
                     line = substr.Substring(x, substr.Length - x);
+                    slm.Lines = new List<string>();
                     line = line.Replace("{\\i1}", "").Replace("{\\i0}", "");
                     slm.RawLines = line.Split(new[] { @"\N" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    slm.Lines = new List<string>();
-                    foreach(string s in slm.RawLines)
+                    foreach (string s in slm.RawLines)
                     {
                         string RealLine = s;
                         formatStart = s.IndexOf(maskFormatL);

@@ -110,29 +110,31 @@ namespace Utils
             List<SubLineModel> rst = new List<SubLineModel>();
             SubLineModel subLineModel = new SubLineModel();
             string substr, beginTimeStr, endTimeStr;
+            int num = 1;
+            substr = sr.ReadLine();
             while (!sr.EndOfStream)
             {
-                substr = sr.ReadLine();
-                if (substr != "")
+                if (substr == num.ToString())
                 {
+                    num++;
                     SubLineModel slm = new SubLineModel();
                     substr = sr.ReadLine();
                     beginTimeStr = substr.Substring(0, substr.IndexOf('-') - 1).Replace(",", ".");
                     endTimeStr = substr.Substring(substr.LastIndexOf('>') + 2, substr.Length - (substr.LastIndexOf('>') + 2)).Replace(",", ".");
                     slm.BeginTime = TimeSpan.Parse(beginTimeStr);
-                    slm.EndTime = TimeSpan.Parse(endTimeStr);;
+                    slm.EndTime = TimeSpan.Parse(endTimeStr); ;
                     substr = sr.ReadLine();
                     slm.RawLines = new List<string>();
                     slm.Lines = new List<string>();
-                    slm.RawLines.Add(substr);
-                    substr = substr.Replace("<i>", "").Replace("</i>", "");
                     slm.Lines.Add(substr);
+                    substr = substr.Replace("<i>", "").Replace(@"</i>", "");
+                    slm.RawLines.Add(substr);
                     substr = sr.ReadLine();
-                    while (substr != "")
+                    while (substr != null&&substr != num.ToString())
                     {
-                        slm.RawLines.Add(substr);
-                        substr = substr.Replace("<i>", "").Replace("</i>", "");
                         slm.Lines.Add(substr);
+                        substr = substr.Replace("<i>", "").Replace(@"</i>", "");
+                        slm.RawLines.Add(substr);
                         substr = sr.ReadLine();
                     }
                     rst.Add(slm);
@@ -173,10 +175,10 @@ namespace Utils
                     slm.EndTime = TimeSpan.Parse(endTimeStr);
                     x = a + 2;
                     line = substr.Substring(x, substr.Length - x);
+                    slm.Lines = new List<string>();
                     line = line.Replace("{\\i1}", "").Replace("{\\i0}", "");
                     slm.RawLines = line.Split(new[] { @"\N" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    slm.Lines = new List<string>();
-                    foreach(string s in slm.RawLines)
+                    foreach (string s in slm.RawLines)
                     {
                         string RealLine = s;
                         formatStart = s.IndexOf(maskFormatL);

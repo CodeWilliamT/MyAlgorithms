@@ -30,7 +30,7 @@ namespace Utils
         public static readonly Dictionary<string,string> Language=new Dictionary<string, string>(){
         {"Afrikaans","af"},{"Albanian","sq"},{"Amharic","am"},{"Armenian","hy"},{"Assamese","as"},{"Azerbaijani","az"},
         {"Bangla","bn"},{"Bashkir","ba"},{"Basque","eu"},{"Bosnian(Latin)","bs"},{"Bulgarian","bg"},
-        {"Cantonese (Traditional)","yue"},{"Catalan","ca"},{"Chinese(Literary)","lzh"},{"Chinese Simplified","zh"},{"Chinese Traditional","zh-Hant"},{"Croatian","hr"},{"Czech","cs"},
+        {"Cantonese (Traditional)","yue"},{"Catalan","ca"},{"Chinese(Literary)","lzh"},{"Chinese Simplified","zh-CN"},{"Chinese Traditional","zh-Hant"},{"Croatian","hr"},{"Czech","cs"},
         {"Danish","da"},{"Dari","prs"},{"Divehi","dv"},{"Dutch","nl"},
         {"English","en"},{"English (United States)","en-US"},{"Estonian","et"},
         {"Fijian","fj"},{"Filipino","fil"},{"Finnish","fi"},{"French","fr"},{"French(Canada)","fr-ca"},
@@ -51,16 +51,16 @@ namespace Utils
         {"Ukrainian","uk"},{"Upper Sorbian","hsb"},{"Urdu","ur"},{"Uyghur","ug"},{"Uzbek(Latin)","uz"},
         {"Vietnamese","vi"},{"Welsh","cy"},{"Yucatec Maya","yua"},{"Zulu","zu"},
         };
-        public static readonly string[] TranslateServer = { "Baidu","Bing"};
+        public static readonly string[] TranslateServer = { "Google","Bing","Baidu" };
 
         //Private constent info
-        private static readonly string[] ContactMark = { "\n", "\r\n" };
-        private static readonly string[] SpiltMark = { "\\r\\n" };
-        private static readonly int[] LimitRequestDelay = new int[] { 5500, 1100 };
+        private static readonly Dictionary<string,string> ContactMark = new Dictionary<string, string> { { "Google", "\r\n" }, { "Bing", "\r\n" }, { "Baidu", "\n" } };
+        private static readonly string[] SpiltMark = { "\\r\\n" ,"\\n"};
+        private static readonly Dictionary<string, int> LimitRequestDelay = new Dictionary<string, int> { { "Google", 1100 }, { "Bing", 1100 }, { "Baidu", 5500 } };
         private const int TransLinesMax = 9000;
         //Baidu Fanyi Server Info
-        private static readonly string baiduAppId = "20220430001197782";
-        private static readonly string baiduKey = "TXwFnIYmM5gUY58OTKi8";
+        private static readonly string baiduAppId = "20220430001197782";//not using.
+        private static readonly string baiduKey = "TXwFnIYmM5gUY58OTKi8";//will dispose.
 
         //Azure Bing Server Info
         private static readonly string bingKey = "1c6aac0dcdd04bd19f79ed51109540d4";
@@ -69,16 +69,57 @@ namespace Utils
         // This is required if using a Cognitive Services resource.
         private static readonly string location = "eastasia";
 
-        public static string TranslateText(string textToTranslate, string from = "en", string to = "zh-Hans", int TransServerUsing = 0)
+        public static string TranslateText(string textToTranslate, string TransServerUsing, string from = "en", string to = "zh-Hans")
         {
             switch (TransServerUsing)
             {
-                case 0:
-                    return BDTranslateText(textToTranslate, from, to);
-                case 1:
+                case "Google":
+                    return TranslateerTranslateText(textToTranslate, from, to);
+                case "Bing":
                     return MSTranslateText(textToTranslate, from, to);
+                case "Baidu":
+                    return BDTranslateText(textToTranslate, from, to);
                 default:
                     return "";
+            }
+        }
+
+        /// <summary>
+        /// Azure Translator Bing翻译并输出翻译后的文本 用的MSDN样例修改
+        /// </summary>
+        /// <param name="textToTranslate">需要翻译的文本</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">到什么语言</param>
+        /// <returns>翻译后的文本</returns>
+        public static string TranslateerTranslateText(string textToTranslate, string from = "en", string to = "zh-Hans")
+        {
+            string address = "https://t.song.work/api?"+"text="+textToTranslate+"&from=" + from + "&to=" + to;
+            string rstStart = "\"result\":\"";
+            string rstEnd = "\"";
+
+            using (var client = new HttpClient())
+            using (var request = new HttpRequestMessage())
+            {
+                // Build the request.
+                request.Method = HttpMethod.Get;
+                request.RequestUri = new Uri(address);
+
+                // Send the request and get response.
+                HttpResponseMessage response = client.SendAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+                // Read response as a string.
+                string rst = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                int start = rst.IndexOf(rstStart) + rstStart.Length;
+                if (start == rstStart.Length-1)
+                {
+                    throw new Exception(rst);
+                }
+                int end = rst.IndexOf(rstEnd, start);
+                int len = end - start;
+                if (len >= 0 && start >= 0)
+                    rst = rst.Substring(start, len);
+                else
+                    throw new Exception(rst);
+                return rst;
             }
         }
         /// <summary>
@@ -113,14 +154,14 @@ namespace Utils
             StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
             string gotString = myStreamReader.ReadToEnd();
             BaiduTransObj transObj = JsonConvert.DeserializeObject<BaiduTransObj>(gotString);
-            if (transObj==null||transObj.trans_result == null)
+            if (transObj == null || transObj.trans_result == null)
             {
                 throw new Exception(gotString);
             }
             string rst = "";
             foreach (var e in transObj.trans_result)
             {
-                rst += e.dst+ "\\r\\n";
+                rst += e.dst + "\\r\\n";
             }
             return rst;
         }
@@ -153,7 +194,7 @@ namespace Utils
         /// <returns>翻译后的文本</returns>
         public static string MSTranslateText(string textToTranslate, string from = "en", string to = "zh-Hans")
         {
-            string route = "/translate?api-version=3.0&from="+from+"&to="+to;
+            string route = "/translate?api-version=3.0&from=" + from + "&to=" + to;
             object[] body = new object[] { new { Text = textToTranslate } };
             var requestBody = JsonConvert.SerializeObject(body);
 
@@ -170,10 +211,14 @@ namespace Utils
                 // Send the request and get response.
                 HttpResponseMessage response = client.SendAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
                 // Read response as a string.
-                string rst= response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                string rst = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 int start = rst.IndexOf("text") + 7;
+                if (start == 6)
+                {
+                    throw new Exception(rst);
+                }
                 int len = rst.LastIndexOf("to") - 3 - start;
-                if(len>=0&& start>=0)
+                if (len >= 0 && start >= 0)
                     rst = rst.Substring(start, len);
                 return rst;
             }
@@ -187,14 +232,14 @@ namespace Utils
         /// <param name="from">从什么语言</param>
         /// <param name="to">翻译为什么语言</param>
         /// <param name="TransServerUsing">用哪个翻译服务</param>
-        public static void TranslateSubTextFile(string filepath, string savepath, SubHelper.SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        public static void TranslateSubTextFile(string filepath, string savepath, SubHelper.SubType subFormat, string TransServerUsing, string from = "English", string to = "Chinese Simplified")
         {
             FileInfo fi = new FileInfo(filepath);
             Encoding ecd = SubHelper.GetFileEncodeType(filepath);
             List<StringBuilder> rst;
             using (StreamReader sr = new StreamReader(filepath, ecd))
             {
-                rst=TranslateSubTextStream(filepath, sr, subFormat, from, to, TransServerUsing);
+                rst=TranslateSubTextStream(filepath, sr, subFormat, TransServerUsing, from, to);
             }
             using (StreamWriter sw = new StreamWriter(savepath, false, ecd))
             {
@@ -211,7 +256,7 @@ namespace Utils
         /// <param name="from">从什么语言</param>
         /// <param name="to">翻译为什么语言</param>
         /// <param name="TransServerUsing">用哪个翻译服务</param>
-        public static List<StringBuilder> TranslateSubTextStream(string fileName, StreamReader sr, SubHelper.SubType subFormat, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        public static List<StringBuilder> TranslateSubTextStream(string fileName, StreamReader sr, SubHelper.SubType subFormat, string TransServerUsing, string from = "English", string to = "Chinese Simplified")
         {
             List<SubHelper.SubLineModel> SubModel;
             int extIdx = fileName.LastIndexOf('.');
@@ -235,7 +280,7 @@ namespace Utils
                     }
             }
             SubModel = SubHelper.GetSingleSubModel(SubModel);
-            string[] transedSubLines = GetTranslatedSubLines(SubModel, from, to, TransServerUsing);
+            string[] transedSubLines = GetTranslatedSubLines(SubModel, TransServerUsing, from, to);
             SubModel=AddTransedSubLines(SubModel, transedSubLines);
             List<StringBuilder> rst = SubHelper.GetTxtsFromSubModel(SubModel);
             return rst;
@@ -249,7 +294,7 @@ namespace Utils
         /// <param name="to"></param>
         /// <param name="TransServerUsing"></param>
         /// <returns></returns>
-        private static string[] GetTranslatedSubLines(List<SubHelper.SubLineModel> SubModel, string from = "English", string to = "Chinese Simplified", int TransServerUsing = 0)
+        private static string[] GetTranslatedSubLines(List<SubHelper.SubLineModel> SubModel, string TransServerUsing, string from = "English", string to = "Chinese Simplified")
         {
             StringBuilder subLines = new StringBuilder();
             string transedSubLineAll = "";
@@ -264,7 +309,7 @@ namespace Utils
                     subLines.Append(SubModel[i].RawLines[0] + ContactMark[TransServerUsing]);
                 }
                 Thread.Sleep(TranslatorHelper.LimitRequestDelay[TransServerUsing]);
-                transedSubLineAll += TranslatorHelper.TranslateText(subLines.ToString(), TranslatorHelper.Language[from], TranslatorHelper.Language[to], TransServerUsing);
+                transedSubLineAll += TranslatorHelper.TranslateText(subLines.ToString(), TransServerUsing, TranslatorHelper.Language[from], TranslatorHelper.Language[to]);
                 transedSubLines = transedSubLineAll.Split(SpiltMark, StringSplitOptions.RemoveEmptyEntries);
             }
             return transedSubLines;

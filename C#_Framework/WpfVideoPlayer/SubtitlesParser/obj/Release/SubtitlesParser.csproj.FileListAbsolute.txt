@@ -1,6 +1,0 @@
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\SubtitlesParser\bin\Release\SubtitlesParser.dll
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\SubtitlesParser\bin\Release\SubtitlesParser.pdb
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\SubtitlesParser\obj\Release\SubtitlesParser.csproj.AssemblyReference.cache
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\SubtitlesParser\obj\Release\SubtitlesParser.csproj.CoreCompileInputs.cache
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\SubtitlesParser\obj\Release\SubtitlesParser.dll
-C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\SubtitlesParser\obj\Release\SubtitlesParser.pdb

@@ -80,6 +80,7 @@ namespace Sub_Translator
             btnTranslate.Text = GetString("Translate");
             btnFolderTranslate.Text = GetString("Translate");
             toolStripStatusLabel1.Text = GetString("Ready");
+            tbSubfilepath.TabStop = true;
         }
         private void SaveConfig()
         {
@@ -114,20 +115,20 @@ namespace Sub_Translator
             int idx_Format = comboBox_Format.SelectedIndex;
             string str_From = comboBoxFrom.Text;
             string str_To = comboBoxTo.Text;
-            int idx_Server = comboBox_Server.SelectedIndex;
+            string str_Server = comboBox_Server.SelectedItem.ToString();
             FileInfo fi = new FileInfo(tbSubfilepath.Text);
             string savepath = fi.DirectoryName + @"\" + fi.Name.Replace(fi.Extension, "") + "_Trans" + "."+ ((SubHelper.SubType)idx_Format).ToString();
+            SaveConfig();
             Task.Run(new Action(() =>
             {
                 try
                 {
-                    TranslatorHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath, (SubHelper.SubType)idx_Format, str_From, str_To, idx_Server);
+                    TranslatorHelper.TranslateSubTextFile(tbSubfilepath.Text, savepath, (SubHelper.SubType)idx_Format, str_Server, str_From, str_To);
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                SaveConfig();
                 this.BeginInvoke(new MethodInvoker(() =>
                 {
                     toolStripProgressBar1.Value = 100;
@@ -174,8 +175,8 @@ namespace Sub_Translator
             int idx_Format = comboBox_Format.SelectedIndex;
             string str_From = comboBoxFrom.Text;
             string str_To = comboBoxTo.Text;
-            int idx_Server = comboBox_Server.SelectedIndex;
-            if(tbSubfoldername.Text[tbSubfoldername.Text.Length-1] =='\\')
+            string str_Server = comboBox_Server.SelectedItem.ToString();
+            if (tbSubfoldername.Text[tbSubfoldername.Text.Length-1] =='\\')
                 tbSubfoldername.Text=tbSubfoldername.Text.Remove(tbSubfoldername.Text.Length - 1);
             string savefolder = tbSubfoldername.Text + "_Trans";
             Task.Run(new Action(() =>
@@ -189,7 +190,7 @@ namespace Sub_Translator
                         Directory.CreateDirectory(savepath.Substring(0, savepath.Length - f.Name.Length));
                         try
                         {
-                            TranslatorHelper.TranslateSubTextFile(f.FullName, savepath, (SubHelper.SubType)idx_Format, str_From, str_To, idx_Server);
+                            TranslatorHelper.TranslateSubTextFile(f.FullName, savepath, (SubHelper.SubType)idx_Format, str_Server, str_From, str_To);
                         }
                         catch(Exception ex)
                         {

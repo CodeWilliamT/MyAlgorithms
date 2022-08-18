@@ -1,0 +1,41 @@
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.AssemblyReference.cache
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\Resources\CustomWindowTemplete.baml
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\MainWindow.g.cs
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\App.g.cs
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer_MarkupCompile.cache
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer_MarkupCompile.lref
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\WpfVideoPlayer.exe.config
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\WpfVideoPlayer.exe
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\WpfVideoPlayer.pdb
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\SubtitlesParser.dll
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\SubtitlesParser.pdb
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\App.baml
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\MainWindow.baml
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.g.resources
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.Properties.Resources.resources
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.GenerateResource.cache
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.CopyComplete
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.exe
+C:\Users\me\source\repos\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.pdb
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\VPlayer.exe
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.AssemblyReference.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\Resources\CustomWindowTemplete.baml
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\MainWindow.g.cs
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\App.g.cs
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\VPlayer_MarkupCompile.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\VPlayer_MarkupCompile.lref
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\App.baml
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\MainWindow.baml
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\VPlayer.g.resources
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.Properties.Resources.resources
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.GenerateResource.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\WpfVideoPlayer.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\VPlayer.exe
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\obj\Debug\VPlayer.pdb
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\VPlayer.exe.config
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\C#_Framework\WpfVideoPlayer\WpfVideoPlayer\bin\Debug\VPlayer.pdb

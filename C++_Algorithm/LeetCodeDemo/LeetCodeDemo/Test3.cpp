@@ -1,36 +1,60 @@
 ﻿using namespace std;
 #include <iostream>
 #include <vector>
-//动态规划
-//用个数组记录前x个是否为可行划分，遍历一遍，4个一判定，同位置已可行就不扫，不可行就继续扫。
+#include <string>
+#include <algorithm>
+#include <unordered_set>
+#include <unordered_map>
+#include <set>
+#include <map>
+#include <queue>
+#include <stack>
+#include <functional>
+#include <bitset>
+#include "TreeNode.cpp"
+typedef long long ll;
+typedef pair<ll, ll> pll;
+typedef pair<int, int> pii;
+//struct TreeNode {
+//	int val;
+//	TreeNode* left;
+//	TreeNode* right;
+//	TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//	TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+//};
+//深搜 回溯
+//二叉树上距离某点的最大深度
+//深搜
+//比较 目标点所在分支最大深度-目标点深度， 根的不含目标点的分支的最大深度+目标点深度 的最大值。
 class Solution {
-    bool check(vector<int>& nums,int l,int r) {
-        int n = r-l+1;
-        if (n < 2)return false;
-        if (n == 2)
-            return nums[l] == nums[l + 1];
-        if (n == 3)
-            return nums[l] == nums[l+1] && nums[l+1] == nums[l+2]|| nums[l] + 1==nums[l + 1]&& nums[l+1] + 1 == nums[l + 2];
-        if (n == 4)
-            return nums[l] == nums[l+1] && nums[l+2] == nums[l+3];
-        return false;
-    }
+	int start;
+	int rst=0,tgtlvl;
+	typedef pair<bool, int> pbi;
 public:
-    bool validPartition(vector<int>& nums) {
-        int n = nums.size();
-        vector<bool> v(n, 0);
-        bool rst;
-        for (int j = 1; j < 4&&j<n; j++) {
-            v[j] = check(nums, 0, j);
-        }
-        for (int i = 0; i < n; i++) {
-            if (v[i])
-                for (int j = 2; j <= 4 && i + j < n; j++) {
-                    if (!v[i + j]) {
-                        v[i + j] = check(nums, i + 1, i + j);
-                    }
-                }
-        }
-        return v[n-1];
+	pbi dfs(TreeNode* root, bool found, int lvl)
+	{
+		if (root->val == start) {
+			found = true;
+			tgtlvl = lvl;
+		}
+		if (found)
+			rst = max(rst, lvl - tgtlvl);
+		if (!root->left && !root->right)
+			return { root->val == start,lvl };
+		pbi left = { false,lvl }, right = { false,lvl };
+		if (root->left)
+			left = dfs(root->left, found, lvl + 1);
+		if (root->right)
+			right = dfs(root->right, found, lvl + 1);
+		if(left.first^right.first)
+			rst = max({ rst, (left.first ? right.second : left.second)+ tgtlvl - 2 * lvl });
+		return { root->val == start|| left.first || right.first,max(left.second,right.second)};
+	}
+
+    int amountOfTime(TreeNode* root, int start) {
+		this->start = start;
+		dfs(root, false, 0);
+		return rst;
     }
 };
