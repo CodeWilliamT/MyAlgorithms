@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CommonMethod\TCP\**" />
+    <EmbeddedResource Remove="CommonMethod\TCP\**" />
+    <None Remove="CommonMethod\TCP\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 

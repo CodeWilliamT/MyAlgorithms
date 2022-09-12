@@ -54,13 +54,13 @@ namespace Utils
         public static readonly string[] TranslateServer = { "Google","Bing","Baidu" };
 
         //Private constent info
-        private static readonly Dictionary<string,string> ContactMark = new Dictionary<string, string> { { "Google", "\r\n" }, { "Bing", "\r\n" }, { "Baidu", "\n" } };
+        private static readonly Dictionary<string,string> ContactMark = new Dictionary<string, string> { { TranslateServer[0], "\r\n" }, { TranslateServer[1], "\r\n" }, { TranslateServer[2], "\n" } };
         private static readonly string[] SpiltMark = { "\\r\\n" ,"\\n"};
-        private static readonly Dictionary<string, int> LimitRequestDelay = new Dictionary<string, int> { { "Google", 1100 }, { "Bing", 1100 }, { "Baidu", 5500 } };
+        private static readonly Dictionary<string, int> LimitRequestDelay = new Dictionary<string, int> { { TranslateServer[0], 1100 }, { TranslateServer[1], 1100 }, { TranslateServer[2], 5500 } };
         private const int TransLinesMax = 9000;
         //Baidu Fanyi Server Info
-        private static readonly string baiduAppId = "20220430001197782";//not using.
-        private static readonly string baiduKey = "TXwFnIYmM5gUY58OTKi8";//will dispose.
+        private static readonly string baiduAppId = "20220430001197782";
+        private static readonly string baiduKey = "TXwFnIYmM5gUY58OTKi8";
 
         //Azure Bing Server Info
         private static readonly string bingKey = "1c6aac0dcdd04bd19f79ed51109540d4";
@@ -74,7 +74,7 @@ namespace Utils
             switch (TransServerUsing)
             {
                 case "Google":
-                    return TranslateerTranslateText(textToTranslate, from, to);
+                    return GoogleTranslateText(textToTranslate, from, to);
                 case "Bing":
                     return MSTranslateText(textToTranslate, from, to);
                 case "Baidu":
@@ -83,25 +83,13 @@ namespace Utils
                     return "";
             }
         }
-
-        /// <summary>
-        /// Azure Translator Bing翻译并输出翻译后的文本 用的MSDN样例修改
-        /// </summary>
-        /// <param name="textToTranslate">需要翻译的文本</param>
-        /// <param name="from">从什么语言</param>
-        /// <param name="to">到什么语言</param>
-        /// <returns>翻译后的文本</returns>
-        public static string TranslateerTranslateText(string textToTranslate, string from = "en", string to = "zh-Hans")
+        public static string SendTranslateTextToServer(string address,string rstStart,string rstEnd, HttpMethod method)
         {
-            string address = "https://t.song.work/api?"+"text="+textToTranslate+"&from=" + from + "&to=" + to;
-            string rstStart = "\"result\":\"";
-            string rstEnd = "\"";
 
             using (var client = new HttpClient())
             using (var request = new HttpRequestMessage())
             {
                 // Build the request.
-                request.Method = HttpMethod.Get;
                 request.RequestUri = new Uri(address);
 
                 // Send the request and get response.
@@ -109,7 +97,7 @@ namespace Utils
                 // Read response as a string.
                 string rst = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 int start = rst.IndexOf(rstStart) + rstStart.Length;
-                if (start == rstStart.Length-1)
+                if (start == rstStart.Length - 1)
                 {
                     throw new Exception(rst);
                 }
@@ -121,6 +109,22 @@ namespace Utils
                     throw new Exception(rst);
                 return rst;
             }
+        }
+
+        /// <summary>
+        /// Azure Translator Bing翻译并输出翻译后的文本 用的MSDN样例修改
+        /// </summary>
+        /// <param name="textToTranslate">需要翻译的文本</param>
+        /// <param name="from">从什么语言</param>
+        /// <param name="to">到什么语言</param>
+        /// <returns>翻译后的文本</returns>
+        public static string GoogleTranslateText(string textToTranslate, string from = "en", string to = "zh-Hans")
+        {
+            string address = "https://t.song.work/api?"+"text="+textToTranslate+"&from=" + from + "&to=" + to;
+            string rstStart = "\"result\":\"";
+            string rstEnd = "\",\"pronunciation\":";
+
+            return SendTranslateTextToServer(address, rstStart, rstEnd, HttpMethod.Get);
         }
         /// <summary>
         /// 百度翻译 连续请求延迟需要5秒

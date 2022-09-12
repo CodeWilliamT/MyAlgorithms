@@ -22,3 +22,21 @@ C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\Utils\Utils\obj\Debug\ne
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfoInputs.cache
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfo.cs
 C:\Users\Me\source\repos\WeiliangTong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.AssemblyReference.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.Resources.Winform.CommonResources.resources
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.Resources.Winform.CommonResources.en-US.resources
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.Resources.Winform.CommonResources.zh.resources
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.GenerateResource.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfoInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfo.cs
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\bin\Debug\netcoreapp3.1\Utils.deps.json
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\bin\Debug\netcoreapp3.1\Utils.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\bin\Debug\netcoreapp3.1\Utils.pdb
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\bin\Debug\netcoreapp3.1\en-US\Utils.resources.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\bin\Debug\netcoreapp3.1\zh\Utils.resources.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\en-US\Utils.resources.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\zh\Utils.resources.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.dll
+C:\Users\me\source\repos\Weiliang Tong\WilliamPublicRepo\Utils\Utils\obj\Debug\netcoreapp3.1\Utils.pdb

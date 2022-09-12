@@ -52,7 +52,7 @@ namespace Utils
         /// <returns>Scaled Bitmap</returns>
         public static Bitmap GetScaledBitmap(Bitmap bitmap)
         {
-            float scaleFactor = DpiUtil.GetDisplayScaleFactor();
+            float scaleFactor = GetDisplayScaleFactor();
             Bitmap scaledBitmap = new Bitmap(bitmap, (int)(bitmap.Width * scaleFactor), (int)(bitmap.Height * scaleFactor));
             return scaledBitmap;
         }

@@ -127,13 +127,13 @@ namespace Utils
                     slm.RawLines = new List<string>();
                     slm.Lines = new List<string>();
                     slm.Lines.Add(substr);
-                    substr = substr.Replace("<i>", "").Replace(@"</i>", "");
+                    substr = substr.Replace("<i>", "").Replace(@"</i>", "").Replace("&", "and");
                     slm.RawLines.Add(substr);
                     substr = sr.ReadLine();
                     while (substr != null&&substr != num.ToString())
                     {
                         slm.Lines.Add(substr);
-                        substr = substr.Replace("<i>", "").Replace(@"</i>", "");
+                        substr = substr.Replace("<i>", "").Replace(@"</i>", "").Replace("&", "and");
                         slm.RawLines.Add(substr);
                         substr = sr.ReadLine();
                     }
@@ -176,7 +176,7 @@ namespace Utils
                     x = a + 2;
                     line = substr.Substring(x, substr.Length - x);
                     slm.Lines = new List<string>();
-                    line = line.Replace("{\\i1}", "").Replace("{\\i0}", "");
+                    line = line.Replace("{\\i1}", "").Replace("{\\i0}", "").Replace("&", "and");
                     slm.RawLines = line.Split(new[] { @"\N" }, StringSplitOptions.RemoveEmptyEntries).ToList();
                     foreach (string s in slm.RawLines)
                     {

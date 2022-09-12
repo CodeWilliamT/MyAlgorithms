@@ -34,6 +34,8 @@ namespace Sub_Translator
             {
                 comboBox_Format.Items.Add(e);
             }
+
+            //comboBox_Server.Items.Add(TranslatorHelper.TranslateServer[0]);
             foreach (var e in TranslatorHelper.TranslateServer)
             {
                 comboBox_Server.Items.Add(e);
@@ -179,6 +181,7 @@ namespace Sub_Translator
             if (tbSubfoldername.Text[tbSubfoldername.Text.Length-1] =='\\')
                 tbSubfoldername.Text=tbSubfoldername.Text.Remove(tbSubfoldername.Text.Length - 1);
             string savefolder = tbSubfoldername.Text + "_Trans";
+            SaveConfig();
             Task.Run(new Action(() =>
             {
                 try
@@ -208,7 +211,6 @@ namespace Sub_Translator
                 {
                     MessageBox.Show(ex.Message);
                 }
-                SaveConfig();
                 this.BeginInvoke(new MethodInvoker(() =>
                 {
                     toolStripProgressBar1.Value = 100;
