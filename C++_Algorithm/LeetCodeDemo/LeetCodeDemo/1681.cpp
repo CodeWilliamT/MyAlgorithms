@@ -1,20 +1,10 @@
 ﻿using namespace std;
 #include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
 #include <unordered_map>
-#include <set>
 #include <map>
-#include <queue>
-#include <stack>
 #include <functional>
-#include <bitset>
-typedef long long ll;
-typedef pair<ll, ll> pll;
-typedef pair<int, int> pii;
-//深搜 枚举
+//深搜 回溯 枚举
 //以序列表示情况，每k个一组，枚举所有符合要求的序列，刷出最小的子集最大差的和。
 //剪枝：组间第一个增序，组内增序，
 class Solution {
