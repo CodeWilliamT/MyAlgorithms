@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\C++_Algorithm",
+    "\\C++_Algorithm\\LeetCodeDemo"
   ],
-  "SelectedNode": "\\Web_SubTools.sln",
+  "SelectedNode": "\\C++_Algorithm\\LeetCodeDemo\\LeetCodeDemo.sln",
   "PreviewInSolutionExplorer": false
 }
