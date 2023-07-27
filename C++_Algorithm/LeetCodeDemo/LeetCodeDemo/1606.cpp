@@ -49,7 +49,7 @@ class Solution {
     /// <param name="r">线段树节点索引指向的原数组区间的右边缘元素索引</param>
     /// <param name="ql">要查询的区间包含的左边界索引</param>
     /// <param name="qr">要查询的区间包含的右边界索引</param>
-    /// <param name="qr">要查询的小于的值</param>
+    /// <param name="v">要查询的小于的值</param>
     /// <returns>该区间的某属性</returns>
     int query(int node, int l, int r, int ql, int qr,int v) {
         if (l == r) {
@@ -78,7 +78,6 @@ class Solution {
     /// <param name="r">线段树节点索引指向的原数组区间的右边缘元素索引</param>
     /// <param name="i">原数组要改的索引</param>
     /// <param name="v">原数组要改成的值</param>
-    /// <returns>整个区间的某极值</returns>
     void update(int node, int l, int r, int i, int v) {
         if (l == r) {
             //当单元素时为原数组元素本身，根据区间要存什么更改
