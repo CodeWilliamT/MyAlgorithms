@@ -1,7 +1,8 @@
 using namespace std;
 #include <iostream>
 #include <vector>
-//线段树 区间修改 懒标记(更新时标记最大子区间，查询还原修复标记区间的子区间)
+//线段树 模板
+//区间修改 懒标记(更新时标记最大子区间，查询还原修复标记区间的子区间)
 //单值最大10^9+10^5*10^5=1.1*10^10>2^31
 //和最大1.1*10^10*10^5=1.1*10^15
 //累计操作 遇到取和时计算
@@ -55,11 +56,12 @@ private:
         if (l == r)
             return;
         int nl = node << 1, nr = nl | 1;
+        //根据所需区间属性修改
         T[node] = T[nl] + T[nr];
     }
 
     /// <summary>
-    /// 根据区间差，更新下级两个区间结果
+    /// 根据标记，更新下级两个区间结果
     /// </summary>
     /// <param name="node">当前区间的线段树索引</param>
     /// <param name="l">要更新的原数组当前区间的左边缘元素索引</param>
@@ -71,8 +73,9 @@ private:
         int m = (l + r) / 2;
         lazy[nl] = !lazy[nl];
         lazy[nr] = !lazy[nr];
+        //根据所需区间属性修改
         T[nl] = (m - l + 1) - T[nl];
-        T[nr] = (r - m + 1) - T[nr];
+        T[nr] = (r - (m+1) + 1) - T[nr];
         lazy[node] = 0;
     }
     /// <summary>
@@ -143,7 +146,7 @@ public:
                 tree.Update(q[1], q[2]);
             }
             else if (q[0] == 2) {
-                sum2 += q[1] * tree.Query(0,n-1);
+                sum2 += 1ll*q[1] * tree.Query(0,n-1);
             }
             else if (q[0] == 3) {
                 rst.push_back(sum2);
