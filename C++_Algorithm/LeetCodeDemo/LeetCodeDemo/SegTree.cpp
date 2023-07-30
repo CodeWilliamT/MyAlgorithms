@@ -1,7 +1,9 @@
 using namespace std;
 #include <iostream>
 #include <vector>
-
+//线段树、树状数组、两分、分治
+//复杂度logN的区间属性改、查。
+//线段树索引，1存整个区间属性，2代表左半个区间属性，3代表右半个区间属性，以此类推。
 class SegTree {
 private:
     vector<int>T;//线段树数组
