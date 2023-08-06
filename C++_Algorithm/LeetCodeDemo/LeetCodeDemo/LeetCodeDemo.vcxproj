@@ -19,19 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2050.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SegTree.cpp" />
+    <ClCompile Include="myAlgo\BFS.cpp" />
+    <ClCompile Include="myAlgo\SegTree.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />
     <ClCompile Include="Test2.cpp" />
     <ClCompile Include="Test3.cpp" />
     <ClCompile Include="Test4.cpp" />
-    <ClCompile Include="TopoSort.cpp" />
-    <ClCompile Include="TreeNode.cpp" />
+    <ClCompile Include="myAlgo\TopoSort.cpp" />
+    <ClCompile Include="myAlgo\TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
+    <ClInclude Include="myAlgo\myHeader.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

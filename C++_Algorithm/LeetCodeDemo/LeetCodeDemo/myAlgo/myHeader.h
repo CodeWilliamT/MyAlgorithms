@@ -1,4 +1,4 @@
-﻿using namespace std;
+using namespace std;
 #include <iostream>
 #include <vector>
 #include <string>
@@ -11,3 +11,9 @@
 #include <stack>
 #include <functional>
 #include <bitset>
+
+#include "TreeNode.cpp"
+
+typedef long long ll;
+typedef pair<ll, ll> pll;
+typedef pair<int, int> pii;
