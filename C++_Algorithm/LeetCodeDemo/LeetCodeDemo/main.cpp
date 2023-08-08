@@ -1,6 +1,6 @@
 #include "header.h"
 //#include "2569.cpp"
-#include "test3.cpp"
+#include "2812.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -39,7 +39,7 @@ int main()
 	vector<int> v1 = { 4,1,3,2,4 };
 	vector<int> v2 = { 3,2,5 };
 	vector<vector<int>> vvi1 = { {0,0,0,1},{0,0,0,0 }, {0, 0, 0, 0}, {1, 0, 0, 0}};
-	vector<vector<int>> vvi2 = { {1, 3}, {2, 3}};
+	vector<vector<int>> vvi2 = { {0,0,1}, {0, 0,0},{0,0,0} };
 	vector<vector<char>> vvc = {{'(', '(', '('}, {')', '(', ')'}, {'(', '(', ')'}, {'(', '(', ')'}};
 	vector<string> vs1 = { "ju","fzjnm","x","e","zpmcz","h","q" };
 	vector<string> vs2 = { "f","hveml","cpivl","d" };
@@ -47,7 +47,7 @@ int main()
 	
 	//s.handleQuery(v1,v2,vvi1);
 	s.maximumSafenessFactor(vvi1);
-	//���
+	//
 	//ofstream dataFile;
 	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);
 	//int output=0,tmp;

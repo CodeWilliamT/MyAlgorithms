@@ -19,8 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="2812.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myAlgo\BFS.cpp" />
+    <ClCompile Include="myAlgo\BinaryCheck.cpp" />
+    <ClCompile Include="myAlgo\DisjointSet.cpp" />
     <ClCompile Include="myAlgo\SegTree.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />
