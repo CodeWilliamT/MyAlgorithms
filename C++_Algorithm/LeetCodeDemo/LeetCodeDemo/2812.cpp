@@ -97,11 +97,11 @@ private:
     vector<vector<int>> g;
 public:
     //处理特殊边界
-    bool Judge(pii& cur,int x) {
+    bool Judge(pii& cur, int x) {
         return g[cur.first][cur.second] >= x;
     }
     //位图广搜，返回抵达终点步骤数，不能则返回-1
-    int BFS(vector<vector<int>>& grid, vector<int>& start, vector<int>& end,int x)
+    int BFS(vector<vector<int>>& grid, vector<int>& start, vector<int>& end, int x)
     {
         int n = grid.size();
         int m = grid[0].size();
@@ -122,7 +122,7 @@ public:
                 q.pop();
                 if (cur.first <0 || cur.first >n - 1 || cur.second <0 || cur.second >m - 1
                     || v[cur.first][cur.second]
-                    || !Judge(cur,x)) {
+                    || !Judge(cur, x)) {
                     continue;//处理边界情况
                 }
                 v[cur.first][cur.second] = 1;//打标记
@@ -138,7 +138,7 @@ public:
             }
             steps++;
         }
-        return reachSteps;
+        return reachSteps > -1;
     }
 
     //多源最广路,返回存各点最小步骤距离的图
@@ -188,7 +188,7 @@ public:
     bool check(int x) {
         BitMapBFS bfs;
         vector<int> s = { 0,0 }, e = { N - 1,M - 1 };
-        return bfs.BFS(g, s, e,x);
+        return bfs.BFS(g, s, e, x);
     }
     //位图中两分查找
     int GetTEdge(vector<vector<int>> grid, int l, int r) {

@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2812.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myAlgo\BFS.cpp" />
     <ClCompile Include="myAlgo\BinaryCheck.cpp" />

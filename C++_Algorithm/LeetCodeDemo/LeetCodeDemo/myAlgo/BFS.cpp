@@ -6,12 +6,13 @@ class BitMapBFS {
 private:
     vector<vector<int>> g;
 public:
+    int minSteps;//抵达终点的步骤数，不能则-1
     //处理特殊边界,能下一步则返回true
     bool Judge(pii& cur) {
         return true;
     }
     //位图广搜，返回抵达终点步骤数，不能则返回-1
-    int BFS(vector<vector<int>>& grid,vector<int>& start, vector<int>& end)
+    bool BFS(vector<vector<int>>& grid,vector<int>& start, vector<int>& end)
     {
         int n = grid.size();
         int m = grid[0].size();
@@ -22,7 +23,7 @@ public:
 
         q.push({ start[0] ,start[1]});
         int steps = 0;//步骤数
-        int reachSteps = -1;//抵达终点的步骤数，不能则-1
+        minSteps = -1;//抵达终点的步骤数，不能则-1
         int witdh;
         pii cur;
         while (!q.empty()) {
@@ -39,7 +40,7 @@ public:
                 //处理当前点位信息
                 //计算下一点位信息；
                 if (cur.first == end[0] && cur.second == end[1]) {
-                    reachSteps = steps;
+                    minSteps = steps;
                     continue;//抵达终点
                 }
                 for (int i = 0; i < 4; i++) {
@@ -48,7 +49,7 @@ public:
             }
             steps++;
         }
-        return reachSteps;
+        return minSteps>-1;
     }
     //多源最广路,返回存各点最小步骤距离的图
     //图，起点集，
