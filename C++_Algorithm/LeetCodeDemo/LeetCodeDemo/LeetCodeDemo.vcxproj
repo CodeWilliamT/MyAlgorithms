@@ -20,16 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="myAlgo\BFS.cpp" />
-    <ClCompile Include="myAlgo\BinaryCheck.cpp" />
-    <ClCompile Include="myAlgo\DisjointSet.cpp" />
-    <ClCompile Include="myAlgo\SegTree.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />
     <ClCompile Include="Test2.cpp" />
     <ClCompile Include="Test3.cpp" />
     <ClCompile Include="Test4.cpp" />
-    <ClCompile Include="myAlgo\TopoSort.cpp" />
     <ClCompile Include="myAlgo\TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>

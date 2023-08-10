@@ -11,3 +11,6 @@
 #include <stack>
 #include <functional>
 #include <bitset>
+typedef long long ll;
+typedef pair<ll, ll> pll;
+typedef pair<int, int> pii;

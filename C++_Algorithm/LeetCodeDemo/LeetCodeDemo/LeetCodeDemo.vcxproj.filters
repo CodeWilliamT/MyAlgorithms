@@ -39,24 +39,6 @@
     <ClCompile Include="myAlgo\TreeNode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="myAlgo\SegTree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="myAlgo\TopoSort.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="myAlgo\BFS.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="2812.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="myAlgo\BinaryCheck.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="myAlgo\DisjointSet.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
