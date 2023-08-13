@@ -20,12 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="myAlgo\Query\HeapSort.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />
     <ClCompile Include="Test2.cpp" />
     <ClCompile Include="Test3.cpp" />
     <ClCompile Include="Test4.cpp" />
-    <ClCompile Include="myAlgo\TreeNode.cpp" />
+    <ClCompile Include="myAlgo\Structs\TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />

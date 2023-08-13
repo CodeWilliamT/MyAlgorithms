@@ -36,7 +36,10 @@
     <ClCompile Include="Test4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="myAlgo\TreeNode.cpp">
+    <ClCompile Include="myAlgo\Structs\TreeNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="myAlgo\Query\HeapSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

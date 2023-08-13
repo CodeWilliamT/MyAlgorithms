@@ -9,7 +9,7 @@ public:
     bool check(int x) {
         return true;
     }
-    //位图中两分查找
+    //位图中两分查找,返回满足check的最大值
     int GetTEdge(vector<vector<int>> grid, int l, int r) {
         g = grid;
         N = g.size();

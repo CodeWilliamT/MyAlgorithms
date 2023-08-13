@@ -1,6 +1,6 @@
 #include "header.h"
 //#include "2569.cpp"
-#include "2812.cpp"
+#include "Test3.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -12,6 +12,10 @@ struct TreeNode {
 	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 	TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
+*/
+
+
+/*
 struct ListNode {
 	int val;
 	ListNode* next;
@@ -19,6 +23,8 @@ struct ListNode {
 	ListNode(int x) : val(x), next(nullptr) {}
 	ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
+*/
+/*
 class Node {
 public:
 	int val;
@@ -36,7 +42,7 @@ int main()
 	//Codec BitTreeHelper;
 	Solution s;
 	string str = "000009";
-	vector<int> v1 = { 4,1,3,2,4 };
+	vector<int> v1 = { 169,98,101,152,113};
 	vector<int> v2 = { 3,2,5 };
 	vector<vector<int>> vvi1 = { {0,0,0,1},{0,0,0,0 }, {0, 0, 0, 0}, {1, 0, 0, 0}};
 	vector<vector<int>> vvi2 = { {0,0,1}, {0, 0,0},{0,0,0} };
@@ -46,7 +52,7 @@ int main()
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
 	
 	//s.handleQuery(v1,v2,vvi1);
-	s.maximumSafenessFactor(vvi1);
+	s.minAbsoluteDifference(v1,2);
 	//
 	//ofstream dataFile;
 	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);

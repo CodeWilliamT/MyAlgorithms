@@ -12,7 +12,7 @@ using namespace std;
 #include <functional>
 #include <bitset>
 
-#include "TreeNode.cpp"
+#include "Structs\TreeNode.cpp"
 
 typedef long long ll;
 typedef pair<ll, ll> pll;
