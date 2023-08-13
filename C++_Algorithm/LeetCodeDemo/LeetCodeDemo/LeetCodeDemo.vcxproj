@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="myAlgo\LookUp\0617.cpp" />
     <ClCompile Include="myAlgo\Query\HeapSort.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />
