@@ -1,6 +1,6 @@
 #include "header.h"
 //#include "2569.cpp"
-#include "0833.cpp"
+#include "1444.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -47,12 +47,12 @@ int main()
 	vector<vector<int>> vvi1 = { {0,0,0,1},{0,0,0,0 }, {0, 0, 0, 0}, {1, 0, 0, 0} };
 	vector<vector<int>> vvi2 = { {0,0,1}, {0, 0,0},{0,0,0} };
 	vector<vector<char>> vvc = { {'(', '(', '('}, {')', '(', ')'}, {'(', '(', ')'}, {'(', '(', ')'} };
-	vector<string> vs1 = { "a", "cd" };
+	vector<string> vs1 = { "A..","AAA","..." };
 	vector<string> vs2 = { "eee", "ffff" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
 
 	//s.handleQuery(v1,v2,vvi1);
-	s.findReplaceString("abcd", v1,vs1,vs2);
+	s.ways(vs1,3);
 	//
 	//ofstream dataFile;
 	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);
