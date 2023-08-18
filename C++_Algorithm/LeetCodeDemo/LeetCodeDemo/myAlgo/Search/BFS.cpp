@@ -1,6 +1,66 @@
 using namespace std;
-#include "myHeader.h"
+#include "..\myHeader.h"
 typedef pair<int, int> pii;
+struct Node {
+    int x;
+    int y;
+    bool operator==(Node const& a) const {
+        return a.x == x && a.y == y;
+    }
+};
+namespace std {
+    template<>
+    struct hash<Node> {
+        std::size_t operator() (const Node& id) const {
+            std::size_t h1 = std::hash<int>()(id.x);
+            std::size_t h2 = std::hash<int>()(id.y);
+            //std::size_t h3 = std::hash<std::string>()(id.z);
+            return h1 ^ h2;
+        }
+    };
+};
+class CommonBFS {
+private:
+public:
+    int minSteps;//抵达终点的步骤数，不能则-1
+    bool Judge(Node& cur) {//处理特殊边界,能下一步则返回true
+        return true;
+    }
+    //通用广搜，返回抵达终点步骤数，不能则返回-1
+    bool BFS(Node& start, Node& end)
+    {
+        queue<Node> q;
+        unordered_map<Node,bool> v;
+        q.push(start);
+        int steps = 0;//步骤数
+        minSteps = -1;//抵达终点的步骤数，不能则-1
+        int witdh;
+        Node cur;
+        while (!q.empty()) {
+            witdh = q.size();
+            while (witdh--) {
+                cur = q.front();
+                q.pop();
+                if (!Judge(cur)) {//处理边界情况
+                    continue;
+                }
+                v[cur] = 1;//打标记
+                //处理当前点位信息
+                //查看是否抵达终点；
+                if (cur== end) {
+                    minSteps = steps;
+                    continue;//抵达终点
+                }
+                //操作成下一步的节点，加入队列
+                for (int i = 0; i < 4; i++) {
+                    q.push(cur);//加入下一步
+                }
+            }
+            steps++;
+        }
+        return minSteps > -1;
+    }
+}；
 
 class BitMapBFS {
 private:
@@ -90,6 +150,7 @@ public:
         return minSteps;
     }
 };
+
 class EdgeMapBFS {
 private:
     vector<vector<int>> g;

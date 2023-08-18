@@ -45,6 +45,18 @@
     <ClCompile Include="myAlgo\LookUp\0617.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1444.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1388.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="myAlgo\Search\DFS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="myAlgo\Search\BFS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="1388.cpp" />
     <ClCompile Include="1444.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myAlgo\LookUp\0617.cpp" />
     <ClCompile Include="myAlgo\Query\HeapSort.cpp" />
+    <ClCompile Include="myAlgo\Search\BFS.cpp" />
+    <ClCompile Include="myAlgo\Search\DFS.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />
     <ClCompile Include="Test2.cpp" />
