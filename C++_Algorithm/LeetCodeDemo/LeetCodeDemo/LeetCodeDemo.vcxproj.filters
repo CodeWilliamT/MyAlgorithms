@@ -48,9 +48,6 @@
     <ClCompile Include="1444.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="1388.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="myAlgo\Search\DFS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
