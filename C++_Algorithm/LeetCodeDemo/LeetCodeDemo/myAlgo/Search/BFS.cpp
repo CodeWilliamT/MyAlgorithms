@@ -30,7 +30,7 @@ public:
     bool BFS(Node& start, Node& end)
     {
         queue<Node> q;
-        unordered_map<Node,bool> v;
+        unordered_map<Node, bool> v;
         q.push(start);
         int steps = 0;//步骤数
         minSteps = -1;//抵达终点的步骤数，不能则-1
@@ -47,7 +47,7 @@ public:
                 v[cur] = 1;//打标记
                 //处理当前点位信息
                 //查看是否抵达终点；
-                if (cur== end) {
+                if (cur == end) {
                     minSteps = steps;
                     continue;//抵达终点
                 }
@@ -60,7 +60,7 @@ public:
         }
         return minSteps > -1;
     }
-}；
+};
 
 class BitMapBFS {
 private:

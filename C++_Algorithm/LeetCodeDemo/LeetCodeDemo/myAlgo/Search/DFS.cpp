@@ -2,7 +2,7 @@ using namespace std;
 #include "..\myHeader.h"
 typedef pair<int, int> pii;
 
-class DFS {
+class DFSBasic {
 private:
     vector<vector<int>> g;
 public:
@@ -17,6 +17,11 @@ public:
     //位图广搜，返回抵达终点步骤数，不能则返回-1
     void DFS(state st, state2 st2)
     {
-
+    }
+    void DFS()
+    {
+        function<void(int, int, uint32_t)> dfs = [&](int idx, int sum, uint32_t rep) {
+            return;
+        };
     }
 };
