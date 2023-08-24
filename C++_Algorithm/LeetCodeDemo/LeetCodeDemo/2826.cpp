@@ -1,19 +1,6 @@
 ﻿using namespace std;
 #include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
-#include <functional>
-#include <bitset>
-typedef long long ll;
-typedef pair<ll, ll> pll;
-typedef pair<int, int> pii;
 //找规律 巧思
 //改变数组中元素，使得数组递增，答最小改动数。
 //枚举以i,j为2组的左右边界时的1，3总数，其为改动值。最小值可能为答案。
