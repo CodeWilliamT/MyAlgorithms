@@ -3,33 +3,53 @@ using namespace std;
 #include <vector>
 #include <algorithm>
 
-//排序后硬推
+//二刷
+//模拟
+//排序后判断处理
 class Solution {
 public:
-    vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        int n = intervals.size();
-        if (!n)return {};
-        vector<vector<int>> ans;
-        vector<int> h;
-        sort(intervals.begin(), intervals.end());
-        h = intervals[0];
-        for (int i = 1; i < n; i++)
-        {
-            if (h[1] >= intervals[i][0])
-            {
-                if (h[1] < intervals[i][1])
-                    h[1] = intervals[i][1];
+    vector<vector<int>> merge(vector<vector<int>>& t) {
+        sort(t.begin(), t.end());
+        vector<vector<int>> rst = { {t[0][0],t[0][1]} };
+        for (auto& e : t) {
+            if (e[0] <= rst.back()[1]) {
+                rst.back()[1] = max(rst.back()[1], e[1]);
             }
-            else
-            {
-                ans.push_back(h);
-                h = intervals[i];
+            else {
+                rst.push_back({ e[0],e[1] });
             }
         }
-        ans.push_back(h);
-        return ans;
+        return rst;
     }
 };
+
+//排序后硬推
+//class Solution {
+//public:
+//    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+//        int n = intervals.size();
+//        if (!n)return {};
+//        vector<vector<int>> ans;
+//        vector<int> h;
+//        sort(intervals.begin(), intervals.end());
+//        h = intervals[0];
+//        for (int i = 1; i < n; i++)
+//        {
+//            if (h[1] >= intervals[i][0])
+//            {
+//                if (h[1] < intervals[i][1])
+//                    h[1] = intervals[i][1];
+//            }
+//            else
+//            {
+//                ans.push_back(h);
+//                h = intervals[i];
+//            }
+//        }
+//        ans.push_back(h);
+//        return ans;
+//    }
+//};
 ////并查集 很慢O(n^2)
 //class Solution {
 //    vector<int> f;
