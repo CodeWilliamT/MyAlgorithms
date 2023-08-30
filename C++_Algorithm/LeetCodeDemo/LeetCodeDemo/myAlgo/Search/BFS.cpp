@@ -1,59 +1,48 @@
 using namespace std;
 #include "..\myHeader.h"
 typedef pair<int, int> pii;
-struct Node {
-    int x;
-    int y;
-    bool operator==(Node const& a) const {
-        return a.x == x && a.y == y;
-    }
-};
-namespace std {
-    template<>
-    struct hash<Node> {
-        std::size_t operator() (const Node& id) const {
-            std::size_t h1 = std::hash<int>()(id.x);
-            std::size_t h2 = std::hash<int>()(id.y);
-            //std::size_t h3 = std::hash<std::string>()(id.z);
-            return h1 ^ h2;
-        }
-    };
-};
 class CommonBFS {
-private:
+#define MAXX 6000
+#define MAXY 2
+    struct Node {
+        int x;
+        int y;
+        string path;
+    };
 public:
     int minSteps;//抵达终点的步骤数，不能则-1
-    bool Judge(Node& cur) {//处理特殊边界,能下一步则返回true
-        return true;
-    }
     //通用广搜，返回抵达终点步骤数，不能则返回-1
     bool BFS(Node& start, Node& end)
     {
         queue<Node> q;
-        unordered_map<Node, bool> v;
-        q.push(start);
+        bool v[MAXX * MAXY + MAXY + 1]{};
+        queue<Node> q;
+        auto judge = [&](Node& nd) {//处理特殊边界,能下一步则返回true
+            return nd.x >= 0 && nd.x <= MAXX;
+        };
         int steps = 0;//步骤数
         minSteps = -1;//抵达终点的步骤数，不能则-1
         int witdh;
-        Node cur;
+        Node cur, next;
         while (!q.empty()) {
             witdh = q.size();
             while (witdh--) {
                 cur = q.front();
                 q.pop();
-                if (!Judge(cur)) {//处理边界情况
+                if (!judge(cur)||v[cur.x]) {//处理边界情况
                     continue;
                 }
-                v[cur] = 1;//打标记
-                //处理当前点位信息
+                v[cur.x] = 1;//打标记
                 //查看是否抵达终点；
-                if (cur == end) {
+                if (cur.x == end.x) {
                     minSteps = steps;
                     continue;//抵达终点
                 }
                 //操作成下一步的节点，加入队列
                 for (int i = 0; i < 4; i++) {
-                    q.push(cur);//加入下一步
+                    next = { cur.x+i,cur.y,cur.path + to_string(cur.x + i)};
+                    if(judge(next))
+                        q.push(next);//加入下一步
                 }
             }
             steps++;
@@ -97,7 +86,6 @@ public:
                     continue;//处理边界情况
                 }
                 v[cur.first][cur.second] = 1;//打标记
-                //处理当前点位信息
                 //计算下一点位信息；
                 if (cur.first == end[0] && cur.second == end[1]) {
                     minSteps = steps;
@@ -171,14 +159,14 @@ public:
         q.push(start);
         int witdh;
         int steps=0;//步骤数
-        int reachSteps=-1;//抵达终点步骤数
+        int minSteps =-1;//抵达终点步骤数
         int cur;
         while (!q.empty()) {
             witdh = q.size();
             while (witdh--) {
                 cur = q.front();
                 q.pop();
-                if (v[cur]||!Judge(cur)) {
+                if (!Judge(cur)|| v[cur]) {
                     continue;//处理边界情况
                 }
                 v[cur] = 1;//打标记
@@ -186,7 +174,7 @@ public:
                 //计算下一点位信息；
                 //抵达终点
                 if (cur == end) {
-                    reachSteps = steps;
+                    minSteps = steps;
                     continue;
                 }
                 for (auto& e : g[cur]) {
@@ -195,6 +183,6 @@ public:
             }
             steps++;
         }
-        return reachSteps;
+        return minSteps;
     }
 };
