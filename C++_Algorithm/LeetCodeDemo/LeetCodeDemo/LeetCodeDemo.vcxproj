@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="2511.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="myAlgo\C_A.cpp" />
     <ClCompile Include="myAlgo\LookUp\0617.cpp" />
     <ClCompile Include="myAlgo\Search\BFS.cpp" />
     <ClCompile Include="myAlgo\Search\DFS.cpp" />

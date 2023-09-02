@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "header.h"
 //#include "2569.cpp"
-#include "1654.cpp"
+#include "Test4.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -42,9 +42,9 @@ int main()
 {
 	//Codec BitTreeHelper;
 	Solution s;
-	string str1 = "R_L_";
+	string str1 = "abbcd";
 	string str2 = "__LR";
-	vector<int> v1 = { 8,3,16,6,12,20 };
+	vector<int> v1 = { 1,1,1,3 };
 	vector<int> v2 = { 3,2,5 };
 	vector<vector<int>> vvi1 = { {1,5} ,{1,5},{3,4},{2,5},{1,3},{5,1},{2,3},{2,5} };
 	vector<vector<int>> vvi2 = { {0,0,1}, {0, 0,0},{0,0,0} };
@@ -54,8 +54,7 @@ int main()
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
 
 	//s.handleQuery(v1,v2,vvi1);
-	s.minimumJumps(v1,15,13,11);
-	//
+	s.countKSubsequencesWithMaxBeauty(str1, 2);
 	//ofstream dataFile;
 	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);
 	//int output=0,tmp;

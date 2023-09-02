@@ -16,7 +16,6 @@ public:
     {
         queue<Node> q;
         bool v[MAXX * MAXY + MAXY + 1]{};
-        queue<Node> q;
         auto judge = [&](Node& nd) {//处理特殊边界,能下一步则返回true
             return nd.x >= 0 && nd.x <= MAXX;
         };
