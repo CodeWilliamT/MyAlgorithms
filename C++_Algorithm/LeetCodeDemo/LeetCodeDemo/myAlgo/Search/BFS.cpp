@@ -15,6 +15,7 @@ public:
     bool BFS(Node& start, Node& end)
     {
         queue<Node> q;
+        q.push(start);
         bool v[MAXX * MAXY + MAXY + 1]{};
         auto judge = [&](Node& nd) {//处理特殊边界,能下一步则返回true
             return nd.x >= 0 && nd.x <= MAXX;
@@ -66,10 +67,10 @@ public:
         int m = grid[0].size();
         g = grid;
         queue<pii> q;
+        q.push({ start[0] ,start[1] });
         vector<vector<bool>> v(n, vector<bool>(m, 0));
         int d[4][2] = { {1,0},{0,1},{-1,0},{0,-1} };//按需求改
 
-        q.push({ start[0] ,start[1]});
         int steps = 0;//步骤数
         minSteps = -1;//抵达终点的步骤数，不能则-1
         int witdh;

@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "header.h"
 //#include "2569.cpp"
-#include "Test4.cpp"
+#include "Test2.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -42,7 +42,7 @@ int main()
 {
 	//Codec BitTreeHelper;
 	Solution s;
-	string str1 = "abbcd";
+	string str1 = "1";
 	string str2 = "__LR";
 	vector<int> v1 = { 1,1,1,3 };
 	vector<int> v2 = { 3,2,5 };
@@ -54,7 +54,7 @@ int main()
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
 
 	//s.handleQuery(v1,v2,vvi1);
-	s.countKSubsequencesWithMaxBeauty(str1, 2);
+	s.minimumOperations(str1);
 	//ofstream dataFile;
 	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);
 	//int output=0,tmp;
