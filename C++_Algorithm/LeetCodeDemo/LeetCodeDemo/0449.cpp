@@ -1,4 +1,4 @@
-锘縰sing namespace std;
+using namespace std;
 
 #include <iostream>
 #include <string>
@@ -14,7 +14,7 @@ struct TreeNode {
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-//搴忓垪鍖栦簩鍙夋爲
+//序列化二叉搜索树(二叉完全树)
 class Codec {
 
 public:
