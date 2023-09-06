@@ -1,7 +1,20 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "header.h"
+using namespace std;
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <unordered_set>
+#include <unordered_map>
+#include <set>
+#include <map>
+#include <queue>
+#include <stack>
+#include <functional>
+#include <bitset>
+//#include "myAlgo\Structs\TreeNode.cpp"
 //#include "2569.cpp"
-#include "Test2.cpp"
+#include "1123.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -42,7 +55,7 @@ int main()
 {
 	//Codec BitTreeHelper;
 	Solution s;
-	string str1 = "1";
+	string str1 = "[1,null,2,null,3,5,4,6,null,9,8,null,7]";
 	string str2 = "__LR";
 	vector<int> v1 = { 1,1,1,3 };
 	vector<int> v2 = { 3,2,5 };
@@ -54,7 +67,10 @@ int main()
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
 
 	//s.handleQuery(v1,v2,vvi1);
-	s.minimumOperations(str1);
+	Codec codec;
+	TreeNode* node= codec.deserialize(str1);
+	string testStr=codec.serialize(node);
+	s.lcaDeepestLeaves(node);
 	//ofstream dataFile;
 	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);
 	//int output=0,tmp;

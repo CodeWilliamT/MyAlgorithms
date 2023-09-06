@@ -108,10 +108,10 @@ public:
         vector<vector<int>> minSteps(n, vector<int>(m, 0));
         g = grid;
         queue<pii> q;
+        for (auto& s : starts)
+            q.push({ s[0],s[1] });
         vector<vector<bool>> v(n, vector<bool>(m, 0));
         int d[4][2] = { {1,0},{0,1},{-1,0},{0,-1} };//按需求改
-        for(auto&s:starts)
-            q.push({ s[0],s[1] });
         int steps = 0;//步骤数
         int witdh;
         pii  cur;

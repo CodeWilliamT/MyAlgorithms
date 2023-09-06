@@ -45,16 +45,13 @@
     <ClCompile Include="myAlgo\Search\DFS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="2511.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="myAlgo\Search\BFS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="myAlgo\C_A.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="2605.cpp">
+    <ClCompile Include="1123.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
