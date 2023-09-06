@@ -14,7 +14,7 @@ using namespace std;
 #include <bitset>
 //#include "myAlgo\Structs\TreeNode.cpp"
 //#include "2569.cpp"
-#include "1123.cpp"
+#include "2594.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -57,7 +57,7 @@ int main()
 	Solution s;
 	string str1 = "[1,null,2,null,3,5,4,6,null,9,8,null,7]";
 	string str2 = "__LR";
-	vector<int> v1 = { 1,1,1,3 };
+	vector<int> v1 = { 4,2,3,1 };
 	vector<int> v2 = { 3,2,5 };
 	vector<vector<int>> vvi1 = { {1,5} ,{1,5},{3,4},{2,5},{1,3},{5,1},{2,3},{2,5} };
 	vector<vector<int>> vvi2 = { {0,0,1}, {0, 0,0},{0,0,0} };
@@ -67,10 +67,10 @@ int main()
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
 
 	//s.handleQuery(v1,v2,vvi1);
-	Codec codec;
+	/*Codec codec;
 	TreeNode* node= codec.deserialize(str1);
-	string testStr=codec.serialize(node);
-	s.lcaDeepestLeaves(node);
+	string testStr=codec.serialize(node);*/
+	s.repairCars(v1,10);
 	//ofstream dataFile;
 	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);
 	//int output=0,tmp;

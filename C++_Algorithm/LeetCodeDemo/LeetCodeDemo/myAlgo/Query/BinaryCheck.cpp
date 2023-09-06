@@ -6,28 +6,30 @@ private:
     vector<vector<int>> g;
     int N, M;
 public:
-    bool check(int x) {
-        return true;
-    }
-    //位图中两分查找,返回满足check的最大值
-    int GetTEdge(vector<vector<int>> grid, int l, int r) {
-        g = grid;
-        N = g.size();
-        M = g[0].size();
+
+    //左false右true，两分查找使check为true的最小值
+    int GetFTEdge(vector<int> a, int start, int end) {
+        int l = start, r = end;
+
+        auto check = [&](int x) {
+            return true;
+        };
         int m;
         while (l < r) {
-            m = (l + r + 1) / 2;
+            m = (l + r) / 2;
             if (check(m))
-                l = m;
+                r = m;
             else
-                r = m - 1;
+                l = m + 1;
         }
-        return l;
+        return r;
     }
-	//一维图中两分查找
-    int GetTEdge(vector<int> a,int l,int r){
-        nums = a;
-        N = nums.size();
+	//左true右false，两分查找使check为true的最大值
+    int GetTFEdge(vector<int> a,int start,int end){
+        int l = start, r = end;
+        auto check = [&](int x) {
+            return true;
+        };
         int m;
         while (l < r) {
             m = (l + r + 1) / 2;
