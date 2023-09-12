@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2651.cpp" />
+    <ClCompile Include="1462.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="myAlgo\Basic\Basic.cpp" />
     <ClCompile Include="myAlgo\C_A.cpp" />
     <ClCompile Include="myAlgo\LookUp\0617.cpp" />
+    <ClCompile Include="myAlgo\Map\TopoSort.cpp" />
     <ClCompile Include="myAlgo\Search\BFS.cpp" />
     <ClCompile Include="myAlgo\Search\DFS.cpp" />
     <ClCompile Include="Test.cpp" />
@@ -122,6 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

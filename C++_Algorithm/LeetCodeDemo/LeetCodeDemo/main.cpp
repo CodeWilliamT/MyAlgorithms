@@ -14,7 +14,7 @@ using namespace std;
 #include <bitset>
 //#include "myAlgo\Structs\TreeNode.cpp"
 //#include "2569.cpp"
-#include "2594.cpp"
+#include "1462.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -59,8 +59,8 @@ int main()
 	string str2 = "__LR";
 	vector<int> v1 = { 4,2,3,1 };
 	vector<int> v2 = { 3,2,5 };
-	vector<vector<int>> vvi1 = { {1,5} ,{1,5},{3,4},{2,5},{1,3},{5,1},{2,3},{2,5} };
-	vector<vector<int>> vvi2 = { {0,0,1}, {0, 0,0},{0,0,0} };
+	vector<vector<int>> vvi1 = { {1,0}};
+	vector<vector<int>> vvi2 = { {0,1}, {1, 0}};
 	vector<vector<char>> vvc = { {'(', '(', '('}, {')', '(', ')'}, {'(', '(', ')'}, {'(', '(', ')'} };
 	vector<string> vs1 = { "A..","AAA","..." };
 	vector<string> vs2 = { "eee", "ffff" };
@@ -70,20 +70,7 @@ int main()
 	/*Codec codec;
 	TreeNode* node= codec.deserialize(str1);
 	string testStr=codec.serialize(node);*/
-	s.repairCars(v1,10);
-	//ofstream dataFile;
-	//dataFile.open("dataFile.txt", std::ios::out | std::ios::app);
-	//int output=0,tmp;
-	//dataFile << "{";
-	//for (int i = 1; i <= 2e9; i++) {
-	//	tmp=s.countSpecialNumbers(i);
-	//	if (output == tmp)continue;
-	//	output = tmp;
-	//	dataFile<<",{" << i << ',' << output<<"}";// д������
-	//	if (i % 10==0)dataFile << endl;
-	//}
-	//dataFile << "}";
-	//dataFile.close();// �ر��ĵ�
+	s.checkIfPrerequisite(2, vvi1, vvi2);
 
 	//string name, url;
 	////将标准输入流重定向到 in.txt 文件

@@ -1,6 +1,10 @@
 using namespace std;
-#include "myHeader.h"
-
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <unordered_set>
+#include <unordered_map>
 class DisjoinSet {
 private:
     vector<int> f;
@@ -23,10 +27,10 @@ public:
     /// <param name="n">点数</param>
     /// <param name="edges">边集合({起点，终点})</param>
     /// <param name="plus">最小编号</param>
-    void DisJoin(int n, vector<vector<int>>& edges,int plus=1) {
-        f = vector<int>(n + plus);
+    void DisJoin(int n, vector<vector<int>>& edges,int from1 =1) {
+        f = vector<int>(n + from1);
         N = n;
-        for (int i = plus; i < n + plus; i++)
+        for (int i = from1; i < n + from1; i++)
             f[i] = i;
         int cost = 0;
         for (auto& e : edges) {
@@ -36,10 +40,10 @@ public:
         }
     }
     //数集合数
-    int CountSets(int plus = 1) {
-        set<int> st;
+    int CountSets(int from1 = 1) {
+        unordered_set<int> st;
         int p;
-        for (int i = 1 + plus; i < N + plus; i++) {
+        for (int i = 1 + from1; i < N + from1; i++) {
             p = findp(i);
             if (!st.count(p)) {
                 st.insert(p);
@@ -54,11 +58,11 @@ public:
     /// <param name="edges">边集合({起点，终点，费用})</param>
     /// <param name="plus">最小编号</param>
     /// <returns>求联通所有点的最小花费，不能连通返回-1</returns>
-    int Kruskal(int n, vector<vector<int>>& edges, int plus = 1)
+    int Kruskal(int n, vector<vector<int>>& edges, int from1 = 1)
     {
         sort(edges.begin(), edges.end(), [&](vector<int>& a, vector<int>& b) {return a[2] < b[2]; });//给边集按权值从小到大排序
-        f = vector<int>(n + plus);
-        for (int i = plus; i < n + plus; i++)
+        f = vector<int>(n + from1);
+        for (int i = from1; i < n + from1; i++)
             f[i] = i;
         int cost = 0;
         for (auto& e : edges) {
@@ -67,8 +71,8 @@ public:
             if (x != y) { cost += e[2]; unionp(x, y); }//若在不同集合则合并
         }
         //遍历所有点判断是否在同一集合
-        for (int i = 1 + plus; i < n + plus; i++) {
-            if (findp(plus) != findp(i)) {
+        for (int i = 1 + from1; i < n + from1; i++) {
+            if (findp(from1) != findp(i)) {
                 return -1;
             }
         }

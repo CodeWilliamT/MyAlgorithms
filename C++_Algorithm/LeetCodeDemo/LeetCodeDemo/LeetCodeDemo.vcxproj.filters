@@ -51,7 +51,13 @@
     <ClCompile Include="myAlgo\C_A.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="2651.cpp">
+    <ClCompile Include="myAlgo\Map\TopoSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="myAlgo\Basic\Basic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1462.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
