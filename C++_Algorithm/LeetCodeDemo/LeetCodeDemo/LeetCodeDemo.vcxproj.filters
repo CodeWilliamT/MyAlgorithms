@@ -60,6 +60,9 @@
     <ClCompile Include="1462.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1222.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

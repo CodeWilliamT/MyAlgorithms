@@ -22,6 +22,9 @@ public:
         auto judge = [&](Node& nd) {//处理特殊边界,能下一步则返回true
             return nd.x >= 0 && nd.x <= MAXN&& nd.y>=0&& nd.y<= MAXM;
         };
+        auto hash = [&](Node& nd) {//处理特殊边界,能下一步则返回true
+            return nd.x * MAXM + nd.y;
+        };
         int steps = 0;//步骤数
         int minSteps = -1;//抵达终点的步骤数，不能则-1
         int witdh;
@@ -31,19 +34,19 @@ public:
             while (witdh--) {
                 cur = q.front();
                 q.pop();
-                if (!judge(cur)||v[cur.x]) {//处理边界情况
+                if (!judge(cur)||v[hash(cur)]]) {//处理边界情况
                     continue;
                 }
-                v[cur.x] = 1;//打标记
+                v[hash(cur)] = 1;//打标记
                 //查看是否抵达终点；
-                if (cur.x == end.x) {
+                if (hash(cur)== hash(end)) {
                     minSteps = steps;
                     continue;//抵达终点,看情况break
                 }
                 //操作成下一步的节点，加入队列
                 for (int i = 0; i < 4; i++) {
                     next = { cur.x+i,cur.y,cur.path + to_string(cur.x + i)};
-                    if (!judge(next) || v[next.x])
+                    if (!judge(next) || v[hash(next)])
                         continue;
                     q.push(next);//加入下一步
                 }
@@ -72,6 +75,7 @@ public:
         q.push({ start[0] ,start[1] });
         vector<vector<bool>> v(n, vector<bool>(m, 0));
         int d[4][2] = { {1,0},{0,1},{-1,0},{0,-1} };//方向
+        //int d[8][2] = { {1,0},{0,1},{-1,0},{0,-1},{1,1},{1,-1},{-1,1},{-1,-1} };//方向
 
         int steps = 0;//步骤数
         minSteps = -1;//抵达终点的步骤数，不能则-1
