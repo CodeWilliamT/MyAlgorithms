@@ -19,8 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1222.cpp" />
-    <ClCompile Include="1462.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myAlgo\Basic\Basic.cpp" />
     <ClCompile Include="myAlgo\C_A.cpp" />
