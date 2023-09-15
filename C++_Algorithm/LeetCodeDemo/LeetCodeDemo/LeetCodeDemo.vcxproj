@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="lcp0050.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myAlgo\Basic\Basic.cpp" />
     <ClCompile Include="myAlgo\C_A.cpp" />
