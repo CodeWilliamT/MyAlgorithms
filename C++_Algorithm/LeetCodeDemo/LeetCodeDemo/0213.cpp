@@ -13,18 +13,17 @@ public:
         if (n == 3)
             return max({ nums[0], nums[1],nums[2] });
         int f[MAXN]{};
-        int d[MAXN]{};
         f[0] = nums[0];
         f[1] = max(nums[0], nums[1]);
         for (int i = 2; i < n-1; i++) {
             f[i] = max(f[i - 2] + nums[i], f[i - 1]);
         }
-        f[n - 1] = f[n - 2];
-        d[1] = nums[1];
-        d[2] = max(nums[1], nums[2]);
+        int rst = f[n - 2];
+        f[1] = nums[1];
+        f[2] = max(nums[1], nums[2]);
         for (int i = 3; i < n; i++) {
-            d[i] = max(d[i - 2] + nums[i], d[i - 1]);
+            f[i] = max(f[i - 2] + nums[i], f[i - 1]);
         }
-        return max(f[n-1],d[n-1]);
+        return max(rst,f[n-1]);
     }
 };
