@@ -12,6 +12,7 @@
 #include <functional>
 #include <bitset>
 #include "myAlgo\Structs\TreeNode.cpp"
+typedef pair<int, bool> pib;
 typedef long long ll;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;

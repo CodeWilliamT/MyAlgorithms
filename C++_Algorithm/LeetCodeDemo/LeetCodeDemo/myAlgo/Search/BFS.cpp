@@ -34,7 +34,7 @@ public:
             while (witdh--) {
                 cur = q.front();
                 q.pop();
-                if (!judge(cur)||v[hash(cur)]]) {//处理边界情况
+                if (!judge(cur)||v[hash(cur)]) {//处理边界情况
                     continue;
                 }
                 v[hash(cur)] = 1;//打标记
