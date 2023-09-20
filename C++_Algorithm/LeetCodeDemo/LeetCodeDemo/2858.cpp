@@ -1,27 +1,14 @@
 ﻿using namespace std;
-#include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_set>
-#include <unordered_map>
-#include <set>
-#include <map>
-#include <queue>
-#include <stack>
 #include <functional>
-#include <bitset>
-#include "myAlgo\Structs\TreeNode.cpp"
-typedef long long ll;
-typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
 //n点n-1条边，正好树。
-//动态规划
+//动态规划 换根DP
 class Solution {
 public:
     vector<int> minEdgeReversals(int n, vector<vector<int>>& edges) {
         vector<vector<pair<int, int> > > g(n);
-        for (auto& e : edges) {
+        for (auto& e : edges) {//构建邻接表，出边为正权，入边为负权
             g[e[0]].emplace_back(e[1], 1);
             g[e[1]].emplace_back(e[0], -1);
         }
@@ -43,6 +30,5 @@ public:
         };
         change(0, -1);
         return dp;
-    }
     }
 };

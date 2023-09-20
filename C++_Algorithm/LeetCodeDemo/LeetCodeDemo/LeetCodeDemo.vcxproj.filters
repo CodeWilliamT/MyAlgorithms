@@ -60,6 +60,15 @@
     <ClCompile Include="lcp0050.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="myAlgo\Basic\Sort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0337.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="myAlgo\Map\SwitchRootDP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

@@ -19,11 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="0337.cpp" />
     <ClCompile Include="lcp0050.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myAlgo\Basic\Basic.cpp" />
+    <ClCompile Include="myAlgo\Basic\Sort.cpp" />
     <ClCompile Include="myAlgo\C_A.cpp" />
     <ClCompile Include="myAlgo\LookUp\0617.cpp" />
+    <ClCompile Include="myAlgo\Map\SwitchRootDP.cpp" />
     <ClCompile Include="myAlgo\Map\TopoSort.cpp" />
     <ClCompile Include="myAlgo\Search\BFS.cpp" />
     <ClCompile Include="myAlgo\Search\DFS.cpp" />
