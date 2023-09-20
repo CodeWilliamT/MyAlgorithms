@@ -9,11 +9,10 @@ public:
 
     //左false右true，两分查找使check为true的最小值
     int GetFTEdge(vector<int> a, int start, int end) {
-        int l = start, r = end;
-
         auto check = [&](int x) {
             return true;
         };
+        int l = start, r = end;
         int m;
         while (l < r) {
             m = (l + r) / 2;
@@ -26,10 +25,10 @@ public:
     }
 	//左true右false，两分查找使check为true的最大值
     int GetTFEdge(vector<int> a,int start,int end){
-        int l = start, r = end;
         auto check = [&](int x) {
             return true;
         };
+        int l = start, r = end;
         int m;
         while (l < r) {
             m = (l + r + 1) / 2;
