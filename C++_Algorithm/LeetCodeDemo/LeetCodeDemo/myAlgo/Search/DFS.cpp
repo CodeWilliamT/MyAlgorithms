@@ -27,10 +27,9 @@ public:
             return nd.x*m+nd.y;
         };
         function<int(Node)> dfs = [&](Node cur) {
-            //搜可行解到达递归边界便跳出
-            if (v[hash(cur)] && !judge(cur))//判定状态可行性，若状态不可行，则跳过
+            if (v[hash(cur)] && !judge(cur))//判定状态可行性、边界、去重，若状态不可行，则跳过
                 return 0;
-            if (cur.x == n)//记方案数则答案++，遍历整棵解答树
+            if (cur.x == n)//抵达重点，判定
                 return 1;
             Node next;
             for (int i = 0; i < 4; i++) {//遍历状态转移操作选项,n为可进行操作数
@@ -39,9 +38,26 @@ public:
                     continue;
                 //状态推进; 剪枝标记记为1;
                 dfs(next); //进行下一重递归
-                //标记还原;准备下一动作尝试
-                //状态还原;状态还原为未进行动作时
+                //状态还原;恢复标记;状态还原为未进行动作时
             }
         };
+    }
+};
+class DFSTree {
+    struct RstNode {
+        int selected = 0;
+        int noSelected = 0;
+    };
+public:
+    RstNode dfs(TreeNode* cur) {
+        if (!cur)//判定状态可行性，若状态不可行，则跳过
+            return { 0,0 };
+        RstNode l = dfs(cur->left);
+        RstNode r = dfs(cur->right);
+        return { cur->val + l.noSelected + r.noSelected,max(l.noSelected,l.selected) + max(r.noSelected,r.selected) };
+    }
+    int DFS(TreeNode* root) {
+        RstNode rst = dfs(root);
+        return max(rst.selected, rst.noSelected);
     }
 };
