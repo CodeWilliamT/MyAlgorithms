@@ -2,7 +2,7 @@ using namespace std;
 #include <iostream>
 #include <vector>
 #include <queue>
-//拓扑排序 有向图中，求是否无环(过全部节点)，无环图的完成时间
+//拓扑排序 有向图中，求是否无环(过全部节点)，无环图的最小完成时间
 //完成该任务的最小cost:f[x]=time[x-1]+max(f[pre(x)])
 //rst=max(f)
 class TopoSort {
