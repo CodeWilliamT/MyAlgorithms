@@ -16,22 +16,19 @@ typedef pair<int, bool> pib;
 typedef long long ll;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
-
+//
+// 选尽量小的数
 class Solution {
 public:
-    string maximumOddBinaryNumber(string s) {
-        int cnt = -1;
-        for (char& c : s) {
-            if (c == '1')
-                cnt++;
-        }
-        int n = s.size();
-        string rst(n, '0');
-        rst[n - 1] = '1';
-        for (int i = 0; i < cnt; i++) {
-            rst[i] = '1';
+    int countWays(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        int rst = nums[0]>0;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] < i + 1&&(i==n-1||i<n-1&&nums[i+1]>i+1)) {
+                rst++;
+            }
         }
         return rst;
-
     }
 };

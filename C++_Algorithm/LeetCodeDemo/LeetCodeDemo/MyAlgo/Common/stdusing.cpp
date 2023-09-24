@@ -137,3 +137,14 @@ using namespace std;
 function<bool(int, int)> check = [&](int p, int q) {
     return p < q;
 };
+
+
+using namespace std;
+#include<numeric>
+//函数内方法声明
+class numeric {
+    int main() {
+        int myints[] = { 10,20,30,40,50 };
+        int sum = accumulate(myints, myints + 5, 0);
+    }
+};

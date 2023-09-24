@@ -12,22 +12,28 @@
 #include <functional>
 #include <bitset>
 #include "myAlgo\Structs\TreeNode.cpp"
-typedef pair<int, bool> pib;
-typedef long long ll;
-typedef pair<ll, ll> pll;
-typedef pair<int, int> pii;
-//
-// 选尽量小的数
+//哈希 枚举
+//枚举最高塔高度
 class Solution {
 public:
-    int countWays(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
-        int n = nums.size();
-        int rst = nums[0]>0;
-        for (int i = 0; i < n; i++) {
-            if (nums[i] < i + 1&&(i==n-1||i<n-1&&nums[i+1]>i+1)) {
-                rst++;
+    long long maximumSumOfHeights(vector<int>& mh) {
+        typedef long long ll;
+        int n = mh.size();
+        ll rst = 0,tmp=0;
+        int x;
+        for (int i = 0; i < n;i++) {
+            tmp = mh[i];
+            x = mh[i];
+            for (int j = i + 1; j < n; j++) {
+                x= min(x, mh[j]);
+                tmp += x;
             }
+            x = mh[i];
+            for (int j = i-1; j>-1; j--) {
+                x = min(x, mh[j]);
+                tmp += x;
+            }
+            rst = max(tmp, rst);
         }
         return rst;
     }

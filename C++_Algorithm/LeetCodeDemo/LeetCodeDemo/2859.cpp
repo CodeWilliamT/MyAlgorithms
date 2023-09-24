@@ -16,22 +16,23 @@ typedef pair<int, bool> pib;
 typedef long long ll;
 typedef pair<ll, ll> pll;
 typedef pair<int, int> pii;
-
 class Solution {
-public:
-    string maximumOddBinaryNumber(string s) {
-        int cnt = -1;
-        for (char& c : s) {
-            if (c == '1')
-                cnt++;
+    int cnt1(int x) {
+        int cnt = 0;
+        while (x) {
+            cnt += (x & 1);
+            x = x >> 1;
         }
-        int n = s.size();
-        string rst(n, '0');
-        rst[n - 1] = '1';
-        for (int i = 0; i < cnt; i++) {
-            rst[i] = '1';
+        return cnt;
+    }
+public:
+    int sumIndicesWithKSetBits(vector<int>& nums, int k) {
+        int rst=0;
+        for (int i = 0; i < nums.size();i++) {
+            if (cnt1(i) == k) {
+                rst += nums[i];
+            }
         }
         return rst;
-
     }
 };
