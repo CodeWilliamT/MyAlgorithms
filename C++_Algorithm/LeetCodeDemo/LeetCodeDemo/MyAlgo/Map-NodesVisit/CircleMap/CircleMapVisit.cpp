@@ -1,20 +1,20 @@
-﻿using namespace std;
+using namespace std;
 #include <vector>
 #include <functional>
-//深搜(回溯) 图
-//有向图中，求以 各个点为起点 的 单路径最多访问点数 的 答案数组。
+//����(����) ͼ
+//����ͼ�У����� ������Ϊ��� �� ��·�������ʵ��� �� �����顣
 //
-//每个点作为起点都遍历一遍，记录答案。因为遍历过程中会记录其他点的遍历过程，所以O(n)
-//遍历时可能有环，环判定：同一点第二次访问记录环深度。
-//即便不是基向图也没问题。
+//ÿ������Ϊ��㶼����һ�飬��¼�𰸡���Ϊ���������л��¼������ı������̣�����O(n)
+//����ʱ�����л������ж���ͬһ��ڶ��η��ʼ�¼����ȡ�
+//���㲻�ǻ���ͼҲû���⡣
 //O(n)
-class Solution {
+class CircleMapVisit {
 #define MAXN (int)1e5+1
 public:
     vector<int> countVisitedNodes(vector<int>& edges) {
         int n = edges.size();
         vector<vector<int> > g(n);
-        for (int i = 0; i < n; i++) {//构建邻接表
+        for (int i = 0; i < n; i++) {//�����ڽӱ�
             g[i].emplace_back(edges[i]);
         }
         vector<int>rst(n, 0);

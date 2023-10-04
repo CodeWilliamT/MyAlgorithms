@@ -14,7 +14,7 @@ using namespace std;
 #include <bitset>
 //#include "myAlgo\Structs\TreeNode.cpp"
 //#include "2569.cpp"
-#include "Test3.cpp"
+#include "Test4.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -57,7 +57,7 @@ int main()
 	Solution s;
 	string str1 = "[1,null,2,null,3,5,4,6,null,9,8,null,7]";
 	string str2 = "__LR";
-	vector<int> v1 = {0,0};
+	vector<int> v1 = { 1,0};
 	vector<int> v2 = { 3,2,5 };
 	vector<vector<int>> vvi1 = { {1,0}};
 	vector<vector<int>> vvi2 = { {0,1}, {1, 0}};
@@ -70,7 +70,7 @@ int main()
 	/*Codec codec;
 	TreeNode* node= codec.deserialize(str1);
 	string testStr=codec.serialize(node);*/
-	s.maxSubarrays(v1);
+	s.countVisitedNodes(v1);
 
 	//string name, url;
 	////将标准输入流重定向到 in.txt 文件

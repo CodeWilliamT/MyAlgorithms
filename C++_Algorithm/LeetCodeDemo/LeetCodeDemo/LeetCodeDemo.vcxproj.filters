@@ -39,30 +39,6 @@
     <ClCompile Include="MyAlgo\Structs\TreeNode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MyAlgo\LookUp\0617.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyAlgo\Search\DFS.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyAlgo\Search\BFS.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyAlgo\C_A.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyAlgo\Map\TopoSort.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyAlgo\Common\Prime.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyAlgo\Common\Sort.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyAlgo\Map\SwitchRootDP.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

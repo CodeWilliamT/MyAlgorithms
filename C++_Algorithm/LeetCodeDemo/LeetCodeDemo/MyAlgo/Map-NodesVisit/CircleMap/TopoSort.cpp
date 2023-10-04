@@ -167,7 +167,7 @@ public:
         return MinCost;
     }
     //每个点不同消耗。求是否无环，完成顺序，最小消耗
-    // 多少个点，后、前关系数组，每个点的用时消耗，是否从1开始
+    //多少个点，后、前关系数组，每个点的用时消耗，是否从1开始
     int MinCost(int n, vector<vector<int>>& edges, vector<int>& time,bool from1=0) {
         bool IsNoCircle;
         int MinCost;
