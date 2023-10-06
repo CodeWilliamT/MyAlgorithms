@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 //堆集
+//适用边加元素边找某极值元素。
 //有序集合
 //log2N插入，log2N查找
 class HeapSort{

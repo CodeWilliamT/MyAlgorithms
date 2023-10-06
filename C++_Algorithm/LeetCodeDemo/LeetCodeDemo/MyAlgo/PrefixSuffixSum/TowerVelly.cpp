@@ -15,7 +15,7 @@
 typedef pair<int, bool> pib;
 //前缀和 后缀和
 //给出以数组作为最高高度，构建选一索引作为山峰，构建山峰数组，求高度和的最大值
-class Solution {
+class TowerVelly {
 public:
     long long maximumSumOfHeights(vector<int>& mh) {
         typedef pair<int, int> pii;

@@ -11,6 +11,9 @@ using namespace std;
 class CircleMapVisit {
 #define MAXN (int)1e5+1
 public:
+    //有向图中，求以 各个点为起点 的 单路径最多访问点数 的 答案数组。
+    //edges:顶点指向的其他顶点构成的数组。
+    //return 每个顶点出发的不分叉路径遇到的最多顶点数
     vector<int> countVisitedNodes(vector<int>& edges) {
         int n = edges.size();
         vector<vector<int> > g(n);
