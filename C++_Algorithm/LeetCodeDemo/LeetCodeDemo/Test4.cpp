@@ -15,7 +15,12 @@
 #include "myAlgo\Structs\TreeNode.cpp"
 #define MAXN (int)1e5+1
 #define MAXM (int)1e5+1
-typedef pair<int, bool> pib;
-typedef long long ll;
-typedef pair<ll, ll> pll;
-typedef pair<int, int> pii;
+//2 6 5 8
+//10 110 101 1000
+//0 110 101 1010 
+class Solution {
+public:
+    int maxSum(vector<int>& nums, int k) {
+        typedef long long ll;
+    }
+};
