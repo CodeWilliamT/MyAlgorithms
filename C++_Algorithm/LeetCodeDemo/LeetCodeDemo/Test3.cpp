@@ -34,7 +34,6 @@ public:
         int m=0;
         for (int i = 0; i < n; i++) {
             if (s1[i] != s2[i]) {
-                diff++;
                 q[m++] = i;
             }
         }
@@ -47,7 +46,6 @@ public:
             if (i % 2) {
             }
             else {
-                f[i]=f[i-1]+f
             }
         }
         return rst;
