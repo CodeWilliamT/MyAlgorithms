@@ -14,7 +14,7 @@ using namespace std;
 #include <bitset>
 //#include "myAlgo\Structs\TreeNode.cpp"
 //#include "2569.cpp"
-#include "2731.cpp"
+#include "2512.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -57,20 +57,21 @@ int main()
 	Solution s;
 	string s1 = "RLL";
 	string s2 = "__LR";
-	vector<int> v1 = { -2,0,2 };
+	vector<int> v1 = { 1,2 };
 	vector<int> v2 = { 3,2,5 };
 	vector<vector<int>> vvi1 = { {1,0}};
 	vector<vector<int>> vvi2 = { {0,1}, {1, 0}};
 	vector<vector<char>> vvc = { {'(', '(', '('}, {')', '(', ')'}, {'(', '(', ')'}, {'(', '(', ')'} };
-	vector<string> vs1 = { "A..","AAA","..." };
-	vector<string> vs2 = { "eee", "ffff" };
+	vector<string> vs1 = { "smart","brilliant","studious" };
+	vector<string> vs2 = { "not" };
+	vector<string> vs3 = { "this student is not studious","the student is smart" };
 	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
 
 	//s.handleQuery(v1,v2,vvi1);
 	/*Codec codec;
 	TreeNode* node= codec.deserialize(str1);
 	string testStr=codec.serialize(node);*/
-	s.sumDistance(v1,s1,3);
+	s.topStudents(vs1,vs2,vs3,v1,2);
 
 	//string name, url;
 	////将标准输入流重定向到 in.txt 文件

@@ -17,6 +17,7 @@ typedef pair<int, bool> pib;
 typedef pair<int, int> pii;
 typedef long long ll;
 typedef pair<ll, ll> pll;
+typedef pair<ll, int> pli;
 #define MAXN (int)(1e5+1)
 #define MAXM (int)(1e5+1)
 #define MOD (int)(1e9+7)
