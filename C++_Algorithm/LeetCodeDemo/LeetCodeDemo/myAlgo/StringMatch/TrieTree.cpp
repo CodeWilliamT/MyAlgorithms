@@ -5,6 +5,9 @@ using namespace std;
 #include <functional>
 
 //前缀树Trie Tree
+//适用：长度l的字符串，找到 在一个 有n个字符串平均长度为m的字符串数组中 能匹配的字符串前缀。
+//tip:如果找字符串，直接用字典数组构造字符串哈希去查，更快。
+//O(n*m+l) O(n*m)
 class Trie {
 	struct TrieNode {
 		unordered_map<char, TrieNode*> c;
