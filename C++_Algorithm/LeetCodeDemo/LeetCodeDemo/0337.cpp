@@ -1,6 +1,6 @@
 using namespace std;
 #include <iostream>
-#include "myAlgo\Structs\TreeNode.cpp"
+#include "myAlgo\LCParse\TreeNode.cpp"
 //动态规划 回溯(深搜)
 class Solution {
     struct RstNode {

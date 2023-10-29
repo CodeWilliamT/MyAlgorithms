@@ -19,17 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="0208.cpp" />
-    <ClCompile Include="0713.cpp" />
-    <ClCompile Include="2512.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyAlgo\LCParse\LCParse.cpp" />
     <ClCompile Include="myAlgo\StringMatch\TrieTree.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test1.cpp" />
     <ClCompile Include="Test2.cpp" />
     <ClCompile Include="Test3.cpp" />
     <ClCompile Include="Test4.cpp" />
-    <ClCompile Include="MyAlgo\Structs\TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />

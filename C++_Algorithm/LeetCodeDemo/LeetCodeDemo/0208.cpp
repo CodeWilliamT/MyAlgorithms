@@ -1,4 +1,4 @@
-#include "myAlgo\Structs\TreeNode.cpp"
+#include "myAlgo\LCParse\TreeNode.cpp"
 using namespace std;
 #include <iostream>
 #include <vector>

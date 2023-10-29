@@ -12,7 +12,7 @@ using namespace std;
 #include <stack>
 #include <functional>
 #include <bitset>
-#include "myAlgo\Structs\TreeNode.cpp"
+#include "myAlgo\LCParse\TreeNode.cpp"
 #define MAXN (int)1e5+1
 #define MAXM (int)1e5+1
 typedef pair<int, bool> pib;

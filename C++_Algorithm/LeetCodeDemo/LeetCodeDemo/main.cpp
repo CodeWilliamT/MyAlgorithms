@@ -12,9 +12,10 @@ using namespace std;
 #include <stack>
 #include <functional>
 #include <bitset>
-//#include "myAlgo\Structs\TreeNode.cpp"
+#include "myAlgo\LCParse\LCParse.cpp"
+//#include "myAlgo\LCParse\TreeNode.cpp"
 //#include "2569.cpp"
-#include "2512.cpp"
+#include "Test3.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -55,23 +56,47 @@ int main()
 {
 	//Codec BitTreeHelper;
 	Solution s;
-	string s1 = "RLL";
-	string s2 = "__LR";
-	vector<int> v1 = { 1,2 };
-	vector<int> v2 = { 3,2,5 };
-	vector<vector<int>> vvi1 = { {1,0}};
-	vector<vector<int>> vvi2 = { {0,1}, {1, 0}};
-	vector<vector<char>> vvc = { {'(', '(', '('}, {')', '(', ')'}, {'(', '(', ')'}, {'(', '(', ')'} };
-	vector<string> vs1 = { "smart","brilliant","studious" };
+	string sin[10];
+	string tmp;
+	int num[10];
+	string str[10];
+	vector<int> v[10];
+	vector<string> vs[10];
 	vector<string> vs2 = { "not" };
 	vector<string> vs3 = { "this student is not studious","the student is smart" };
-	vector < vector<string>> tuple4 = { {"d"} ,{"hveml","f","cpivl"},{"cpivl","zpmcz","h","e","fzjnm","ju"},{"cpivl","hveml","zpmcz","ju","h"},{"h","fzjnm","e","q","x"},{"d","hveml","cpivl","q","zpmcz","ju","e","x"},{"f","hveml","cpivl"} };
-
+	vector<vector<int>> vvi[10];
+	vector<vector<int>> vvi2 = { {0,1}, {1, 0}};
+	vector<vector<char>> vvc[10];
+	vector<vector<string>> vvs[10];
 	//s.handleQuery(v1,v2,vvi1);
-	/*Codec codec;
-	TreeNode* node= codec.deserialize(str1);
-	string testStr=codec.serialize(node);*/
-	s.topStudents(vs1,vs2,vs3,v1,2);
+	TreeNode* node[10];
+	while (true) {
+		for (int i = 0; i < 2; i++) {
+			std::getline(cin, sin[i]);
+			if(cin.fail()||sin[i].empty())
+				break;
+			if (sin[i][0] != '[')
+				num[i] = stoi(sin[i]);
+			if (sin[i].size() <2){
+				continue;
+			}
+			str[i] = sin[i].substr(1, sin[i].size() - 2);
+			v[i] = stov(sin[i]);
+			vs[i]=stovs(sin[i]);
+			if (sin[i][1]!='[') {
+				continue;
+			}
+			vvi[i] = stovvi(sin[i]);
+			vvc[i] = stovvc(sin[i]);
+			vvs[i] = stovvs(sin[i]);
+			node[i]=stotree(sin[i]);
+		}
+		if (cin.fail())
+			break;
+		auto rst=s.lengthOfLongestSubsequence(v[0], num[1]);
+		//string srst=treetos(rst);
+		cout << rst << endl << endl;
+	}
 
 	//string name, url;
 	////将标准输入流重定向到 in.txt 文件

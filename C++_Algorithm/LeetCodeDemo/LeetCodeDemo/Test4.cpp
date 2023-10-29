@@ -12,15 +12,11 @@
 #include <stack>
 #include <functional>
 #include <bitset>
-#include "myAlgo\Structs\TreeNode.cpp"
-#define MAXN (int)1e5+1
-#define MAXM (int)1e5+1
-//2 6 5 8
-//10 110 101 1000
-//0 110 101 1010 
-class Solution {
-public:
-    int maxSum(vector<int>& nums, int k) {
-        typedef long long ll;
-    }
-};
+typedef pair<int, bool> pib;
+typedef pair<int, int> pii;
+typedef long long ll;
+typedef pair<ll, ll> pll;
+typedef pair<ll, int> pli;
+#define MAXN (int)(1e5+1)
+#define MAXM (int)(1e5+1)
+#define MOD (int)(1e9+7)

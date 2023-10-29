@@ -20,17 +20,16 @@ public:
         function<int(int)> dfs = [&](int cur) {
             if (v[hash(cur)] && !judge(cur))//判定状态可行性、边界、去重，若状态不可行，则跳过
                 return 0;
-            if (cur== n)//抵达终点，判定
+            if (cur== n)
                 return 1;
             int next;
-            for (int i = 0; i < 4; i++) {//遍历状态转移操作选项,n为可进行操作数
+            for (int i = 0; i < 4; i++) {//遍历状态
                 next = cur;//计算下一状态；
                 if (v[hash(next)] && !judge(next))//判定状态可行性，若状态不可行，则跳过
                     continue;
-                //状态推进; 剪枝标记记为1;
-                dfs(next); //进行下一重递归
-                //状态还原;恢复标记;状态还原为未进行动作时
+                dfs(next); 
             }
+            return -1;
         };
     }
 };
