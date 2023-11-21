@@ -12,10 +12,10 @@ using namespace std;
 #include <stack>
 #include <functional>
 #include <bitset>
-#include "myAlgo\LCParse\LCParse.cpp"
+#include "MyAlgo\LCParse\LCParse.cpp"
 //#include "myAlgo\LCParse\TreeNode.cpp"
 //#include "2569.cpp"
-#include "Test3.cpp"
+#include "Test2.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -62,8 +62,6 @@ int main()
 	string str[10];
 	vector<int> v[10];
 	vector<string> vs[10];
-	vector<string> vs2 = { "not" };
-	vector<string> vs3 = { "this student is not studious","the student is smart" };
 	vector<vector<int>> vvi[10];
 	vector<vector<int>> vvi2 = { {0,1}, {1, 0}};
 	vector<vector<char>> vvc[10];
@@ -71,31 +69,40 @@ int main()
 	//s.handleQuery(v1,v2,vvi1);
 	TreeNode* node[10];
 	while (true) {
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 1; i++) {
 			std::getline(cin, sin[i]);
 			if(cin.fail()||sin[i].empty())
 				break;
-			if (sin[i][0] != '[')
+			if (sin[i][0] >= '0' && sin[i][0] <= '9')
 				num[i] = stoi(sin[i]);
-			if (sin[i].size() <2){
+			if (sin[i][0] == '"')
+				str[i] = sin[i].substr(1, sin[i].size() - 2);
+			if (sin[i][0] != '['){
 				continue;
 			}
-			str[i] = sin[i].substr(1, sin[i].size() - 2);
-			v[i] = stov(sin[i]);
-			vs[i]=stovs(sin[i]);
-			if (sin[i][1]!='[') {
-				continue;
+			if (sin[i][1] == '"')
+				vs[i] = stovs(sin[i]);
+			if (sin[i][1] >= '0' && sin[i][1] <= '9') {
+				v[i] = stov(sin[i]);
 			}
-			vvi[i] = stovvi(sin[i]);
-			vvc[i] = stovvc(sin[i]);
-			vvs[i] = stovvs(sin[i]);
-			node[i]=stotree(sin[i]);
+
+			if (sin[i][1] >= '0' && sin[i][1] <= '9'|| sin[i][1]=='n') {
+				node[i] = stotree(sin[i]);
+			}
+			if (sin[i][1] != '[')
+				continue;
+			if(sin[i][2]>='0'&& sin[i][2]<='9')
+				vvi[i] = stovvi(sin[i]);
+			if (sin[i][2] =='\'')
+				vvc[i] = stovvc(sin[i]);
+			if (sin[i][2] == '"')
+				vvs[i] = stovvs(sin[i]);
 		}
 		if (cin.fail())
 			break;
-		auto rst=s.lengthOfLongestSubsequence(v[0], num[1]);
+		auto rst=s.findHighAccessEmployees(vvs[0]);
 		//string srst=treetos(rst);
-		cout << rst << endl << endl;
+		//cout << rst << endl << endl;
 	}
 
 	//string name, url;

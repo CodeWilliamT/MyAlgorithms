@@ -41,7 +41,7 @@ static vector<vector<int>> stovvi(string s) {
 			vvi.push_back(vector<int>());
 		if ('0' <= c && c <= '9')
 			tmp.push_back(c);
-		if (c == ',' || c == ']') {
+		if (c == ','&& s[j - 1]!=']' || c == ']') {
 			vvi.back().push_back(stoi(tmp));
 			tmp.clear();
 		}
@@ -67,9 +67,9 @@ static vector<vector<string>> stovvs(string s) {
 			vvs.push_back(vector<string>());
 			vvs.back().push_back(string());
 		}
-		if (c == ',')
+		if (c == ','&&s[j-1]!=']')
 			vvs.back().push_back(string());
-		if (c != '[' && c != ']' && c != '\'' && c != ',')
+		if (c != '[' && c != ']' && c != '\"' && c != ',')
 			vvs.back().back().push_back(c);
 	}
 	return vvs;

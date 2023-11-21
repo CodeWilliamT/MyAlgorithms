@@ -39,9 +39,6 @@
     <ClCompile Include="myAlgo\StringMatch\TrieTree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MyAlgo\LCParse\LCParse.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
