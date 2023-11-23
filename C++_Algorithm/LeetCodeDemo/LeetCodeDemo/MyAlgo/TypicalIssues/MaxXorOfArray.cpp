@@ -1,4 +1,4 @@
-using namespace std;
+﻿using namespace std;
 #include <iostream>
 #include <vector>
 #include <string>
@@ -20,24 +20,30 @@ typedef pair<ll, int> pli;
 #define MAXN (int)(1e5+1)
 #define MAXM (int)(1e5+1)
 #define MOD (int)(1e9+7)
-//��ϣ
+//哈希 异或
+//按答案最高位依次异或求出答案。
 class Solution {
-#define MAXD (int)(30)
+#define MAXD (int)(20)
 public:
-    int findMaximumXOR(vector<int>& nums) {
-        int rst=0,next;
+    int maximumStrongPairXor(vector<int>& nums) {
+        int n = nums.size();
         sort(nums.begin(), nums.end());
-        unordered_set<int> st;
+        int rst = 0,next, target,y;
+        unordered_map<int, int> mp;
         for (int k = MAXD; k > -1; k--) {
-            st.clear();
+            mp.clear();
             rst = rst << 1;
             next = rst + 1;
-            for (int& e : nums) {
-                if (st.count(next ^ (e >> k))) {
-                    rst = next;
-                    break;
+            for (int& x : nums) {
+                target = next ^ (x >> k);
+                if (mp.count(target)) {
+                    y = mp[target];
+                    if (x <= 2 * y) {
+                        rst = next;
+                        break;
+                    }
                 }
-                st.insert(e >> k);
+                mp[x >> k] = x;
             }
         }
         return rst;

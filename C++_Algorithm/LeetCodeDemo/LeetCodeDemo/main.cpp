@@ -15,7 +15,7 @@ using namespace std;
 #include "MyAlgo\LCParse\LCParse.cpp"
 //#include "myAlgo\LCParse\TreeNode.cpp"
 //#include "2569.cpp"
-#include "Test2.cpp"
+#include "Test4.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -100,7 +100,7 @@ int main()
 		}
 		if (cin.fail())
 			break;
-		auto rst=s.findHighAccessEmployees(vvs[0]);
+		auto rst=s.maximumStrongPairXor(v[0]);
 		//string srst=treetos(rst);
 		//cout << rst << endl << endl;
 	}

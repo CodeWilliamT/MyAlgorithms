@@ -36,9 +36,6 @@
     <ClCompile Include="Test4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="myAlgo\StringMatch\TrieTree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

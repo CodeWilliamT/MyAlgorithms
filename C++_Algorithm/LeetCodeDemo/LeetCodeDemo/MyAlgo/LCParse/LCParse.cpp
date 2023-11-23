@@ -137,6 +137,8 @@ TreeNode* doDeserialize(queue<string>& ndata)
                 q.push(cur->left);
             }
             ndata.pop();
+            if (!cnt && ndata.empty())
+                break;
             if (ndata.front() == "null")
                 cur->right = nullptr;
             else {
