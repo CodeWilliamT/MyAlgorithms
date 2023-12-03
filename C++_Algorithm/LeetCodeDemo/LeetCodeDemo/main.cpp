@@ -100,7 +100,7 @@ int main()
 		}
 		if (cin.fail())
 			break;
-		auto rst=s.maximumStrongPairXor(v[0]);
+		auto rst=s.findMaximumLength(v[0]);
 		//string srst=treetos(rst);
 		//cout << rst << endl << endl;
 	}
