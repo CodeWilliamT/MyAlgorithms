@@ -15,7 +15,7 @@ using namespace std;
 #include "MyAlgo\LCParse\LCParse.cpp"
 //#include "myAlgo\LCParse\TreeNode.cpp"
 //#include "2569.cpp"
-#include "Test4.cpp"
+#include "Test2.cpp"
 //#include "0297.cpp"
 //bittree helper
 /*
@@ -69,7 +69,7 @@ int main()
 	//s.handleQuery(v1,v2,vvi1);
 	TreeNode* node[10];
 	while (true) {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 6; i++) {
 			std::getline(cin, sin[i]);
 			if(cin.fail()||sin[i].empty())
 				break;
@@ -100,7 +100,7 @@ int main()
 		}
 		if (cin.fail())
 			break;
-		auto rst=s.findMaximumLength(v[0]);
+		auto rst=s.minMovesToCaptureTheQueen(num[0], num[1], num[2], num[3], num[4], num[5]);
 		//string srst=treetos(rst);
 		//cout << rst << endl << endl;
 	}
